@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      background-color: #002b36;
+    }
+
+    h1 {
+      margin-top: 180px;
+      position: relative;
+      left: 25%;
+      font-size: 5em;
+      color: #6c71c4;
+    }
+
+    form {
+      position: relative;
+      left: 45%;
+      color: #6c71c4;
+    }
+
+    #submit {
+      position: relative;
+      left: 3.3%;
+    }
+
+    #box1 {
+      margin-top: 50px;
+      margin-left: 20px;
+      width: 35%;
+      height: 180px;
+      position: relative;
+      background: #6c71c4;
+      font-size: 2em;
+      color: #002b36;
+    }
+
+    #box2 .current {
+      position: relative;
+      left: 79%;
+    }
+
+    #box2 .height {
+      height: 0;
+      position: relative;
+    }
+
+    #box2 .prevHash {
+      position: relative;
+      top: 65%;
+      height: 0;
+    }
+
+    #box2 .nextHash {
+      position: relative;
+      top: 77%;
+      left: 83%;
+    }
+
+    #box2 .content {
+      height: 0;
+      position: relative;
+      top: 25%;
+    }
+
+    #box2 {
+      left: 28%;
+      margin-top: 50px;
+      width: 70%;
+      height: 400px;
+      position: relative;
+      background: #6c71c4;
+      font-size: 2.5em;
+      color: #002b36;
+    }
+
+    .tooltiptext {
+      visibility: hidden;
+      width: 120px;
+      background-color: black;
+      color: #fff;
+      font-size: 0.5em;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px 0;
+
+      /* Position the tooltip */
+      position: absolute;
+      z-index: 1;
+    }
+
+    .height:hover .tooltiptext {
+      visibility: visible;
+    }
+
+    .current:hover .tooltiptext {
+      visibility: visible;
+    }
+
+    .content:hover .tooltiptext {
+      visibility: visible;
+    }
+
+    .prevHash:hover .tooltiptext {
+      visibility: visible;
+    }
+
+    .nextHash:hover .tooltiptext {
+      visibility: visible;
+    }
+
+    .tooltiptext::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0%;
+      margin-left: -5px;
+      border-width: 10px;
+      border-style: solid;
+      border-color: black transparent transparent transparent;
+    }
+
+    .text {
+      color: white;
+      font-size: 2 em;
+      position: relative;
+      left: 120%;
+      top: -80%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="box1">
+    <div>
+      Private Key
+    </div>
+    <div>
+      Publib Key
+      <br>02a1633cafcc01ebfb6d78e39f687a1f0 995c62fc95f51ead10a02ee0be551b5dc
+    </div>
+
+    <div class="text">
+      This is where i want to put the text that explains what the public key and the private key is and how the public key is ranomly
+      generated
+    </div>
+  </div>
+  <div id="box2">
+    <div class="height">
+      Height
+      <span class="tooltiptext">Tooltip for Block Height</span>
+    </div>
+    <div class="current">
+      Current Hash
+      <span class="tooltiptext">Tooltip for Current Hash</span>
+    </div>
+    <div class="content">
+      Content ~~~~~~~~~~~~~~~~~~~~~
+      <span class="tooltiptext">Tooltip for Content</span>
+    </div>
+    <div class="nextHash">
+      Next Hash
+      <span class="tooltiptext">Tooltip for Next Hash</span>
+    </div>
+    <div class="prevHash">Prev
+      <span class="tooltiptext">Tooltip for Previouse Hash</span>
+    </div>
+  </div>
+
+</body>
+
+</html>
