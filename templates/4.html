@@ -1,0 +1,87 @@
+<link rel="stylesheet" href="../node_modules/material-design-lite/material.min.css">
+<script src="../node_modules/material-design-lite/material.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+      href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<style>
+  body {
+    background-color: #272822;
+  }
+
+  h1 {
+    font-size: 5em;
+    color: #6c71c4;
+  }
+
+  h3 {
+    color: #AE81FF;
+  }
+
+  .const {
+    color:#F92672;
+  }
+
+  .eql {
+    color: #A6E22A;
+  }
+
+  .mdl-textfield__input{
+    color: #75715E;
+    font-size: 2em;
+  }
+  ul li{
+    display: inline-block;
+  }
+
+  .giant {
+    font-size: 20em;
+    color: #AE81FF;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+  }
+
+  .grey-light {
+    color: #E6E6E6;
+  }
+
+  .grey-darkest {
+    color: #141411;
+  }
+
+  .yellow{
+    color: #E6DB74;
+  }
+
+  .mdl-textfield__input{
+    border-bottom: 1px solid #E6E6E6;
+}
+</style>
+
+<body>
+
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--4-col">
+    <h1>//CHECK TRANSACTION</h1>
+  </div>
+</div>
+<div class="container mdl-grid">
+  <pre><code  class="javascript">if (checkTX(tx)) {
+    mempool.push(tx)
+  } else {
+    throw New.error;
+  };
+}</code></pre>
+  <div class="mdl-cell mdl-cell--1-col">
+    <span class="giant">}</span>
+  </div>
+  <div class="mdl-cell mdl-cell--6-col">
+    <h2 class="yellow">HASH <span class="eql">=</span></h2><input class="mdl-textfield__input" type="text" id="sample1">
+  </div>
+    <script>hljs.initHighlightingOnLoad();</script>
+</div>
+</body>

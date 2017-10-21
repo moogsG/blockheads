@@ -1,86 +1,131 @@
 <link rel="stylesheet" href="../node_modules/material-design-lite/material.min.css">
+<link rel="stylesheet" href="../node_modules/hover.css/css/hover.css">
 <script src="../node_modules/material-design-lite/material.min.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+ <link href="https://fonts.googleapis.com/css?family=Quicksand|VT323" rel="stylesheet">
 <style>
   body {
-    background-color: #272822;
+    background-color: #403F4C;
+    color: #CDD3D5;
+
+
+    font-family: 'Quicksand', sans-serif;
+
+
+
+
+  }
+
+  .secondaryFont {
+    font-family: 'VT323', monospace;
+  }
+  .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #6290c3;
+    margin: 20px;
+    padding: 20px;
+    border: 10px solid #CDD3D5;
+    border-radius: 5px;
+  }
+
+  .line {
+    margin: 2em;
+    border-top: 1px solid #CDD3D5;
   }
 
   h1 {
-    font-size: 5em;
-    color: #6c71c4;
+    font-size: 3em;
   }
 
   h3 {
-    color: #AE81FF;
+    font-size: 2em;
   }
 
   .const {
-    color:#F92672;
+    color: #931621;
   }
 
   .eql {
-    color: #A6E22A;
+    color: #28464b;
   }
 
-  .mdl-textfield__input{
-    color: #75715E;
+  .mdl-textfield__input {
+    color: #403F4C;
     font-size: 2em;
-  }
-  ul li{
-    display: inline-block;
   }
 
   .giant {
-    font-size: 20em;
-    color: #AE81FF;
-  }
-
-  .container {
-    display: flex;
-    align-items: center;
+    font-size: 15em;
   }
 
   .grey-light {
-    color: #E6E6E6;
+    color: #403F4C;
   }
 
   .grey-darkest {
     color: #141411;
   }
 
-  .yellow{
+  .yellow {
     color: #E6DB74;
   }
 
-  .mdl-textfield__input{
-    border-bottom: 1px solid #E6E6E6;
-}
+
+  .vert-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hvr-pulse-grow{
+    animation-name: hvr-pulse-grow;
+    animation-duration: 0.3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
 </style>
-<div class="mdl-grid">
-  <div class="mdl-cell mdl-cell--4-col">
-    <h1>//SEND TRANSACTION</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <div class="line"> </div>
+      <h1>SEND TRANSACTION<i class="material-icons">devices_other</i></h2>
+      <div class="line"> </div>
+    </div>
   </div>
-</div>
-<div class="container mdl-grid">
-  <div class="mdl-textfield mdl-js-textfiel mdl-cell mdl-cell--5-col">
-    <ul>
-      <li>
-        <h3><span class="const">const</span> pubKey <span class="eql"> =   </span> </h3>
-      </li>
-      <li><input class="mdl-textfield__input" type="text" id="sample1"></li>
-    </ul>
-    <ul style="padding-left: 75px">
-      <li>
-        <h3><span class="const">let</span> favFood <span class="eql"> =   </span> </h3>
-      </li>
-      <li><input class="mdl-textfield__input" type="text" id="sample1"></li>
-    </ul>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="box">
+          <div class="row">
+            <div class="vert-center">
+            <div class="col-md-2">
+              <span class="giant hvr-backward">{</span>
+            </div>
+            <div class="col-md-8 text-center secondaryFont">
+              <form action="#">
+               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                 <label class="mdl-textfield__label" for="sample1"><h3><span class="const">const</span> pubKey <span class="eql"> =   </span> </h3></label>
+                 <input class="mdl-textfield__input" type="text" id="sample1" >
+               </div>
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <label class="mdl-textfield__label" for="sample2"><h3><span class="const">let</span> favFood <span class="eql"> =   </span> </h3></label>
+              <input class="mdl-textfield__input" type="text" id="sample2">
+            </div>
+            </form>
+          </div>
+            <div class="col-md-2">
+              <span class="giant hvr-forward">}</span>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+        <div class="col-md-4 vert-center">
+          <h1>To send your first transaction, enter your <span class="secondaryFont hvr-pulse-grow">pubKey</span> along with your favourite food.</h1>
+        </div>
+    </div>
+    <h2>HASH = </h2>
   </div>
-  <div class="mdl-cell mdl-cell--1-col">
-    <span class="giant">}</span>
-  </div>
-  <div class="mdl-cell mdl-cell--6-col">
-    <h2 class="yellow">HASH <span class="eql">=</span></h2><input class="mdl-textfield__input" type="text" id="sample1">
-  </div>
-</div>
