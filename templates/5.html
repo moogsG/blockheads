@@ -1,0 +1,230 @@
+<link rel="stylesheet" href="../node_modules/material-design-lite/material.min.css">
+<link rel="stylesheet" href="../node_modules/hover.css/css/hover.css">
+<script src="../node_modules/material-design-lite/material.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Quicksand|VT323" rel="stylesheet">
+
+<style>
+  body {
+    background-color: #403F4C;
+    color: #CDD3D5;
+
+
+    font-family: 'Quicksand', sans-serif;
+
+
+
+
+  }
+
+  .secondaryFont {
+    font-family: 'VT323', monospace;
+  }
+
+  .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #6290c3;
+    margin: 20px;
+    padding: 20px;
+    border: 10px solid #CDD3D5;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+  }
+
+  .box:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  }
+
+  .line {
+    margin: 2em;
+    border-top: 1px solid #CDD3D5;
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+
+  h3 {
+    font-size: 2em;
+  }
+
+  .red {
+    color: #931621;
+  }
+
+  .blue-dark {
+    color: #28464b;
+  }
+
+  .mdl-textfield__input {
+    color: #403F4C;
+    font-size: 2em;
+  }
+
+  .giant {
+    font-size: 15em;
+  }
+
+  .grey-darkest {
+    color: #141411;
+  }
+
+  .yellow {
+    color: #e1bc29;
+  }
+
+  .green {
+    color: #3bb273;
+  }
+
+  .purple {
+    color: #403f4c;
+  }
+
+  .vert-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hvr-pulse-grow {
+    animation-name: hvr-pulse-grow;
+    animation-duration: 0.3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  .block {
+    background-color: #28464b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+    border: 5px solid #CDD3D5;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+
+  .block-header {
+    border-bottom: 1px solid #CDD3D5;
+    margin-bottom: 12px;
+  }
+
+  .block-footer {
+    border-top: 1px solid #CDD3D5;
+    margin-top: 12px;
+  }
+
+  .mdl-chip {
+    border-radius: 4px;
+  }
+
+  .mdl-chip__text {
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+  }
+</style>
+
+<body>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="line"> </div>
+        <h1>The new BLOCK</h2>
+      <div class="line"> </div>
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-md-12 vert-center">
+        <h1>Time to add your transmission to the next block!  Looks like there a few transmissions ready to be added.  Blocks are able top house many transmissions, so how about we add a few!</h1>
+      </div>
+      <div class="col-md-12">
+        <div class="box">
+          <div class="row">
+            <div class="vert-center">
+              <div class="col-md-4">
+                <div class="row">
+                  <div class="col-md-6">
+                    <span class="mdl-chip">
+                      <span class="mdl-chip__text">transmission</span>
+                    </span>
+                  </div>
+                  <div class="col-md-6">
+                    <span class="mdl-chip">
+                      <span class="mdl-chip__text">transmission</span>
+                    </span>
+                  </div>
+
+                  <div class="col-md-6">
+                    <span class="mdl-chip">
+                      <span class="mdl-chip__text">transmission</span>
+                    </span>
+                  </div>
+                  <div class="col-md-6">
+                    <span class="mdl-chip">
+                      <span class="mdl-chip__text">transmission</span>
+                    </span>
+                  </div>
+
+
+                  <div class="col-md-6">
+                    <span class="mdl-chip">
+                      <span class="mdl-chip__text">transmission</span>
+                    </span>
+                  </div>
+                  <div class="col-md-6">
+                    <span class="mdl-chip">
+                      <span class="mdl-chip__text">transmission</span>
+                    </span>
+                  </div>
+
+              </div>
+            </div>
+              <div class="col-md-8 secondaryFont">
+                <div class="block">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="block-header text-center">
+                        <span class="block-height float-left" data-toggle="tooltip" title="This is the number of the block.">6</span>
+                        <h2>Block Hash</h2>
+                        <h4 data-toggle="tooltip" title="39034456789534455454534">39034...</h4>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-secondary list-group-item-action">transmission</a>
+                        <a href="#" class="list-group-item list-group-item-secondary list-group-item-action">transmission</a>
+                        <a href="#" class="list-group-item list-group-item-secondary list-group-item-action">transmission</a>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="block-footer">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <h4 data-toggle="tooltip" title="39034456789534455454534">1235...</h4>
+                          </div>
+                          <div class="col-md-6 ">
+                            <h4 class="float-right" data-toggle="tooltip" title="39034456789534455454534">67891...</h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
