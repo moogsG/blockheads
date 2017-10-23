@@ -1,87 +1,132 @@
 <link rel="stylesheet" href="../node_modules/material-design-lite/material.min.css">
+<link rel="stylesheet" href="../node_modules/hover.css/css/hover.css">
 <script src="../node_modules/material-design-lite/material.min.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet"
-      href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Quicksand|VT323" rel="stylesheet">
 
 <style>
   body {
-    background-color: #272822;
+    background-color: #403F4C;
+    color: #CDD3D5;
+
+
+    font-family: 'Quicksand', sans-serif;
+
+
+
+
+  }
+
+  .secondaryFont {
+    font-family: 'VT323', monospace;
+  }
+
+  .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #6290c3;
+    margin: 20px;
+    padding: 20px;
+    border: 10px solid #CDD3D5;
+    border-radius: 5px;
+  }
+
+  .line {
+    margin: 2em;
+    border-top: 1px solid #CDD3D5;
   }
 
   h1 {
-    font-size: 5em;
-    color: #6c71c4;
+    font-size: 3em;
   }
 
   h3 {
-    color: #AE81FF;
-  }
-
-  .const {
-    color:#F92672;
-  }
-
-  .eql {
-    color: #A6E22A;
-  }
-
-  .mdl-textfield__input{
-    color: #75715E;
     font-size: 2em;
   }
-  ul li{
-    display: inline-block;
+
+  .red {
+    color: #931621;
+  }
+
+  .blue-dark {
+    color: #28464b;
+  }
+
+  .mdl-textfield__input {
+    color: #403F4C;
+    font-size: 2em;
   }
 
   .giant {
-    font-size: 20em;
-    color: #AE81FF;
-  }
-
-  .container {
-    display: flex;
-    align-items: center;
+    font-size: 15em;
   }
 
   .grey-light {
-    color: #E6E6E6;
+    color: #403F4C;
   }
 
   .grey-darkest {
     color: #141411;
   }
 
-  .yellow{
-    color: #E6DB74;
+  .yellow {
+    color: #e1bc29;
   }
 
-  .mdl-textfield__input{
-    border-bottom: 1px solid #E6E6E6;
-}
+  .green {
+    color: #3bb273;
+  }
+
+  .purple {
+    color: #403f4c;
+  }
+  .vert-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hvr-pulse-grow {
+    animation-name: hvr-pulse-grow;
+    animation-duration: 0.3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
 </style>
-
 <body>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <div class="line"> </div>
 
-<div class="mdl-grid">
-  <div class="mdl-cell mdl-cell--4-col">
-    <h1>//CHECK TRANSACTION</h1>
+      <h1>CHECK TX</h2>
+      <div class="line"> </div>
+    </div>
   </div>
-</div>
-<div class="container mdl-grid">
-  <pre><code  class="javascript">if (checkTX(tx)) {
-    mempool.push(tx)
-  } else {
-    throw New.error;
-  };
-}</code></pre>
-  <div class="mdl-cell mdl-cell--1-col">
-    <span class="giant">}</span>
+    <div class="row">
+        <div class="col-md-6 vert-center">
+          <h1>Now that your transition is sent, it first has to be verified to be a valid transaction. So in this case, is  ______ REALLY your favourite food?  Is there proof that it is your favourite food? Is it spelled correctly?</h1>
+    </div>
+    <div class="col-md-6">
+      <div class="box">
+        <div class="row">
+          <div class="vert-center">
+            <div class="col-md-12 secondaryFont">
+              <h2><span class="blue-dark">IF</span> (<span class=" purple">transmission</span><span class="blue-dark">.fav_food</span> is <span class=yellow>true</span>) <span class="purple">then</span></h2>
+              <h2>&nbsp add transmission to <span data-toggle="tooltip"title="The mempool is where the transmissions meet up before being adding to a block, but more of that in the next step.">mempool</span></h2>
+              <h2 class="blue-dark">ELSE</h2>
+              <h2>&nbsp return <span class=yellow>New</span><span class="red">.error</span> = <br>&nbsp &nbsp "Not users favourite food"</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="mdl-cell mdl-cell--6-col">
-    <h2 class="yellow">HASH <span class="eql">=</span></h2><input class="mdl-textfield__input" type="text" id="sample1">
-  </div>
-    <script>hljs.initHighlightingOnLoad();</script>
 </div>
 </body>
