@@ -35,6 +35,7 @@
     "webpack-dev-server": "2.3.0"
   },
   "dependencies": {
+    "aos": "^2.2.0",
     "bootstrap": "^4.0.0-beta.2",
     "express": "4.16.1",
     "hover.css": "^2.2.1",
