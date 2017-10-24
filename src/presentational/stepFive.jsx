@@ -4,7 +4,8 @@ import React, {Component} from 'react';
   class StepFour extends Component {
     render() {
       return (
-        <div data-aos="flip-up" data-aos-delay="1000" className="container">
+        <div className="container">
+        <div data-aos="flip-up" data-aos-delay="1000">
           <div className="row">
             <div className="col-md-12 text-center">
               <div className="line"> </div>
@@ -94,6 +95,7 @@ import React, {Component} from 'react';
                 </div>
               </div>
             </div>
+          </div>
           </div>
         </div>
       )

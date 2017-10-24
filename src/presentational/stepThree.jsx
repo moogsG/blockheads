@@ -8,7 +8,8 @@ import React, {Component} from 'react';
     }
     render() {
       return (
-        <div data-aos="fade-up" data-aos-delay="1000" className="container">
+        <div className="container">
+        <div data-aos="fade-up" data-aos-delay="2000" >
           <div className="row">
             <div className="col-md-12 text-center">
               <div className="line"></div>
@@ -29,7 +30,7 @@ import React, {Component} from 'react';
                          <label className="mdl-textfield__label" htmlFor="sample1">
                           <span className="red">const</span> pubKey <span className="yellow"> =   </span>
                         </label>
-                        <input className="mdl-textfield__input" type="text" id="sample1"/>
+                        <input className="mdl-textfield__input" type="text" id="sample1" />
                       </div>
                       <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <label className="mdl-textfield__label " htmlFor="sample2">
@@ -51,6 +52,7 @@ import React, {Component} from 'react';
                 <h1>To send your first transaction, enter your <span className="secondaryFont hvr-pulse-grow">pubKey</span> along with your favourite food.</h1>
               </div>
             </div>
+          </div>
           </div>
         </div>
       )

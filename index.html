@@ -17,12 +17,15 @@
   <div id="react-root"></div>
   <script src="/build/bundle.js"></script>
   <script>
-  $(function(){
-   AOS.init();
-   })
-
-
-
+   $(document).ready(function(){
+    $('.container').css('height', $(window).height());
+    AOS.init();
+    // Comma, not colon ----^
+    });
+$(window).resize(function(){
+    $('.container').css('height', $(window).height());
+    // Comma, not colon ----^
+});
  </script>
 </body>
 </html>
