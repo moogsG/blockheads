@@ -1,16 +1,21 @@
 import React, {Component} from 'react';
-import StepThree from './presentational/stepThree.jsx';
-import StepFour from './presentational/stepFour.jsx';
-import StepFive from './presentational/stepFive.jsx';
+import Steps from './components/steps.jsx';
+
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+  }
+
+  componentDidMount() {
+    console.log("Connected!")
+  }
+
+
   render() {
     return (
-      <div>
-      <StepThree />
-      <StepFour />
-      <StepFive />
-      </div>
+      <Steps />
     );
   }
 }

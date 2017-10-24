@@ -2,6 +2,16 @@ import React, {Component} from 'react';
 
 
   class StepThree extends Component {
+    constructor(props) {
+      super(props);
+
+      this.state = {
+        user: 'Morgan',
+        pubKey: '',
+        message: ''
+      };
+
+    }
     render() {
       return (
         <div data-aos="fade-up" data-aos-delay="1000" className="container">
@@ -22,10 +32,10 @@ import React, {Component} from 'react';
                     <div className="col-md-8 text-center ">
                       <form action="#">
                        <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                         <label className="mdl-textfield__label"    htmlFor="sample1">
+                         <label className="mdl-textfield__label" htmlFor="sample1">
                           <span className="red">const</span> pubKey <span className="yellow"> =   </span>
                         </label>
-                        <input className="mdl-textfield__input" type="text" id="sample1" />
+                        <input className="mdl-textfield__input" type="text" id="sample1" defaultValue={this.state.user}/>
                       </div>
                       <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <label className="mdl-textfield__label " htmlFor="sample2">

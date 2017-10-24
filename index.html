@@ -6,7 +6,6 @@
   <script src="./node_modules/material-design-lite/material.min.js"></script>
     <script src=
   "../node_modules/aos/dist/aos.js"></script>
-
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <!-- EXTERNAL STYLESHEETS -->
 
@@ -21,6 +20,14 @@
   $(function(){
    AOS.init();
    })
+   $(document).ready(function(){
+    $('.container').css('height', $(window).height());
+    // Comma, not colon ----^
+});
+$(window).resize(function(){
+    $('.container').css('height', $(window).height());
+    // Comma, not colon ----^
+});
  </script>
 </body>
 </html>
