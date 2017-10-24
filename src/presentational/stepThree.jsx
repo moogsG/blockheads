@@ -5,12 +5,6 @@ import React, {Component} from 'react';
     constructor(props) {
       super(props);
 
-      this.state = {
-        user: 'Morgan',
-        pubKey: '',
-        message: ''
-      };
-
     }
     render() {
       return (
@@ -35,7 +29,7 @@ import React, {Component} from 'react';
                          <label className="mdl-textfield__label" htmlFor="sample1">
                           <span className="red">const</span> pubKey <span className="yellow"> =   </span>
                         </label>
-                        <input className="mdl-textfield__input" type="text" id="sample1" defaultValue={this.state.user}/>
+                        <input className="mdl-textfield__input" type="text" id="sample1"/>
                       </div>
                       <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <label className="mdl-textfield__label " htmlFor="sample2">

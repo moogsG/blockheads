@@ -5,6 +5,7 @@ import StepTwo from '../presentational/stepTwo.jsx';
 import StepThree from '../presentational/stepThree.jsx';
 import StepFour from '../presentational/stepFour.jsx';
 import StepFive from '../presentational/stepFive.jsx';
+import StepSix from '../presentational/stepSix.jsx';
 
 const SHA256 = require("crypto-js/sha256");
 
@@ -12,9 +13,9 @@ class Steps extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      privKey: ' ',
-      pubKey: ' ',
-      message: ' '
+      privKey: '',
+      pubKey: '',
+      message: ''
     };
 
 this.onStateChange = this.onStateChange.bind(this);
@@ -42,6 +43,7 @@ this.onStateChange = this.onStateChange.bind(this);
       <StepThree />
       <StepFour />
       <StepFive />
+      <StepSix />
       </div>
     );
   }

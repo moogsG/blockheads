@@ -22,7 +22,7 @@ import React, {Component} from 'react';
 
     render() {
       return (
-        <div className="container">
+        <div data-aos="fade-up" data-aos-delay="1000" className="container">
           <div className="row">
             <div className="col-md-12 text-center">
               <div className="line"></div>
