@@ -1,0 +1,41 @@
+// Colours
+$red: #931621;
+$blue-dark: #28464b;
+$grey-darkest: #e1bc29;
+$yellow: #e1bc29;
+$green: #3bb273;
+$purple: #403f4c;
+
+.grey-darkest {
+  color: $grey-darkest;
+}
+
+.yellow {
+  color: $yellow;
+}
+
+.green {
+  color: $green;
+}
+
+.purple {
+  color: $purple;
+}
+
+.red {
+  color: $red;
+}
+
+.blue-dark {
+  color: $blue-dark;
+}
+//@media breakpoints
+$breakpoints: (phone: 320px, tablet: 768px, desktop: 1024px);
+
+//Main mixins
+@mixin transition($time) {
+    -moz-transition: all $time ease-in;
+    -o-transition: all $time ease-in;
+    -webkit-transition: all $time ease-in;
+    transition: all $time ease-in;
+}

@@ -1,0 +1,31 @@
+// Global SASS
+
+body {
+  background-color: #403F4C;
+  color: #CDD3D5;
+  font-family: 'Quicksand', sans-serif;
+}
+
+// FONTS
+
+h1 {
+  font-size: 2.5em;
+}
+
+h3 {
+  font-size: 2em;
+}
+
+.giant {
+  font-size: 15em;
+}
+
+.secondaryFont {
+  font-family: 'VT323', monospace;
+}
+
+.vert-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
