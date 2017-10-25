@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+const SHA256 = require("crypto-js/sha256");
+
 
 
   class StepTwo extends Component {
@@ -7,7 +9,10 @@ import React, {Component} from 'react';
 
             this.state = {
               privKey: '',
-              pubKey: ''
+              pubKey: '',
+              message: '',
+              picks: [],
+              hash: ''
             };
       this.change = this.change.bind(this);
     }
@@ -17,6 +22,25 @@ import React, {Component} from 'react';
         privKey: event.target.value
       };
       this.props.onStateChange(newState);
+    }
+
+    add(event){
+      event.preventDefault();
+      let pick = event.currentTarget.getAttribute('href');
+      let index = this.props.picks.indexOf(pick);
+      if(index === -1){
+        let newState = {
+          picks: this.props.picks.push(pick),
+          hash: SHA256(this.props.picks.push(pick).toString()).toString()
+        }
+        this.props.onStateChange(newState);
+      }else{
+        let newState ={
+          picks: this.props.picks.splice(index, 1),
+          hash: SHA256(this.props.picks.splice(index, 1).toString()).toString()
+        }
+        this.props.onStateChange(newState);
+      }
     }
 
     render() {
@@ -58,26 +82,29 @@ import React, {Component} from 'react';
                 <div className="row">
                   <div className="col-md-12">
                     <div className="block-header text-center">
-                      <span className="block-height float-left" data-toggle="tooltip" title="This is the number of the block.">6</span>
-                      <h2>Block Hash</h2>
-                      <h4 data-toggle="tooltip" title="39034456789534455454534">39034...</h4>
+                      <span className="block-height float-left" data-toggle="tooltip" title="This is the number of the block.">Block Height<i className="material-icons">info</i></span>
+                      <h2>Block Hash<i className="material-icons">info</i></h2>
+                      <h4 data-toggle="tooltip" title={SHA256(this.state.picks.toString()).toString()}>{this.props.picks}...<i className="material-icons">info</i></h4>
                     </div>
                   </div>
                   <div className="col-md-12">
                     <div className="list-group">
-                      <a href="#" className="list-group-item list-group-item-secondary list-group-item-action">From: 39456 Message: Hello!</a>
-                      <a href="#" className="list-group-item list-group-item-secondary list-group-item-action">From: 39456 Message: Hello!</a>
-                      <a href="#" className="list-group-item list-group-item-secondary list-group-item-action">From: 39456 Message: Hello!</a>
+                      <a href="1" className="list-group-item list-group-item-secondary list-group-item-action"
+                      onClick={this.add.bind(this)}>From: 39456 Message: Hello!</a>
+                      <a href="2" className="list-group-item list-group-item-secondary list-group-item-action"
+                      onClick={this.add.bind(this)}>From: 87412 Message: Fuck You!</a>
+                      <a href="3" className="list-group-item list-group-item-secondary list-group-item-action"
+                      onClick={this.add.bind(this)}>From: 95133 Message: No! You Fuck!</a>
                     </div>
                   </div>
                   <div className="col-md-12">
                     <div className="block-footer">
                       <div className="row">
                         <div className="col-md-6">
-                          <h4 data-toggle="tooltip" title="39034456789534455454534">1235...</h4>
+                          <h4 data-toggle="tooltip" title="39034456789534455454534">1235...<i className="material-icons">info</i></h4>
                         </div>
                         <div className="col-md-6 ">
-                          <h4 className="float-right" data-toggle="tooltip" title="39034456789534455454534">67891...</h4>
+                          <h4 className="float-right" data-toggle="tooltip" title="39034456789534455454534"><i className="material-icons">info</i>67891...</h4>
                         </div>
                       </div>
                     </div>

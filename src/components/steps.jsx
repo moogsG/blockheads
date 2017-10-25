@@ -15,8 +15,9 @@ class Steps extends Component {
     this.state = {
       privKey: '',
       pubKey: '',
-      favFood: '',
-      isPubKey: ''
+      message: '',
+      picks: [],
+      hash: ''
     };
 
     this.onStateChange = this.onStateChange.bind(this);
@@ -43,11 +44,11 @@ class Steps extends Component {
           onStateChange = {this.onStateChange}
           privKey = {this.state.privKey}
           />
-        <StepTwo
-          privKey = {this.state.privKey}
-          pubKey = {this.state.pubKey}
-          onStateChange = {this.onStateChange}
-          />
+          <StepTwo privKey = {this.state.privKey}
+            pubKey = {this.state.pubKey}
+            picks = {this.state.picks}
+            hash = {this.state.hash}
+            onStateChange = {this.onStateChange} />
         <StepThree
           onStateChange = {this.onStateChange}
           pubKey = {this.state.pubKey}

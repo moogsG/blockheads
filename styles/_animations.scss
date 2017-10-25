@@ -1,3 +1,5 @@
+#server-animation{
+
 .hvr-pulse-grow {
   animation-name: hvr-pulse-grow;
   animation-duration: 0.3s;
@@ -6,9 +8,9 @@
   animation-direction: alternate;
 }
 
-$green: #B9F270;
+$green: #b9f270;
 $red: #931621;
-$off-white: #CDD3D5;
+$off-white: #cdd3d5;
 $blue: #6290c3;
 
 @keyframes contract {
@@ -22,7 +24,6 @@ $blue: #6290c3;
     box-shadow: none;
   }
 }
-
 
 @keyframes expandWtoG {
   from {
@@ -38,7 +39,6 @@ $blue: #6290c3;
   }
 }
 
-
 @keyframes expandWtoR {
   from {
     background: $off-white;
@@ -51,7 +51,6 @@ $blue: #6290c3;
   }
 }
 
-
 @keyframes WtoG {
   from {
     color: $off-white;
@@ -61,7 +60,6 @@ $blue: #6290c3;
     color: $green;
   }
 }
-
 
 @keyframes WtoR {
   from {
@@ -73,7 +71,6 @@ $blue: #6290c3;
   }
 }
 
-
 @keyframes makeVisible {
   from {
     visibility: hidden;
@@ -84,12 +81,11 @@ $blue: #6290c3;
   }
 }
 
-
 .circle {
   position: absolute;
   border-radius: 50%;
-  width: 75px;
-  height: 75px;
+  width: 85px;
+  height: 85px;
   background: $off-white;
   transform: scale(0.1);
   animation-name: expandWtoG, contract;
@@ -103,7 +99,8 @@ $blue: #6290c3;
 
 .material-icons {
   position: absolute;
-  font-size: 4em;
+  padding-top: 5px;
+  font-size: 4.2em;
   color: $off-white;
   animation-name: WtoG;
   animation-delay: 4.8s;
@@ -113,63 +110,63 @@ $blue: #6290c3;
 }
 
 .server1 {
-  left: -280px;
-  top: -40px;
+  left: -275px;
+  top: -41px;
 }
 
 .circle1 {
-  left: -286px;
-  top: -45px;
+  left: -287px;
+  top: -50px;
 }
 
 .server2 {
-  left: -190px;
-  top: 90px;
+  left: -185px;
+  top: 86px;
   animation-name: WtoR;
 }
 
 .circle2 {
-  left: -195px;
-  top: 85px;
+  left: -196px;
+  top: 77px;
   animation-name: expandWtoR, contract;
 }
 
 .server3 {
-  left: -30px;
-  top: 90px;
+  left: -25px;
+  top: 88px;
 }
 
 .circle3 {
-  left: -35px;
-  top: 85px;
+  left: -36px;
+  top: 79px;
 }
 
 .server4 {
-  left: 60px;
-  top: -40px;
+  left: 65px;
+  top: -42px;
 }
 
 .circle4 {
   left: 55px;
-  top: -45px;
+  top: - 51px;
 }
 
 .server5 {
   color: $green;
-  left: -30px;
-  top: -170px;
+  left: -28px;
+  top: -173px;
   z-index: 3;
 }
 
 .server6 {
-  left: -190px;
-  top: -170px;
+  left: -183px;
+  top: -173px;
   animation-name: WtoR;
 }
 
 .circle6 {
   left: -195px;
-  top: -175px;
+  top: -181px;
   animation-name: expandWtoR, contract;
 }
 
@@ -185,7 +182,6 @@ $blue: #6290c3;
   }
 }
 
-
 @keyframes dash {
   from {
     stroke-dashoffset: 1000;
@@ -196,7 +192,6 @@ $blue: #6290c3;
   }
 }
 
-
 svg {
   position: absolute;
   top: -200px;
@@ -205,7 +200,7 @@ svg {
   width: 670px;
 }
 
-path {
+svg {
   position: absolute;
   stroke: #28464b;
   stroke-width: 4;
@@ -216,12 +211,13 @@ path {
 }
 
 .moving {
-  height: 6px;
-  width: 6px;
+  height: 8px;
+  width: 8px;
   position: absolute;
   border-radius: 50%;
   background: $green;
   visibility: hidden;
+  z-index: 2;
 }
 
 @keyframes copy1 {
@@ -233,7 +229,6 @@ path {
     transform: translate(0px, 220px);
   }
 }
-
 
 .shotting1 {
   top: -117px;
@@ -251,7 +246,6 @@ path {
   }
 }
 
-
 .shotting2 {
   top: -117px;
   left: 1px;
@@ -267,7 +261,6 @@ path {
     transform: translate(-255px, 89px);
   }
 }
-
 
 .shotting3 {
   top: -117px;
@@ -285,7 +278,6 @@ path {
   }
 }
 
-
 .shotting4 {
   top: -117px;
   left: 1px;
@@ -302,7 +294,6 @@ path {
   }
 }
 
-
 .shotting5 {
   top: -142px;
   left: -30px;
@@ -310,13 +301,13 @@ path {
 }
 
 .greenServer {
-  top: -100px;
+  top: -90px;
   right: -200px;
   color: $green;
 }
 
 .redServer {
-  top: 0px;
+  top: 10px;
   right: -200px;
   color: $red;
 }
@@ -324,14 +315,14 @@ path {
 .score1 {
   font-size: 3em;
   position: absolute;
-  top: -5px;
+  top: 11px;
   right: -240px;
 }
 
 .score2 {
   font-size: 3em;
   position: absolute;
-  top: -105px;
+  top: -88px;
   right: -240px;
 }
 
@@ -353,8 +344,34 @@ path {
 .majority {
   position: absolute;
   font-size: 3em;
-  top: -160px;
+  top: -140px;
   left: 142px;
   opacity: 0;
   animation: fadeIn 2s ease 7s forwards;
+}
+
+.pause-animation {
+  animation-play-state: paused, paused;
+}
+
+.play-animation {
+  animation-play-state: running, running;
+}
+
+button {
+  position: absolute;
+  z-index: 3;
+  background: $off-white;
+  top: -183px;
+  left: 280px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.restart {
+  animation-fill-mode: initial;
+  animation: none;
+}
 }
