@@ -41,6 +41,8 @@ this.onStateChange = this.onStateChange.bind(this);
         />
       <StepTwo privKey = {this.state.privKey}
         pubKey = {this.state.pubKey}
+        picks = {this.state.picks}
+        hash = {this.state.hash}
         onStateChange = {this.onStateChange} />
       <StepThree />
       <StepFour />

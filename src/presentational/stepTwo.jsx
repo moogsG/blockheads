@@ -27,17 +27,17 @@ const SHA256 = require("crypto-js/sha256");
     add(event){
       event.preventDefault();
       let pick = event.currentTarget.getAttribute('href');
-      let index = this.state.picks.indexOf(pick);
+      let index = this.props.picks.indexOf(pick);
       if(index === -1){
         let newState = {
-          picks: this.state.picks.push(pick),
-          hash: SHA256(this.state.picks.push(pick).toString()).toString()
+          picks: this.props.picks.push(pick),
+          hash: SHA256(this.props.picks.push(pick).toString()).toString()
         }
         this.props.onStateChange(newState);
       }else{
         let newState ={
-          picks: this.state.picks.splice(index, 1),
-          hash: SHA256(this.state.picks.splice(index, 1).toString()).toString()
+          picks: this.props.picks.splice(index, 1),
+          hash: SHA256(this.props.picks.splice(index, 1).toString()).toString()
         }
         this.props.onStateChange(newState);
       }
@@ -83,7 +83,7 @@ const SHA256 = require("crypto-js/sha256");
                     <div className="block-header text-center">
                       <span className="block-height float-left" data-toggle="tooltip" title="This is the number of the block.">Block Height<i className="material-icons">info</i></span>
                       <h2>Block Hash<i className="material-icons">info</i></h2>
-                      <h4 data-toggle="tooltip" title={SHA256(this.state.picks.toString()).toString()}>{SHA256(this.state.picks.toString()).toString().substring(0, 5)}...<i className="material-icons">info</i></h4>
+                      <h4 data-toggle="tooltip" title={SHA256(this.state.picks.toString()).toString()}>{this.props.picks}...<i className="material-icons">info</i></h4>
                     </div>
                   </div>
                   <div className="col-md-12">
