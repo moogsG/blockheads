@@ -15,35 +15,49 @@ class Steps extends Component {
     this.state = {
       privKey: '',
       pubKey: '',
-      message: ''
+      favFood: '',
+      isPubKey: ''
     };
 
-this.onStateChange = this.onStateChange.bind(this);
+    this.onStateChange = this.onStateChange.bind(this);
   }
 
   onStateChange(newState) {
-    this.setState({
-      ...newState
-    });
-    let pubKey = SHA256(this.state.privKey).toString();
-    this.setState({
-      pubKey
+    Promise.resolve(
+      this.setState({
+        ...newState
+      })
+    )
+    .then(() => {
+      let pubKey = SHA256(this.state.privKey).toString();
+      this.setState({
+        pubKey
+      })
     })
   }
 
   render() {
     return (
       <div>
-      <StepOne onStateChange = {this.onStateChange}
-        privKey = {this.state.privKey}
-        />
-      <StepTwo privKey = {this.state.privKey}
-        pubKey = {this.state.pubKey}
-        onStateChange = {this.onStateChange} />
-      <StepThree />
-      <StepFour />
-      <StepFive />
-      <StepSix />
+        <StepOne
+          onStateChange = {this.onStateChange}
+          privKey = {this.state.privKey}
+          />
+        <StepTwo
+          privKey = {this.state.privKey}
+          pubKey = {this.state.pubKey}
+          onStateChange = {this.onStateChange}
+          />
+        <StepThree
+          onStateChange = {this.onStateChange}
+          pubKey = {this.state.pubKey}
+          isPubKey = {this.state.isPubKey}
+          />
+        <StepFour
+          favFood = {this.state.favFood}
+          />
+        <StepFive />
+        <StepSix />
       </div>
     );
   }

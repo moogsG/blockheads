@@ -7,8 +7,7 @@ import React, {Component} from 'react';
 
             this.state = {
               privKey: '',
-              pubKey: '',
-              message: ''
+              pubKey: ''
             };
       this.change = this.change.bind(this);
     }
