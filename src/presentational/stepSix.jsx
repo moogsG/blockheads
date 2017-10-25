@@ -120,14 +120,9 @@ class StepSix extends Component {
             </h1>
           </div>
         </div>
-<<<<<<< HEAD
         </div>
-      )
-    }
-=======
-      </div>
+
     );
->>>>>>> 791caee8fa2d8e382371de731ff0f13232306d76
   }
 }
 export default StepSix;

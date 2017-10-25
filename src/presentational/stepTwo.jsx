@@ -27,12 +27,15 @@ const SHA256 = require("crypto-js/sha256");
     add(event){
       event.preventDefault();
       let pick = event.currentTarget.getAttribute('href');
+      console.log(pick)
       let index = this.props.picks.indexOf(pick);
+      console.log(index)
       if(index === -1){
         let newState = {
           picks: this.props.picks.push(pick),
           hash: SHA256(this.props.picks.push(pick).toString()).toString()
         }
+        console.log(newState)
         this.props.onStateChange(newState);
       }else{
         let newState ={
@@ -88,13 +91,23 @@ const SHA256 = require("crypto-js/sha256");
                     </div>
                   </div>
                   <div className="col-md-12">
-                    <div className="list-group">
-                      <a href="1" className="list-group-item list-group-item-secondary list-group-item-action"
-                      onClick={this.add.bind(this)}>From: 39456 Message: Hello!</a>
-                      <a href="2" className="list-group-item list-group-item-secondary list-group-item-action"
-                      onClick={this.add.bind(this)}>From: 87412 Message: Fuck You!</a>
-                      <a href="3" className="list-group-item list-group-item-secondary list-group-item-action"
-                      onClick={this.add.bind(this)}>From: 95133 Message: No! You Fuck!</a>
+                    <div className="input-group">
+                      <span className="input-group-addon" id="pubKeyLab">Public Key</span>
+                      <input type="text" className="form-control" id="pubKey" aria-describedby="pubKey"/>
+                      <span className="input-group-addon" id="transLab">Transmision</span>
+                      <input type="text" className="form-control" id="trans" aria-describedby="transLab"/>
+                    </div>
+                    <div className="input-group">
+                      <span className="input-group-addon" id="pubKeyLab">Public Key</span>
+                      <input type="text" className="form-control" id="pubKey" aria-describedby="pubKey"/>
+                      <span className="input-group-addon" id="transLab">Transmision</span>
+                      <input type="text" className="form-control" id="trans" aria-describedby="transLab"/>
+                    </div>
+                    <div className="input-group">
+                      <span className="input-group-addon" id="pubKeyLab">Public Key</span>
+                      <input type="text" className="form-control" id="pubKey" aria-describedby="pubKey"/>
+                      <span className="input-group-addon" id="transLab">Transmision</span>
+                      <input type="text" className="form-control" id="trans" aria-describedby="transLab"/>
                     </div>
                   </div>
                   <div className="col-md-12">
