@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import Steps from './components/steps.jsx';
 
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -12,10 +11,11 @@ class App extends Component {
     console.log("Connected!")
   }
 
-
   render() {
     return (
-      <Steps />
+      <div data-target="#myScrollspy">
+        <Steps/>
+      </div>
     );
   }
 }
