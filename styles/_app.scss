@@ -44,6 +44,17 @@
   border-top: 1px solid #CDD3D5;
   margin-top: 12px;
 }
+
+.dragula-container {
+  min-height: 30px;
+  .input-group{
+    cursor: move;
+    input{
+      cursor: move;
+    }
+  }
+}
+
 // MDL
 .mdl-textfield__label {
   border: none;

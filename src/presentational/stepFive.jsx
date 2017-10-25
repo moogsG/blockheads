@@ -1,7 +1,74 @@
 import React, {Component} from 'react';
+import Dragula from 'react-dragula';
+const SHA256 = require("crypto-js/sha256");
+  class StepFive extends Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        transmissions: [],
+        hash: '',
+      };
+      this.change = this.change.bind(this);
+
+    }
+    change(event) {
+      let newState ={
+          transmissions: event.textContent
+      };
+      let index = this.state.transmissions.indexOf(newState.transmissions)
+        if (index === -1) {
+        Promise.resolve(this.state.transmissions.push(newState.transmissions))
+        .then(()=>{
+          this.setState({
+            hash: SHA256(this.state.transmissions.toString()).toString()
+          })
+        })
+      }else{
+        Promise.resolve(this.state.transmissions.splice(index))
+        .then(()=>{
+          this.setState({
+            hash: SHA256(this.state.transmissions.toString()).toString()
+          })
+        })
+      }
+        console.log(event.textContent)
+    }
+
+    dragulaDecorator = (componentBackingInstance) => {
+        if (componentBackingInstance) {
+          let options = ({
+            isContainer: function (el) {
+              return el.classList.contains('dragula-container');
+          }
+        });
+          Dragula([componentBackingInstance], options)
+        }
+
+      };
+      dragulaDropDecorator = (componentBackingInstance) => {
+          if (componentBackingInstance) {
+            let options = ({
+              isContainer: function (el) {
+                return el.classList.contains('dragula-container');
+            },
+            moves: function (el, source, handle, sibling) {
+              return true; // elements are always draggable by default
+            },
+            oveOnSpill: true,
+          });
+            let drake = Dragula([componentBackingInstance], options)
+            drake.on('drop', (el) => {
+              this.change(el)
+            })
+            drake.emit('shadow', item, dropTarget);
+
+          }
+
+        };
+        componentDidMount(){
 
 
-  class StepFour extends Component {
+        }
     render() {
       return (
         <div className="container">
@@ -23,42 +90,40 @@ import React, {Component} from 'react';
                   <div className="vert-center">
                     <div className="col-md-4">
                       <div className="row">
-                        <div className="col-md-6">
-                          <span className="mdl-chip">
-                            <span className="mdl-chip__text">transmission</span>
-                          </span>
-                        </div>
-                        <div className="col-md-6">
-                          <span className="mdl-chip">
-                            <span className="mdl-chip__text">transmission</span>
-                          </span>
-                        </div>
-
-                        <div className="col-md-6">
-                          <span className="mdl-chip">
-                            <span className="mdl-chip__text">transmission</span>
-                          </span>
-                        </div>
-                        <div className="col-md-6">
-                          <span className="mdl-chip">
-                            <span className="mdl-chip__text">transmission</span>
-                          </span>
-                        </div>
-
-
-                        <div className="col-md-6">
-                          <span className="mdl-chip">
-                            <span className="mdl-chip__text">transmission</span>
-                          </span>
-                        </div>
-                        <div className="col-md-6">
-                          <span className="mdl-chip">
-                            <span className="mdl-chip__text">transmission</span>
-                          </span>
-                        </div>
-
+                        <div className="dragula-container" ref={this.dragulaDropDecorator}>
+                          <div className="col-md-12">
+                            <div className="input-group">
+                              <span className="input-group-addon" id="pubKeyLab">PubKey</span>
+                              <input draggable="true" type="text" className="form-control" id="pubKey" aria-describedby="pubKeyLab" value="3993480993..."/>
+                              </div>
+                              <div className="input-group">
+                                <span className="input-group-addon" id="transmissionLab">Transmission</span>
+                                <input type="text" className="form-control" id="transmission" aria-describedby="transmissionLab" value="asdf"/>
+                            </div>
+                          </div>
+                          <div className="col-md-12">
+                            <div className="input-group">
+                              <span className="input-group-addon" id="pubKeyLab">PubKey</span>
+                              <input type="text" className="form-control" id="pubKey" aria-describedby="pubKeyLab" value="3993480993..."/>
+                              </div>
+                              <div className="input-group">
+                                <span className="input-group-addon" id="transmissionLab">Transmision</span>
+                                <input type="text" className="form-control" id="transmission" aria-describedby="transmissionLab" value="asdf"/>
+                            </div>
+                          </div>
+                          <div className="col-md-12">
+                            <div className="input-group">
+                              <span className="input-group-addon" id="pubKeyLab">PubKey</span>
+                              <input type="text" className="form-control" id="pubKey" aria-describedby="pubKeyLab" value="3993480993..."/>
+                              </div>
+                              <div className="input-group">
+                                <span className="input-group-addon" id="transmissionLab">Transmision</span>
+                                <input type="text" className="form-control" id="transmission" aria-describedby="transmissionLab" value="asdf"/>
+                            </div>
+                          </div>
                     </div>
                   </div>
+                </div>
                     <div className="col-md-8 secondaryFont">
                       <div className="block">
                         <div className="row">
@@ -66,15 +131,14 @@ import React, {Component} from 'react';
                             <div className="block-header text-center">
                               <span className="block-height float-left" data-toggle="tooltip" title="This is the number of the block.">6</span>
                               <h2>Block Hash</h2>
-                              <h4 data-toggle="tooltip" title="39034456789534455454534">39034...</h4>
+                              <h4>{ this.state.hash }</h4>
                             </div>
                           </div>
                           <div className="col-md-12">
-                            <div className="list-group">
-                              <a href="#" className="list-group-item list-group-item-secondary list-group-item-action">transmission</a>
-                              <a href="#" className="list-group-item list-group-item-secondary list-group-item-action">transmission</a>
-                              <a href="#" className="list-group-item list-group-item-secondary list-group-item-action">transmission</a>
-                            </div>
+                              <div className="dragula-container" ref={this.dragulaDecorator}>
+                                <div className="row">
+                              </div>
+                          </div>
                           </div>
                           <div className="col-md-12">
                             <div className="block-footer">
@@ -99,6 +163,7 @@ import React, {Component} from 'react';
           </div>
         </div>
       )
+
     }
   }
-export default StepFour;
+export default StepFive;

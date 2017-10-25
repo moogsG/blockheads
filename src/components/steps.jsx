@@ -15,9 +15,7 @@ class Steps extends Component {
     this.state = {
       privKey: '',
       pubKey: '',
-      message: '',
-      picks: [],
-      hash: ''
+      message: ''
     };
 
     this.onStateChange = this.onStateChange.bind(this);
@@ -57,7 +55,10 @@ class Steps extends Component {
         <StepFour
           favFood = {this.state.favFood}
           />
-        <StepFive />
+        <StepFive
+          tempBlock = {this.state.tempBlock}
+          onStateChange = {this.onStateChange}
+        />
         <StepSix />
       </div>
     );

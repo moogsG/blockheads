@@ -49,7 +49,7 @@ const SHA256 = require("crypto-js/sha256");
     render() {
       return (
         <div className="container">
-        <div data-aos="fade-up" data-aos-delay="1000">
+        <div data-aos="fade-up">
           <div className="row">
             <div className="col-md-12 text-center">
               <div className="line"></div>
