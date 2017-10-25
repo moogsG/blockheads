@@ -1,3 +1,5 @@
+#server-animation{
+
 .hvr-pulse-grow {
   animation-name: hvr-pulse-grow;
   animation-duration: 0.3s;
@@ -371,4 +373,5 @@ button {
 .restart {
   animation-fill-mode: initial;
   animation: none;
+}
 }

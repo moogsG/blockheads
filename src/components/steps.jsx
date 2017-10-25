@@ -15,7 +15,9 @@ class Steps extends Component {
     this.state = {
       privKey: '',
       pubKey: '',
-      message: ''
+      message: '',
+      picks: [],
+      hash: ''
     };
 
 this.onStateChange = this.onStateChange.bind(this);
