@@ -99,12 +99,18 @@ class StepSix extends Component {
                         <i className="material-icons greenServer visable pause-animation">
                           storage
                         </i>
-                        <span className="majority pause-animation">Majority</span>
-                        <span className="score2 visable pause-animation">:4</span>
+                        <span className="majority pause-animation">
+                          Majority
+                        </span>
+                        <span className="score2 visable pause-animation">
+                          :4
+                        </span>
                         <i className="material-icons redServer visable pause-animation">
                           storage
                         </i>
-                        <span className="score1 visable pause-animation">:2</span>
+                        <span className="score1 visable pause-animation">
+                          :2
+                        </span>
                       </div>
                     </div>
                   </div>
