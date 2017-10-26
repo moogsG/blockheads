@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-
 import Steps from './components/steps.jsx';
 
 
@@ -10,6 +9,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    this.connection = new WebSocket('ws:localhost:3001');
     console.log("Connected!")
   }
 

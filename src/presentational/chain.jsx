@@ -5,15 +5,22 @@ class Chain extends Component {
     super(props);
 
     this.state = {};
+    this.send = this.send.bind(this);
   }
-
+  componentDidMount() {
+    this.connection = new WebSocket('ws:localhost:3001');
+    console.log("Connected!")
+  }
+send(even){
+  this.connection.send(JSON.stringify({
+    data: "client1"
+  }));
+}
   render() {
     return (
       <div>
-        <form method="POST" href="http://localhost:3001/mine">
-            <input type="text"/>
-            <button value="button"></button>
-        </form>
+
+            <button value="button" onClick={this.send}>VLICK</button>
       </div>
     )
   }
