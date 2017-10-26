@@ -18,6 +18,7 @@ router.get('/chain', (req, res) => {
 
 router.post('/mine', (req, res) => {
     const block = create(req.body.data);
+    console.log(req.body)
     chain.update(block);
     broadcast(responseLatestMsg());
     console.log('New block in chain has been added: ', block);

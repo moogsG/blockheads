@@ -39,6 +39,8 @@ class Steps extends Component {
   render() {
     return (
       <div>
+        <Chain />
+        
         <StepOne
           onStateChange = {this.onStateChange}
           privKey = {this.state.privKey}
@@ -61,7 +63,6 @@ class Steps extends Component {
           onStateChange = {this.onStateChange}
         />
         <StepSix />
-        <Chain />
       </div>
     );
   }
