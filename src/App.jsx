@@ -8,6 +8,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    this.connection = new WebSocket('ws:localhost:3001');
     console.log("Connected!")
   }
 
