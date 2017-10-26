@@ -31,12 +31,10 @@ class StepTwo extends Component {
     let pick = event
       .currentTarget
       .getAttribute('href');
-    console.log(pick);
     let index = this
       .props
       .picks
       .indexOf(pick);
-    console.log(index);
     if (index === -1) {
       let newState = {
         picks: this
@@ -45,7 +43,6 @@ class StepTwo extends Component {
           .push(pick),
         hash: SHA256(this.props.picks.push(pick).toString()).toString()
       };
-      console.log(newState);
       this
         .props
         .onStateChange(newState);

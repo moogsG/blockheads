@@ -2,7 +2,9 @@ var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 var config = require('./webpack.config');
 
-config.node = { fs: 'empty' };
+config.node = {
+  fs: 'empty'
+};
 new WebpackDevServer(webpack(config), {
     publicPath: config.output.publicPath,
     watchOptions: {
