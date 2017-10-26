@@ -1,28 +1,33 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 class Chain extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
-    this.send = this.send.bind(this);
+    this.state = {
+      connect: {
+        server: new WebSocket('ws:localhost:3001')
+      }
+    };
   }
   componentDidMount() {
-    this.connection = new WebSocket('ws:localhost:3001');
-    console.log("Connected!")
+    this.state.connect.server.addEventListener('message', event => {
+      let newMessage = JSON.parse(event.data);
+      console.log(newMessage);
+    });
   }
-send(even){
-  this.connection.send(JSON.stringify({
-    data: "client1"
-  }));
-}
+
+  send() {
+    this.state.connect.server.send(JSON.stringify({ data: 'message' }));
+  }
   render() {
     return (
       <div>
-
-            <button value="button" onClick={this.send}>VLICK</button>
+        <button value="button" onClick={this.send}>
+          VLICK
+        </button>
       </div>
-    )
+    );
   }
 }
 export default Chain;

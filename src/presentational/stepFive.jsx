@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Dragula from 'react-dragula';
 const SHA256 = require('crypto-js/sha256');
 class StepFive extends Component {
@@ -8,34 +8,27 @@ class StepFive extends Component {
       transmissions: [],
       hash: ''
     };
-    this.change = this
-      .change
-      .bind(this);
+    this.change = this.change.bind(this);
   }
   change(event) {
     let newState = {
       transmissions: event.textContent
     };
-    let index = this
-      .state
-      .transmissions
-      .indexOf(newState.transmissions);
+    let index = this.state.transmissions.indexOf(newState.transmissions);
     if (index === -1) {
-      Promise
-        .resolve(this.state.transmissions.push(newState.transmissions))
-        .then(() => {
-          this.setState({
-            hash: SHA256(this.state.transmissions.toString()).toString()
-          });
+      Promise.resolve(
+        this.state.transmissions.push(newState.transmissions)
+      ).then(() => {
+        this.setState({
+          hash: SHA256(this.state.transmissions.toString()).toString()
         });
+      });
     } else {
-      Promise
-        .resolve(this.state.transmissions.splice(index))
-        .then(() => {
-          this.setState({
-            hash: SHA256(this.state.transmissions.toString()).toString()
-          });
+      Promise.resolve(this.state.transmissions.splice(index)).then(() => {
+        this.setState({
+          hash: SHA256(this.state.transmissions.toString()).toString()
         });
+      });
     }
     console.log(event.textContent);
   }
@@ -43,10 +36,8 @@ class StepFive extends Component {
   dragulaDecorator = componentBackingInstance => {
     if (componentBackingInstance) {
       let options = {
-        isContainer: function (el) {
-          return el
-            .classList
-            .contains('dragula-container');
+        isContainer: function(el) {
+          return el.classList.contains('dragula-container');
         }
       };
       Dragula([componentBackingInstance], options);
@@ -55,12 +46,10 @@ class StepFive extends Component {
   dragulaDropDecorator = componentBackingInstance => {
     if (componentBackingInstance) {
       let options = {
-        isContainer: function (el) {
-          return el
-            .classList
-            .contains('dragula-container');
+        isContainer: function(el) {
+          return el.classList.contains('dragula-container');
         },
-        moves: function (el, source, handle, sibling) {
+        moves: function(el, source, handle, sibling) {
           return true; // elements are always draggable by default
         },
         oveOnSpill: true
@@ -69,10 +58,9 @@ class StepFive extends Component {
       drake.on('drop', el => {
         this.change(el);
       });
-      drake.emit('shadow', item, dropTarget);
+      drake.emit('shadow');
     }
   };
-  componentDidMount() {}
   render() {
     return (
       <section id="StepFive">
@@ -80,17 +68,17 @@ class StepFive extends Component {
           <div data-aos="flip-up" data-aos-delay="1000">
             <div className="row">
               <div className="col-md-12 text-center">
-                <div className="line"/>
+                <div className="line" />
                 <h1>The new BLOCK</h1>
-                <div className="line"/>
+                <div className="line" />
               </div>
             </div>
             <div className="row">
               <div className="col-md-12 vert-center">
                 <h1>
-                  Time to add your transmission to the next block! Looks like there a few
-                  transmissions ready to be added. Blocks are able top house many transmissions,
-                  so how about we add a few!
+                  Time to add your transmission to the next block! Looks like
+                  there a few transmissions ready to be added. Blocks are able
+                  top house many transmissions, so how about we add a few!
                 </h1>
               </div>
               <div className="col-md-12">
@@ -99,10 +87,16 @@ class StepFive extends Component {
                     <div className="vert-center">
                       <div className="col-md-4">
                         <div className="row">
-                          <div className="dragula-container" ref={this.dragulaDropDecorator}>
+                          <div
+                            className="dragula-container"
+                            ref={this.dragulaDropDecorator}
+                          >
                             <div className="col-md-12">
                               <div className="input-group">
-                                <span className="input-group-addon" id="pubKeyLab">
+                                <span
+                                  className="input-group-addon"
+                                  id="pubKeyLab"
+                                >
                                   PubKey
                                 </span>
                                 <input
@@ -111,10 +105,14 @@ class StepFive extends Component {
                                   className="form-control"
                                   id="pubKey"
                                   aria-describedby="pubKeyLab"
-                                  value="3993480993..."/>
+                                  value="3993480993..."
+                                />
                               </div>
                               <div className="input-group">
-                                <span className="input-group-addon" id="transmissionLab">
+                                <span
+                                  className="input-group-addon"
+                                  id="transmissionLab"
+                                >
                                   Transmission
                                 </span>
                                 <input
@@ -122,12 +120,16 @@ class StepFive extends Component {
                                   className="form-control"
                                   id="transmission"
                                   aria-describedby="transmissionLab"
-                                  value="asdf"/>
+                                  value="asdf"
+                                />
                               </div>
                             </div>
                             <div className="col-md-12">
                               <div className="input-group">
-                                <span className="input-group-addon" id="pubKeyLab">
+                                <span
+                                  className="input-group-addon"
+                                  id="pubKeyLab"
+                                >
                                   PubKey
                                 </span>
                                 <input
@@ -135,10 +137,14 @@ class StepFive extends Component {
                                   className="form-control"
                                   id="pubKey"
                                   aria-describedby="pubKeyLab"
-                                  value="3993480993..."/>
+                                  value="3993480993..."
+                                />
                               </div>
                               <div className="input-group">
-                                <span className="input-group-addon" id="transmissionLab">
+                                <span
+                                  className="input-group-addon"
+                                  id="transmissionLab"
+                                >
                                   Transmision
                                 </span>
                                 <input
@@ -146,12 +152,16 @@ class StepFive extends Component {
                                   className="form-control"
                                   id="transmission"
                                   aria-describedby="transmissionLab"
-                                  value="asdf"/>
+                                  value="asdf"
+                                />
                               </div>
                             </div>
                             <div className="col-md-12">
                               <div className="input-group">
-                                <span className="input-group-addon" id="pubKeyLab">
+                                <span
+                                  className="input-group-addon"
+                                  id="pubKeyLab"
+                                >
                                   PubKey
                                 </span>
                                 <input
@@ -159,10 +169,14 @@ class StepFive extends Component {
                                   className="form-control"
                                   id="pubKey"
                                   aria-describedby="pubKeyLab"
-                                  value="3993480993..."/>
+                                  value="3993480993..."
+                                />
                               </div>
                               <div className="input-group">
-                                <span className="input-group-addon" id="transmissionLab">
+                                <span
+                                  className="input-group-addon"
+                                  id="transmissionLab"
+                                >
                                   Transmision
                                 </span>
                                 <input
@@ -170,7 +184,8 @@ class StepFive extends Component {
                                   className="form-control"
                                   id="transmission"
                                   aria-describedby="transmissionLab"
-                                  value="asdf"/>
+                                  value="asdf"
+                                />
                               </div>
                             </div>
                           </div>
@@ -184,7 +199,8 @@ class StepFive extends Component {
                                 <span
                                   className="block-height float-left"
                                   data-toggle="tooltip"
-                                  title="This is the number of the block.">
+                                  title="This is the number of the block."
+                                >
                                   6
                                 </span>
                                 <h2>Block Hash</h2>
@@ -192,15 +208,21 @@ class StepFive extends Component {
                               </div>
                             </div>
                             <div className="col-md-12">
-                              <div className="dragula-container" ref={this.dragulaDecorator}>
-                                <div className="row"/>
+                              <div
+                                className="dragula-container"
+                                ref={this.dragulaDecorator}
+                              >
+                                <div className="row" />
                               </div>
                             </div>
                             <div className="col-md-12">
                               <div className="block-footer">
                                 <div className="row">
                                   <div className="col-md-6">
-                                    <h4 data-toggle="tooltip" title="39034456789534455454534">
+                                    <h4
+                                      data-toggle="tooltip"
+                                      title="39034456789534455454534"
+                                    >
                                       1235...
                                     </h4>
                                   </div>
@@ -208,7 +230,8 @@ class StepFive extends Component {
                                     <h4
                                       className="float-right"
                                       data-toggle="tooltip"
-                                      title="39034456789534455454534">
+                                      title="39034456789534455454534"
+                                    >
                                       67891...
                                     </h4>
                                   </div>

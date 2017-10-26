@@ -1,104 +1,84 @@
 <!doctype html>
+
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-<!-- EXTERNAL JAVASCRIPTS -->
+  <!-- EXTERNAL JAVASCRIPTS -->
   <script src="./node_modules/material-design-lite/material.min.js"></script>
-    <script src=
-  "../node_modules/aos/dist/aos.js"></script>
+  <script src="../node_modules/aos/dist/aos.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<!-- EXTERNAL STYLESHEETS -->
+  <!-- EXTERNAL STYLESHEETS -->
 
-<!-- FONTS -->
+  <!-- FONTS -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link href="https://fonts.googleapis.com/css?family=Quicksand|VT323" rel="stylesheet">
 </head>
-<body>
-  <div id="react-root"></div>
-  <script src="/build/bundle.js"></script>
-  <script><!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-<!-- EXTERNAL JAVASCRIPTS -->
-  <script src="./node_modules/material-design-lite/material.min.js"></script>
-    <script src=
-  "../node_modules/aos/dist/aos.js"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<!-- EXTERNAL STYLESHEETS -->
 
-<!-- FONTS -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link href="https://fonts.googleapis.com/css?family=Quicksand|VT323" rel="stylesheet">
-</head>
 <body>
   <div id="react-root"></div>
   <script src="/build/bundle.js"></script>
   <script>
-   $(document).ready(function(){
-    $('.container').css('height', $(window).height());
-    AOS.init();
-    // Comma, not colon ----^
-    $(window).bind('scroll',function(e){
-      dotnavigation();
-    });
-    
-    function dotnavigation(){
-             
+    $(document).ready(function () {
+      $('.container').css('height', $(window).height());
+      AOS.init();
+      // Comma, not colon ----^
+      $(window).bind('scroll', function (e) {
+        dotnavigation();
+      });
+
+      function dotnavigation() {
+
         var numSections = $('section').length;
-        
-        $('#dot-nav li a').removeClass('active').parent('li').removeClass('active');     
-        $('section').each(function(i,item){
-          var ele = $(item), nextTop;
-          
-          console.log(ele.next().html());
-          
+
+        $('#dot-nav li a').removeClass('active').parent('li').removeClass('active');
+        $('section').each(function (i, item) {
+          var ele = $(item),
+            nextTop;
+
           if (typeof ele.next().offset() != "undefined") {
             nextTop = ele.next().offset().top;
-          }
-          else {
+          } else {
             nextTop = $(document).height();
           }
-          
+
           if (ele.offset() !== null) {
             thisTop = ele.offset().top - ((nextTop - ele.offset().top) / numSections);
-          }
-          else {
+          } else {
             thisTop = 0;
           }
-          
+
           var docTop = $(document).scrollTop();
-          
-          if(docTop >= thisTop && (docTop < nextTop)){
+
+          if (docTop >= thisTop && (docTop < nextTop)) {
             $('#dot-nav li').eq(i).addClass('active');
           }
-        });   
-    }
+        });
+      }
 
-    /* get clicks working */
-    $('#dot-nav li').click(function(){
-      
+      /* get clicks working */
+      $('#dot-nav li').click(function () {
+
         var id = $(this).find('a').attr("href"),
           posi,
           ele,
           padding = 0;
-      
-        ele = $(id);
-        posi = ($(ele).offset()||0).top - padding;
-      
-        $('html, body').animate({scrollTop:posi}, 'slow');
-      
-        return false;
-    });
-    });
-$(window).resize(function(){
-    $('.container').css('height', $(window).height());
-    // Comma, not colon ----^
-});
- </script>
-</body>
-</html>
 
- </script>
+        ele = $(id);
+        posi = ($(ele).offset() || 0).top - padding;
+
+        $('html, body').animate({
+          scrollTop: posi
+        }, 'slow');
+
+        return false;
+      });
+    });
+    $(window).resize(function () {
+      $('.container').css('height', $(window).height());
+      // Comma, not colon ----^
+    });
+  </script>
 </body>
+
 </html>

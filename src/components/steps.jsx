@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 import StepOne from '../presentational/stepOne.jsx';
 import StepTwo from '../presentational/stepTwo.jsx';
@@ -8,6 +8,7 @@ import StepFive from '../presentational/stepFive.jsx';
 import StepSix from '../presentational/stepSix.jsx';
 import NavDots from '../presentational/navDots.jsx';
 import Chain from '../presentational/chain.jsx';
+import NavBar from '../presentational/navBar.jsx';
 
 const SHA256 = require('crypto-js/sha256');
 
@@ -17,44 +18,90 @@ class Steps extends Component {
     this.state = {
       privKey: '',
       pubKey: '',
-      message: ''
+      message: '',
+      chain: [
+        {
+          index: '1',
+          timestamp: '1',
+          hash: '111',
+          prev: '111'
+        },
+        {
+          index: '2',
+          timestamp: '2',
+          hash: '2',
+          prev: '2'
+        },
+        {
+          index: '3',
+          timestamp: '3',
+          hash: '333',
+          prev: '333'
+        },
+        {
+          index: '4',
+          timestamp: '4',
+          hash: '444',
+          prev: '444'
+        },
+        {
+          index: '5',
+          timestamp: '5',
+          hash: '555',
+          prev: '555'
+        },
+
+        {
+          index: '6',
+          timestamp: '6',
+          hash: '666',
+          prev: '666'
+        }
+      ]
     };
 
-    this.onStateChange = this
-      .onStateChange
-      .bind(this);
+    this.onStateChange = this.onStateChange.bind(this);
   }
 
   onStateChange(newState) {
-    Promise
-      .resolve(this.setState({
-      ...newState
-    }))
-      .then(() => {
-        let pubKey = SHA256(this.state.privKey).toString();
-        this.setState({pubKey});
-      });
+    Promise.resolve(
+      this.setState({
+        ...newState
+      })
+    ).then(() => {
+      let pubKey = SHA256(this.state.privKey).toString();
+      this.setState({ pubKey });
+    });
   }
 
   render() {
     return (
       <div>
-        <NavDots/>
-        <StepOne onStateChange={this.onStateChange} privKey={this.state.privKey}/>
+        <NavBar wholeChain={this.state.chain} />
+        <NavDots />
+        <StepOne
+          onStateChange={this.onStateChange}
+          privKey={this.state.privKey}
+        />
         <StepTwo
           privKey={this.state.privKey}
           pubKey={this.state.pubKey}
           picks={this.state.picks}
           hash={this.state.hash}
-          onStateChange={this.onStateChange}/>
+          onStateChange={this.onStateChange}
+        />
         <StepThree
           onStateChange={this.onStateChange}
           pubKey={this.state.pubKey}
-          isPubKey={this.state.isPubKey}/>
-        <StepFour favFood={this.state.favFood}/>
-        <StepFive tempBlock={this.state.tempBlock} onStateChange={this.onStateChange}/>
-        <StepSix/>
-        <Chain/>
+          isPubKey={this.state.isPubKey}
+        />
+        <StepFour favFood={this.state.favFood} />
+        <StepFive
+          tempBlock={this.state.tempBlock}
+          onStateChange={this.onStateChange}
+        />
+        <StepSix />
+        <Chain />
       </div>
     );
   }
