@@ -6,6 +6,7 @@ import StepThree from '../presentational/stepThree.jsx';
 import StepFour from '../presentational/stepFour.jsx';
 import StepFive from '../presentational/stepFive.jsx';
 import StepSix from '../presentational/stepSix.jsx';
+import Chain from '../presentational/chain.jsx';
 
 const SHA256 = require("crypto-js/sha256");
 
@@ -60,6 +61,7 @@ class Steps extends Component {
           onStateChange = {this.onStateChange}
         />
         <StepSix />
+        <Chain />
       </div>
     );
   }
