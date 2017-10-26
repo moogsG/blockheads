@@ -14,9 +14,9 @@ import React, {Component} from 'react';
             </div>
           </div>
             <div className="row">
-                <div className="col-md-6 vert-center">
-                  <h1>Now that your transition is sent, it first has to be verified to be a valid transaction. So in this case, is  {this.props.favFood} REALLY your favourite food?  Is there proof that it is your favourite food? Is it spelled correctly?</h1>
-            </div>
+              <div className="col-md-6 vert-center">
+                <h1>Now that your transition is sent, it first has to be verified to be a valid transaction. So in this case, is  {this.props.favFood} REALLY your favourite food?  Is there proof that it is your favourite food? Is it spelled correctly?</h1>
+              </div>
             <div className="col-md-6">
               <div className="box secondaryFont">
                 <div className="row">

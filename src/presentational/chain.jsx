@@ -5,15 +5,7 @@ import React, {Component} from 'react';
 
       return (
         <div>
-          <div>
-            {this.props.data}
-          </div>
-          <div>
-            {this.props.timestamp}
-          </div>
-          <div>
-            {this.props.hash}
-          </div>
+          
         </div>
       )
     }

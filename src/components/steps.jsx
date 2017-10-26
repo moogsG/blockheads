@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
-
+import Chain from './blockChain.jsx';
 import StepOne from '../presentational/stepOne.jsx';
 import StepTwo from '../presentational/stepTwo.jsx';
 import StepThree from '../presentational/stepThree.jsx';
 import StepFour from '../presentational/stepFour.jsx';
 import StepFive from '../presentational/stepFive.jsx';
 import StepSix from '../presentational/stepSix.jsx';
-import Chain from '../presentational/chain.jsx';
+import StepSeven from '../presentational/stepSeven.jsx';
+
 
 const SHA256 = require("crypto-js/sha256");
 
@@ -61,6 +62,7 @@ class Steps extends Component {
           onStateChange = {this.onStateChange}
         />
         <StepSix />
+        <StepSeven sendWS = {this.props.sendWS}/>
       </div>
     );
   }
