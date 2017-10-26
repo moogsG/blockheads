@@ -48,6 +48,7 @@ export const onMessage = (ws) => {
                 write(ws, responseLatestMsg());
                 break;
             case MessageType.QUERY_ALL:
+            console.log("%^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^")
                 write(ws, responseChainMsg());
                 break;
             case MessageType.RESPONSE_BLOCKCHAIN:
@@ -68,4 +69,3 @@ export const onError = (ws) => {
     ws.on('close', () => closeConnection(ws));
     ws.on('error', () => closeConnection(ws));
 };
-

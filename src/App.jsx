@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Steps from './components/steps.jsx';
+import BlockChain from './components/blockChain.jsx';
 
 class App extends Component {
   constructor(props) {
@@ -15,7 +16,8 @@ class App extends Component {
   render() {
     return (
       <div data-target="#myScrollspy">
-        <Steps/>
+        <BlockChain />
+        <Steps />
       </div>
     );
   }

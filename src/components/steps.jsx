@@ -101,7 +101,6 @@ class Steps extends Component {
           onStateChange={this.onStateChange}
         />
         <StepSix />
-        <Chain />
       </div>
     );
   }

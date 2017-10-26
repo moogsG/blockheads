@@ -5,13 +5,13 @@ const Chain = (function () { // eslint-disable-line func-names
     const origin = {
         index: 0,
         timestamp: 0,
-        data: 'Hello Blockchain!',
+        data: '{"data":"Hello Blockchain!"}',
         prevHash: 0,
         hash: calcHash({
             index: 0,
             prevHash: 0,
             timestamp: 0,
-            data: 'Hello Blockchain!'
+            data: '{"data":"Hello Blockchain!"}'
         })
     };
     const chain = [origin];
