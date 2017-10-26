@@ -9,7 +9,7 @@ import StepSix from '../presentational/stepSix.jsx';
 import NavDots from '../presentational/navDots.jsx';
 import Chain from '../presentational/chain.jsx';
 
-const SHA256 = require("crypto-js/sha256");
+const SHA256 = require('crypto-js/sha256');
 
 class Steps extends Component {
   constructor(props) {
@@ -32,8 +32,8 @@ class Steps extends Component {
     }))
       .then(() => {
         let pubKey = SHA256(this.state.privKey).toString();
-        this.setState({pubKey})
-      })
+        this.setState({pubKey});
+      });
   }
 
   render() {
@@ -48,19 +48,13 @@ class Steps extends Component {
           hash={this.state.hash}
           onStateChange={this.onStateChange}/>
         <StepThree
-          onStateChange = {this.onStateChange}
-          pubKey = {this.state.pubKey}
-          isPubKey = {this.state.isPubKey}
-          />
-        <StepFour
-          favFood = {this.state.favFood}
-          />
-        <StepFive
-          tempBlock = {this.state.tempBlock}
-          onStateChange = {this.onStateChange}
-        />
-        <StepSix />
-        <Chain />
+          onStateChange={this.onStateChange}
+          pubKey={this.state.pubKey}
+          isPubKey={this.state.isPubKey}/>
+        <StepFour favFood={this.state.favFood}/>
+        <StepFive tempBlock={this.state.tempBlock} onStateChange={this.onStateChange}/>
+        <StepSix/>
+        <Chain/>
       </div>
     );
   }

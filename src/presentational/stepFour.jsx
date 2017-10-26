@@ -8,17 +8,19 @@ class StepFour extends Component {
           <div data-aos="fade-up" data-aos-delay="4000">
             <div className="row">
               <div className="col-md-12 text-center">
-                <div className="line"></div>
+                <div className="line"/>
                 <h1>CHECK TX</h1>
-                <div className="line"></div>
+                <div className="line"/>
               </div>
             </div>
             <div className="row">
               <div className="col-md-6 vert-center">
-                <h1>Now that your transition is sent, it first has to be verified to be a valid
-                  transaction. So in this case, is {this.props.favFood}
+                <h1>
+                  Now that your transition is sent, it first has to be verified to be a valid
+                  transaction. So in this case, is{' '} {this.props.favFood}
                   REALLY your favourite food? Is there proof that it is your favourite food? Is it
-                  spelled correctly?</h1>
+                  spelled correctly?
+                </h1>
               </div>
               <div className="col-md-6">
                 <div className="box secondaryFont">
@@ -37,14 +39,18 @@ class StepFour extends Component {
                           &nbsp; add transmission to
                           <span
                             data-toggle="tooltip"
-                            title="The mempool is where the transmissions meet up before being adding to a block, but more of that in the next step.">mempool</span>
+                            title="The mempool is where the transmissions meet up before being adding to a block, but more of that in the next step.">
+                            mempool
+                          </span>
                         </h2>
                         <h2 className="blue-dark secondaryFont">ELSE</h2>
-                        <h2 className="secondaryFont">&nbsp; return
+                        <h2 className="secondaryFont">
+                          &nbsp; return
                           <span className="yellow">New</span>
                           <span className="red">.error</span>
                           =
-                          <br/>&nbsp; &nbsp; "Not users favourite food"</h2>
+                          <br/>&nbsp; &nbsp; "Not users favourite food"
+                        </h2>
                       </div>
                     </div>
                   </div>
@@ -54,7 +60,7 @@ class StepFour extends Component {
           </div>
         </div>
       </section>
-    )
+    );
   }
 }
 export default StepFour;
