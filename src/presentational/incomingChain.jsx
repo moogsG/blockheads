@@ -13,7 +13,7 @@ class IncomingChain extends Component {
     return (
       <div className={'rectangle moveRight1 navbar-brand' + this.addColor()}>
         <span className="index">{this.props.index}</span>
-        <span className="hash">{this.props.hash}</span>
+        <span className="hash">{this.props.hash.substring(0, 5)}</span>
       </div>
     );
   }

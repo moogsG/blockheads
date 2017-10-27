@@ -27,6 +27,7 @@ class navBar extends Component {
       return (
         <IncomingChain
           key={blocks.hash}
+          index={blocks.index}
           hash={blocks.hash}
           timestamp={blocks.timestamp}
           data={blocks.data.data}

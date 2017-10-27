@@ -65,7 +65,7 @@
           padding = 0;
 
         ele = $(id);
-        posi = ($(ele).offset() || 0).top - padding;
+        posi = ($(ele).offset() || 0).top - padding - 90;
 
         $('html, body').animate({
           scrollTop: posi
