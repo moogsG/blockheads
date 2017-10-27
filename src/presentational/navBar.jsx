@@ -16,22 +16,29 @@ class navBar extends Component {
   }
 
   render() {
-    const chain = this.props.wholeChain;
-    const lastSix = chain.slice(Math.max(chain.length - 7, 1));
-    const block = lastSix.map(block => {
+    let chain = this.props.chain;
+
+    chain = chain.slice(Math.max(chain.length - 7, 1));
+    chain.reverse();
+    const block = chain.map(blocks => {
+      typeof blocks.data === 'object'
+        ? null
+        : (blocks.data = JSON.parse(blocks.data));
       return (
         <IncomingChain
-          key={block.hash}
-          move={this.move}
-          index={block.index + ' INDEX'}
-          content={block.hash + ' BLOCK'}
+          key={blocks.hash}
+          hash={blocks.hash}
+          timestamp={blocks.timestamp}
+          data={blocks.data.data}
+          prevHash={blocks.prevHash}
+          privKey={this.props.privKey}
         />
       );
     });
 
     return (
       <nav className="navbar fixed-top navbar-light bg-faded">
-        <div className="messages">{block}</div>
+        <div className="blocks">{block}</div>
         <div id="navLine" />
       </nav>
     );

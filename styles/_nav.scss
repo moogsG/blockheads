@@ -3,9 +3,25 @@
 $off-white: #cdd3d5;
 $blue: #6290c3;
 
+#test {
+  position: absolute;
+  left: 100px;
+  width: 100px;
+  height: 100px;
+  top: 200px;
+}
+
 .navbar-brand {
   font-family: 'Monoton', cursive;
   font-size: 2rem;
+}
+
+.navbar {
+  display: inline-block;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow: hidden;
 }
 
 #navLine {
@@ -15,20 +31,21 @@ $blue: #6290c3;
   top: 52px;
   height: 5px;
   background: $off-white;
-  z-index: 888;
+  z-index: 8;
   box-shadow: 0px 2px 3px $off-white;
 }
 
 .rectangle {
   position: relative;
+  right: 240px;
   width: 200px;
   height: 100px;
   border: 5px solid #cdd3d5;
   border-radius: 5px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   background: $blue;
-  overflow: hidden;
-  margin-right: 60px;
+  margin-right: 55px;
+  display: inline-block;
   animation-name: none;
   animation-duration: 2s;
   animation-fill-mode: forwards;
@@ -36,40 +53,23 @@ $blue: #6290c3;
 }
 
 .moveRight1 {
-  animation-name: moveRight1;
+  animation-name: moveRight;
 }
 
-.moveRight2 {
-  animation-name: moveRight2;
+.restart {
+  animation: none;
+  animation-fill-mode: initial;
 }
 
-.moveRight3 {
-  animation-name: moveRight3;
+.hilight {
+  background: orange;
 }
 
-@keyframes moveRight1 {
+@keyframes moveRight {
   from {
     transform: translateX(0px);
   }
   to {
-    transform: translateX(100px);
-  }
-}
-
-@keyframes moveRight2 {
-  from {
-    transform: translateX(100px);
-  }
-  to {
-    transform: translateX(330px);
-  }
-}
-
-@keyframes moveRight3 {
-  from {
-    transform: translateX(330px);
-  }
-  to {
-    transform: translateX(560px);
+    transform: translateX(255px);
   }
 }

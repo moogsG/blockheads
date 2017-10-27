@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Chain from './blockChain.jsx';
 import StepOne from '../presentational/stepOne.jsx';
 import StepTwo from '../presentational/stepTwo.jsx';
@@ -7,8 +7,6 @@ import StepFour from '../presentational/stepFour.jsx';
 import StepFive from '../presentational/stepFive.jsx';
 import StepSix from '../presentational/stepSix.jsx';
 import NavDots from '../presentational/navDots.jsx';
-import Chain from '../presentational/chain.jsx';
-import NavBar from '../presentational/navBar.jsx';
 import StepSeven from '../presentational/stepSeven.jsx';
 
 const SHA256 = require('crypto-js/sha256');
@@ -19,46 +17,7 @@ class Steps extends Component {
     this.state = {
       privKey: '',
       pubKey: '',
-      message: '',
-      chain: [
-        {
-          index: '1',
-          timestamp: '1',
-          hash: '111',
-          prev: '111'
-        },
-        {
-          index: '2',
-          timestamp: '2',
-          hash: '2',
-          prev: '2'
-        },
-        {
-          index: '3',
-          timestamp: '3',
-          hash: '333',
-          prev: '333'
-        },
-        {
-          index: '4',
-          timestamp: '4',
-          hash: '444',
-          prev: '444'
-        },
-        {
-          index: '5',
-          timestamp: '5',
-          hash: '555',
-          prev: '555'
-        },
-
-        {
-          index: '6',
-          timestamp: '6',
-          hash: '666',
-          prev: '666'
-        }
-      ]
+      message: ''
     };
 
     this.onStateChange = this.onStateChange.bind(this);
@@ -78,7 +37,6 @@ class Steps extends Component {
   render() {
     return (
       <div>
-        <NavBar wholeChain={this.state.chain} />
         <NavDots />
         <StepOne
           onStateChange={this.onStateChange}
@@ -102,7 +60,7 @@ class Steps extends Component {
           onStateChange={this.onStateChange}
         />
         <StepSix />
-        <StepSeven sendWS = {this.props.sendWS}/>
+        <StepSeven sendWS={this.props.sendWS} />
       </div>
     );
   }
