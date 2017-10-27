@@ -1,4 +1,6 @@
-import React, { Component } from 'react';
+import React, {
+  Component
+} from 'react';
 import Chain from '../presentational/chain.jsx';
 import NavBar from '../presentational/navBar.jsx';
 
@@ -34,7 +36,10 @@ class BlockChain extends Component {
 
   sendWS(event) {
     var json_upload =
-      'data=' + JSON.stringify({ data: 'John Rambo', from: '3489032840985' });
+      'data=' + JSON.stringify({
+        data: 'John Rambo',
+        from: '3489032840985'
+      });
     let connection = new XMLHttpRequest();
     connection.open('POST', 'http://localhost:3001/mine', true);
     connection.setRequestHeader(
@@ -42,7 +47,7 @@ class BlockChain extends Component {
       'application/x-www-form-urlencoded'
     );
 
-    connection.onreadystatechange = function() {
+    connection.onreadystatechange = function () {
       if (connection.readyState != 4 || connection.status != 200) return;
     };
     connection.send(json_upload);
@@ -59,50 +64,70 @@ class BlockChain extends Component {
     $('.rectangle')
       .addClass('restart')
       .removeClass('moveRight');
-    setInterval(function() {
+    setInterval(function () {
       $('.rectangle')
         .removeClass('restart')
         .addClass('moveRight');
-    }, 1);
+    }, 10);
 
-    console.log('SUPPPPPP');
-    return false;
+    setInterval(function () {
+      return false;
+    }, 2000);
   }
 
   render() {
     let blocks = this.state.chain.map(blocks => {
       console.log(blocks.hash);
-      typeof blocks.data === 'object'
-        ? null
-        : (blocks.data = JSON.parse(blocks.data));
+      typeof blocks.data === 'object' ?
+        null :
+        (blocks.data = JSON.parse(blocks.data));
 
-      return (
-        <Chain
-          key={blocks.hash}
-          hash={blocks.hash}
-          timestamp={blocks.timestamp}
-          data={blocks.data.data}
-          prevHash={blocks.prevHash}
+      return ( <
+        Chain key = {
+          blocks.hash
+        }
+        hash = {
+          blocks.hash
+        }
+        timestamp = {
+          blocks.timestamp
+        }
+        data = {
+          blocks.data.data
+        }
+        prevHash = {
+          blocks.prevHash
+        }
         />
       );
     });
 
     return (
       // <div onClick={this.sendWS}>{blocks}</div>
-      <div>
-        <NavBar chain={this.state.chain} privKey={this.state.privKey} />
-        <button id="test" onClick={this.addTo}>
-          TEST
-        </button>
-      </div>
+      <
+      div >
+      <
+      NavBar chain = {
+        this.state.chain
+      }
+      privKey = {
+        this.state.privKey
+      }
+      /> <
+      button id = "test"
+      onClick = {
+        this.addTo
+      } >
+      TEST <
+      /button> <
+      /div>
     );
   }
 }
 export default BlockChain;
 
 function fillTemp() {
-  let temp = [
-    {
+  let temp = [{
       hash: 1111,
       timestamp: 111,
       data: {
