@@ -2,6 +2,16 @@
 import React, {Component} from 'react';
 
   class StepSeven extends Component {
+    constructor(props) {
+      super(props);
+
+      this.change = this.change.bind(this);
+    }
+
+    change(event) {
+      this.props.sendWS();
+    }
+
     render() {
 
       return (
@@ -21,7 +31,7 @@ import React, {Component} from 'react';
             </div>
             </div>
             <div className="col-md-12">
-              <button onClick={this.props.sendWS}>SEND BUTCH</button>
+              <h2 onClick={ this.change }>SEND BUTCH</h2>
               <div className="block-footer">
                 <div className="row">
                   <div className="col-md-6">
