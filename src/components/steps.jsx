@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Chain from './blockChain.jsx';
 import StepOne from '../presentational/stepOne.jsx';
 import StepTwo from '../presentational/stepTwo.jsx';
 import StepThree from '../presentational/stepThree.jsx';
@@ -14,53 +13,43 @@ const SHA256 = require('crypto-js/sha256');
 class Steps extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      privKey: '',
-      pubKey: '',
-      message: ''
-    };
 
-    this.onStateChange = this.onStateChange.bind(this);
   }
 
-  onStateChange(newState) {
-    Promise.resolve(
-      this.setState({
-        ...newState
-      })
-    ).then(() => {
-      let pubKey = SHA256(this.state.privKey).toString();
-      this.setState({ pubKey });
-    });
-  }
+
 
   render() {
     return (
       <div>
         <NavDots />
         <StepOne
-          onStateChange={this.onStateChange}
-          privKey={this.state.privKey}
+          onStateChange={this.props.onStateChange}
+          privKey={this.props.privKey}
         />
         <StepTwo
-          privKey={this.state.privKey}
-          pubKey={this.state.pubKey}
-          picks={this.state.picks}
-          hash={this.state.hash}
-          onStateChange={this.onStateChange}
+          privKey={this.props.privKey}
+          pubKey={this.props.pubKey}
+          picks={this.props.picks}
+          hash={this.props.hash}
+          onStateChange={this.props.onStateChange}
         />
         <StepThree
-          onStateChange={this.onStateChange}
-          pubKey={this.state.pubKey}
-          isPubKey={this.state.isPubKey}
+          onStateChange={this.props.onStateChange}
+          pubKey={this.props.pubKey}
+          isPubKey={this.props.isPubKey}
         />
-        <StepFour favFood={this.state.favFood} />
+      <StepFour favFood={this.props.favFood} />
         <StepFive
-          tempBlock={this.state.tempBlock}
-          onStateChange={this.onStateChange}
+          tempBlock={this.props.tempBlock}
+          onStateChange={this.props.onStateChange}
+          favFood={this.props.favFood}
+          pubKey={this.props.pubKey}
         />
         <StepSix />
-        <StepSeven sendWS={this.props.sendWS} />
+        <StepSeven
+          pubKey={this.props.pubKey}
+          favFood={this.props.favFood}
+          sendWS={this.props.sendWS} />
       </div>
     );
   }

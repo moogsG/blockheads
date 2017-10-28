@@ -1,10 +1,16 @@
 .box {
+    h1 {
+      font-size: 4em;
+    }
+    h2 {
+      font-size:3.5em;
+    }
+
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #6290c3;
   font-family: 'VT323', monospace;
-  margin: 20px;
   padding: 20px;
   border: 10px solid #CDD3D5;
   border-radius: 5px;
@@ -19,16 +25,19 @@
   min-height: 400px;
 }
 .line {
-  margin: 2em;
+  min-width: 100%;
+  margin: 2em 0 2em 0;
   border-top: 1px solid #CDD3D5;
 }
 
 .block {
+  .secondaryFont{
+    font-size: 2em;
+  }
   background-color: #6290c3;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px;
   padding: 20px;
   border: 5px solid #CDD3D5;
   border-radius: 3px;
@@ -45,6 +54,13 @@
   margin-top: 12px;
 }
 
+.input-group-addon{
+  font-size: 1.5em;
+}
+
+.form-control{
+  font-size: 1.5em;
+}
 .dragula-container {
   min-height: 30px;
   .input-group{
@@ -55,6 +71,17 @@
   }
 }
 
+.gu-transit, .gu-mirror {
+  font-family: 'VT323', monospace;
+}
+.secondaryFontInLine {
+  font-family: 'VT323', monospace;
+  padding-bottom: 6px;
+}
+
+#StepOne {
+  margin-top: 15em;
+}
 // MDL
 .mdl-textfield__label {
   border: none;
@@ -64,11 +91,24 @@
   color: #403F4C;
   font-size: 2em;
   border:none;
+  font-family: 'VT323', monospace;
   .input {
 
   }
 }
 
+.alert{
+  font-size: 1.5em;
+}
+.alert-danger {
+  background-color: $red;
+  color: $white;
+  border: none;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.45), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+.display-none {
+  visibility: hidden;
+}
 .mdl-textfield--floating-label.is-focused .mdl-textfield__label, .mdl-textfield--floating-label.is-dirty .mdl-textfield__label, .mdl-textfield--floating-label.has-placeholder .mdl-textfield__label {
   font-size: 2em;
 	color: rgb(63,81,181);

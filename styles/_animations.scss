@@ -1,5 +1,3 @@
-#server-animation{
-
 .hvr-pulse-grow {
   animation-name: hvr-pulse-grow;
   animation-duration: 0.3s;
@@ -7,6 +5,15 @@
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
+
+.hvr-buzz-out {
+  animation-name: hvr-buzz-out;
+  animation-duration: 0.75s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+#server-animation{
+
 
 $green: #b9f270;
 $red: #931621;

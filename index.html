@@ -19,11 +19,11 @@
   <div id="react-root"></div>
   <script src="/build/bundle.js"></script>
   <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
       $('.container').css('height', $(window).height());
       AOS.init();
       // Comma, not colon ----^
-      $(window).bind('scroll', function (e) {
+      $(window).bind('scroll', function(e) {
         dotnavigation();
       });
 
@@ -32,7 +32,7 @@
         var numSections = $('section').length;
 
         $('#dot-nav li a').removeClass('active').parent('li').removeClass('active');
-        $('section').each(function (i, item) {
+        $('section').each(function(i, item) {
           var ele = $(item),
             nextTop;
 
@@ -57,7 +57,7 @@
       }
 
       /* get clicks working */
-      $('#dot-nav li').click(function () {
+      $('#dot-nav li').click(function() {
 
         var id = $(this).find('a').attr("href"),
           posi,
@@ -74,7 +74,7 @@
         return false;
       });
     });
-    $(window).resize(function () {
+    $(window).resize(function() {
       $('.container').css('height', $(window).height());
       // Comma, not colon ----^
     });
