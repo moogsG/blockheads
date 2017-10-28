@@ -1,0 +1,32 @@
+$blue: #6290c3;
+
+#InvalidHash {
+  left: 100px;
+}
+
+#InvalidHash .invalid {
+  display: inline-block;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow: hidden;
+  width: 320px;
+  left: 50px;
+  margin-right: 50px;
+}
+
+.goodBox {
+  background: $blue;
+}
+
+.badBox {
+  background: red;
+}
+
+.container .text-muted {
+  margin: 20px 0;
+}
+//
+// body > .container-fluid {
+//   padding: 60px 15px 0;
+// }

@@ -15,6 +15,7 @@ import React, {Component} from 'react';
     render() {
 
       return (
+        <section id='StepSeven'>
         <div className="block">
           <div className="row">
             <div className="col-md-12">
@@ -45,7 +46,7 @@ import React, {Component} from 'react';
             </div>
           </div>
         </div>
-
+        </section>
       )
     }
   }

@@ -5,19 +5,18 @@ import BlockChain from './components/blockChain.jsx';
 class App extends Component {
   constructor(props) {
     super(props);
-
   }
 
   componentDidMount() {
     this.connection = new WebSocket('ws:localhost:6001');
-    console.log("Connected!")
+    console.log('Connected!');
   }
 
   render() {
     return (
       <div data-target="#myScrollspy">
-        <BlockChain />
-        <Steps />
+        <BlockChain/>
+        <Steps/>
       </div>
     );
   }

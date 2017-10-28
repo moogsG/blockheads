@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import Chain from './blockChain.jsx';
 import StepOne from '../presentational/stepOne.jsx';
 import StepTwo from '../presentational/stepTwo.jsx';
@@ -8,6 +8,7 @@ import StepFive from '../presentational/stepFive.jsx';
 import StepSix from '../presentational/stepSix.jsx';
 import NavDots from '../presentational/navDots.jsx';
 import StepSeven from '../presentational/stepSeven.jsx';
+import InvalidHash from '../presentational/invalidHash.jsx'
 
 const SHA256 = require('crypto-js/sha256');
 
@@ -24,43 +25,26 @@ class Steps extends Component {
   }
 
   onStateChange(newState) {
-    Promise.resolve(
-      this.setState({
-        ...newState
-      })
-    ).then(() => {
+    Promise.resolve(this.setState({
+      ...newState
+    })).then(() => {
       let pubKey = SHA256(this.state.privKey).toString();
-      this.setState({ pubKey });
+      this.setState({pubKey});
     });
   }
 
   render() {
     return (
       <div>
-        <NavDots />
-        <StepOne
-          onStateChange={this.onStateChange}
-          privKey={this.state.privKey}
-        />
-        <StepTwo
-          privKey={this.state.privKey}
-          pubKey={this.state.pubKey}
-          picks={this.state.picks}
-          hash={this.state.hash}
-          onStateChange={this.onStateChange}
-        />
-        <StepThree
-          onStateChange={this.onStateChange}
-          pubKey={this.state.pubKey}
-          isPubKey={this.state.isPubKey}
-        />
-        <StepFour favFood={this.state.favFood} />
-        <StepFive
-          tempBlock={this.state.tempBlock}
-          onStateChange={this.onStateChange}
-        />
-        <StepSix />
-        <StepSeven sendWS={this.props.sendWS} />
+        <NavDots/>
+        <StepOne onStateChange={this.onStateChange} privKey={this.state.privKey}/>
+        <StepTwo privKey={this.state.privKey} pubKey={this.state.pubKey} onStateChange={this.onStateChange}/>
+        <StepThree onStateChange={this.onStateChange} pubKey={this.state.pubKey}/>
+        <StepFour/>
+        <StepFive onStateChange={this.onStateChange}/>
+        <StepSix/>
+        <InvalidHash/>
+        <StepSeven sendWS={this.props.sendWS}/>
       </div>
     );
   }
