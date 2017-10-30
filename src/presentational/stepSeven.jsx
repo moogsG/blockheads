@@ -59,6 +59,7 @@ const SHA256 = require('crypto-js/sha256');
           </div>
         </div>
         </div>
+        <button onClick={this.props.sendWS}>SEND THE transmission</button>
       </div>
       )
     }

@@ -24,11 +24,13 @@ class navBar extends Component {
           hash={blocks.hash}
           timestamp={blocks.timestamp}
           data={blocks.data.data}
+          from={blocks.data.from}
           prevHash={blocks.prevHash}
-          privKey={this.props.privKey}
+          pubKey={this.props.pubKey}
         />
       );
     });
+
 
     return (
       <nav className="navbar fixed-top navbar-light bg-faded">
