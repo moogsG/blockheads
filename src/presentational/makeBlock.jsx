@@ -1,6 +1,11 @@
 import React, {Component} from 'react';
 
 class MakeBlock extends Component {
+  firstHash() {
+    return this.props.prevHash
+      ? this.props.prevHash
+      : '0000000000000000000000000000000000000000000000000000000000000000'
+  }
   render() {
     return (
       <div className={"invalid goodBox box" + this.props.height}>
@@ -37,7 +42,7 @@ class MakeBlock extends Component {
             <div className="form-group">
               <label className="col-sm-2 control-label">PrevHash:</label>
               <div className="col-sm-10">
-                <input type="text" disabled="disabled" className="form-control" value={this.props.prevHash}/>
+                <input type="text" disabled="disabled" className="form-control" value={this.firstHash()}/>
               </div>
             </div>
             <div className="form-group">
