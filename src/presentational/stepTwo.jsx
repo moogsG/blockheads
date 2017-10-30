@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 const SHA256 = require('crypto-js/sha256');
-import TextScramble from '../scripts/textScram';
 class StepTwo extends Component {
   constructor(props) {
     super(props);
@@ -8,13 +7,12 @@ class StepTwo extends Component {
   }
 
   change(event) {
-    const el = document.querySelector('.hash')
-    const fx = new TextScramble(el)
+
     let newState = {
       privKey: event.target.value
     };
     this.props.onStateChange(newState);
-    fx.setText(this.props.pubKey)
+
   }
 
   render() {
@@ -78,7 +76,7 @@ class StepTwo extends Component {
                           <span className="input-group-addon" id="pubKeyLab">
                             PubKey
                           </span>
-                          <input type="text" className="form-control hash" id="pubKey" aria-describedby="pubKeyLab" value={this.props.pubKey}/>
+                          <input type="text" className="form-control form-hash" id="pubKey" aria-describedby="pubKeyLab" value={this.props.pubKey}/>
                         </div>
                         <div className="input-group">
                           <span className="input-group-addon" id="transmissionLab">
