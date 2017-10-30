@@ -1,4 +1,4 @@
-import { calcHash, isNewBlockValid } from './block';
+import { calcHash, isNewBlockValid, calcNonce } from './block';
 
 const Chain = (function () { // eslint-disable-line func-names
     let instance;
@@ -8,6 +8,12 @@ const Chain = (function () { // eslint-disable-line func-names
         data: '{"data":"Hello Blockchain!"}',
         prevHash: 0,
         hash: calcHash({
+            index: 0,
+            prevHash: 0,
+            timestamp: 0,
+            data: '{"data":"Hello Blockchain!"}'
+        }),
+        nonce: calcNonce({
             index: 0,
             prevHash: 0,
             timestamp: 0,

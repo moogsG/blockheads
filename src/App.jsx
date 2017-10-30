@@ -26,6 +26,7 @@ class App extends Component {
       let parseBlock = JSON.parse(JSON.parse(event.data).data);
       let chain = this.state.chain.concat(parseBlock);
       this.setState({chain: chain});
+      this.addTo();
     };
 
     this.recive.onopen = event => {
@@ -64,7 +65,7 @@ class App extends Component {
       }
       snackbarContainer.MaterialSnackbar.showSnackbar(data);
       connection.send(json_upload);
-      this.addTo();
+
       this.setState({
         favFood: ''
       })
