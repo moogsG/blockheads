@@ -87,7 +87,7 @@ class App extends Component {
       <div data-target="#myScrollspy">
         <NavBar
           chain = { this.state.chain }
-          privKey = { this.state.privKey }
+          pubKey = { this.state.pubKey }
         />
         <Steps
           { ...this.state }
