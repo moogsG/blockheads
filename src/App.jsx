@@ -10,7 +10,7 @@ class App extends Component {
     this.state = {
       chain: [],
       privKey: '',
-      pubKey: '',
+      pubKey: 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855',
       favFood: ''
     };
 
@@ -41,21 +41,40 @@ class App extends Component {
   }
 
   sendWS(event) {
+    $('.block')
+      .removeClass('hvr-buzz-out')
+    var snackbarContainer = document.querySelector('#transmissionSent');
+    var showToastButton = document.querySelector('#sendTransmission');
 
-    let json_upload = 'data=' + JSON.stringify({data: this.state.favFood , from: this.state.pubKey});
-    let connection = new XMLHttpRequest();
-    connection.open('POST', 'http://localhost:3001/mine', true);
-    connection.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    if (this.state.pubKey != 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'&& this.state.favFood) {
+      let json_upload = 'data=' + JSON.stringify({data: this.state.favFood, from: this.state.pubKey});
+      let connection = new XMLHttpRequest();
+      connection.open('POST', 'http://localhost:3001/mine', true);
+      connection.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
-    connection.onreadystatechange = function() {
+      connection.onreadystatechange = function() {
 
-      if (connection.readyState != 4 || connection.status != 200) {
-        return;
+        if (connection.readyState != 4 || connection.status != 200) {
+          return;
+        }
+      };
+
+      var data = {
+        message: 'Block Submitted!'
       }
-    };
+      snackbarContainer.MaterialSnackbar.showSnackbar(data);
+      connection.send(json_upload);
+      this.addTo();
+      this.setState({
+        favFood: ''
+      })
+    }else {
+      $('.block')
+        .addClass('hvr-buzz-out')
+      $('.alert-danger')
+      .removeClass('display-none')
+    }
 
-    connection.send(json_upload);
-    this.addTo();
 
   }
 
@@ -72,27 +91,27 @@ class App extends Component {
   }
 
   onStateChange(newState) {
-    Promise.resolve(
-      this.setState({
-        ...newState
-      })
-    ).then(() => {
+    Promise.resolve(this.setState({
+      ...newState
+    })).then(() => {
       let pubKey = SHA256(this.state.privKey).toString();
-      this.setState({ pubKey });
+      this.setState({pubKey});
     });
+    $('.box')
+    .removeClass('hvr-buzz-out')
+    $('.block')
+    .removeClass('hvr-buzz-out')
+    $('.alert-danger')
+    .addClass('display-none');
+    $('.empty-block')
+    .addClass('display-none');
   }
 
   render() {
     return (
       <div data-target="#myScrollspy">
-        <NavBar
-          chain = { this.state.chain }
-          pubKey = { this.state.pubKey }
-        />
-        <Steps
-          { ...this.state }
-          onStateChange={ this.onStateChange }
-          sendWS={ this.sendWS } />
+        <NavBar chain={this.state.chain} pubKey={this.state.pubKey}/>
+        <Steps { ...this.state } onStateChange={this.onStateChange} sendWS={this.sendWS}/>
       </div>
     );
   }

@@ -51,7 +51,9 @@ class Steps extends Component {
         <StepSeven
           pubKey={this.props.pubKey}
           favFood={this.props.favFood}
-          sendWS={this.props.sendWS} />
+          sendWS={this.props.sendWS}
+          onStateChange={this.props.onStateChange}
+        />
       </div>
     );
   }
