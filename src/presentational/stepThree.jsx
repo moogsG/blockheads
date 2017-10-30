@@ -20,10 +20,6 @@ class StepThree extends Component {
   }
 
   change(event) {
-    $('.alert-danger')
-    .addClass('display-none')
-    $('.box')
-      .removeClass('hvr-buzz-out')
     let newState = {
       isPubKey: event.target.value
     };
@@ -42,7 +38,6 @@ class StepThree extends Component {
           .addClass('hvr-buzz-out')
         $('.alert-danger')
         .removeClass('display-none')
-        console.log('BI+IO');
       }
 
     console.log("asdf")

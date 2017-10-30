@@ -4,27 +4,20 @@ $off-white: #cdd3d5;
 $blue: #6290c3;
 $blue-dark: #28464b;
 
-#test {
-  position: absolute;
-  left: 100px;
-  width: 100px;
-  height: 100px;
-  top: 200px;
-}
-
 .navbar-brand {
   font-family: 'Monoton', cursive;
   font-size: 1em;
 }
 
 .navbar {
-  position: absolute;  
-  top: 400px;
   display: inline-block;
   flex-wrap: nowrap;
   white-space: nowrap;
   overflow-x: auto;
   overflow: hidden;
+  background-color: RGB(64, 63, 76, 0.9);
+  color: $purple;
+  font-size: 18px;
 }
 
 .top {
@@ -43,7 +36,14 @@ $blue-dark: #28464b;
   box-shadow: 0px 2px 3px $off-white;
 }
 
+.blocks{
+  margin: 5px;
+}
+
 .rectangle {
+  overflow: hidden;
+  color: $purple;
+  font-family: 'VT323', monospace;
   position: relative;
   right: 175px;
   width: 120px;
@@ -70,7 +70,7 @@ $blue-dark: #28464b;
 }
 
 .hilight {
-  background: orange;
+  background: RGB(179, 179, 179);
 }
 
 @keyframes moveRight {

@@ -33,7 +33,7 @@ class navBar extends Component {
 
 
     return (
-      <nav className="navbar fixed-top navbar-light bg-faded">
+      <nav className="navbar fixed-top bg-faded">
         <div className="blocks">{block}</div>
         <div id="navLine" />
       </nav>

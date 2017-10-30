@@ -12,8 +12,10 @@ class IncomingChain extends Component {
   render() {
     return (
       <div className={'rectangle moveRight1 navbar-brand' + this.addColor()}>
+        <div className="blocks">
+          <marquee behavior="alternate">{this.props.data}</marquee>
 
-        <span className="hash">{this.props.data}</span>
+        </div>
       </div>
     );
   }
