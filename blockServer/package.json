@@ -10,7 +10,7 @@
     "dev": "node dev.js",
     "build": "babel -d ./dist ./src -s",
     "lint-staged": "lint-staged",
-    "prepublish": "npm run clean && npm run lint && npm run build"
+    "prepublish": "npm run clean && npm run build"
   },
   "pre-commit": "lint-staged",
   "repository": {

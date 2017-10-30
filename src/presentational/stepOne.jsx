@@ -8,18 +8,14 @@ class StepOne extends Component {
       privKey: '',
       pubKey: ''
     };
-    this.change = this
-      .change
-      .bind(this);
+    this.change = this.change.bind(this);
   }
 
   change(event) {
     let newState = {
       privKey: event.target.value
     };
-    this
-      .props
-      .onStateChange(newState);
+    this.props.onStateChange(newState);
   }
 
   render() {
@@ -39,11 +35,7 @@ class StepOne extends Component {
                       <label className="mdl-textfield__label" htmlFor="sample1">
                         privateKey
                       </label>
-                      <input
-                        className="mdl-textfield__input"
-                        type="text"
-                        onChange={this.change}
-                        value={this.props.privKey}/>
+                      <input className="mdl-textfield__input" type="text" onChange={this.change} value={this.props.privKey}/>
                     </div>
                   </div>
                 </div>

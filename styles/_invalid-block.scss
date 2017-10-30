@@ -26,7 +26,41 @@ $blue: #6290c3;
 .container .text-muted {
   margin: 20px 0;
 }
-//
-// body > .container-fluid {
-//   padding: 60px 15px 0;
-// }
+
+.invalid button span {
+  padding-right: 6px;
+}
+
+.loader {
+  display: inline-flex;
+  border: 2px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 2px solid #3498db;
+  width: 0;
+  height: 0;
+  animation: spin 2s linear infinite, enlarge 1s ease 2s forwards;
+  float: right;
+  margin-right: 5px;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes enlarge {
+  0% {
+    width: 0;
+    height: 0;
+    display: none;
+  }
+
+  100% {
+    width: 16px;
+    height: 16px;
+    display: all;
+  }
+}

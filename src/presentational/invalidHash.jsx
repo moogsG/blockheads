@@ -16,14 +16,17 @@ class InvalidHash extends Component {
     this.genHash = this.genHash.bind(this);
     this.greenChange = this.greenChange.bind(this);
     this.colorChange = this.colorChange.bind(this);
+    this.mine = this.mine.bind(this);
   }
   genHash(event) {
     let value = event.target.value;
     let index = event.target.attributes.data.value;
+    console.log(event.target.attributes.class.value);
     value = SHA256(value).toString();
     let hash = this.state.hash;
     hash[index - 1] = value;
     this.setState(hash);
+    this.setState(mined);
     this.colorChange(index, value);
   };
 
@@ -54,20 +57,39 @@ class InvalidHash extends Component {
     let hash = this.state.hash;
     let mined = this.state.mined;
     switch (true) {
-      case(index <= 1 && hash[0] !== mined[0]):
-        break;
-      case(index <= 1 && hash[0] === mined[0]):
-        $('.box1').removeClass('badBox').addClass('goodBox');
-      case(index <= 2 && hash[1] !== mined[1]):
-        break;
-      case(index <= 2 && hash[1] === mined[1]):
-        $('.box2').removeClass('badBox').addClass('goodBox');
-      case(hash[2] === mined[2]):
-        if (hash[2] === mined[2]) {
+      case(index === 1):
+        if (hash[0] === mined[0]) {
+          $('.box1').removeClass('badBox').addClass('goodBox');
+        } else {
+          break;
+        }
+      case(index === 2):
+        if (hash[1] === mined[1] && hash[0] === mined[0]) {
+          $('.box2').removeClass('badBox').addClass('goodBox');
+        } else {
+          break;
+        }
+      case(index === 3):
+        if (hash[2] === mined[2] && hash[1] === mined[1]) {
           $('.box3').removeClass('badBox').addClass('goodBox');
         }
       default:
         break;
+    }
+  }
+
+  mine(event) {
+    event.preventDefault();
+    console.log(event.target)
+    let index = event.target.attributes.data.value;
+    let has = $(".box" + index).hasClass('badBox')
+    if (has) {
+      let mined = this.state.mined;
+      mined[index - 1] = this.state.hash[index - 1];
+      setTimeout(function() {
+        this.setState(mined);
+        $(".box" + index).removeClass('badBox').addClass('goodBox');
+      }, 5000);
     }
   }
 
@@ -96,8 +118,9 @@ class InvalidHash extends Component {
         Nonce={blocks.Nonce}
         data={blocks.data}
         genHash={this.genHash}
-        prevHash={this.state.hash[blocks.index - 2]}
-        hash={this.state.hash[blocks.index - 1]}/>);
+        prevHash={this.state.mined[blocks.index - 2]}
+        hash={this.state.hash[blocks.index - 1]}
+        mine={this.mine}/>)
     });
 
     return (

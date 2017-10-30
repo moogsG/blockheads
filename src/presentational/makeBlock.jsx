@@ -50,8 +50,13 @@ class MakeBlock extends Component {
                 <i className="icon-spinner icon-spin icon-large"></i>
               </div>
               <div className="col-sm-10">
-                <button data-style="expand-right" className="btn btn-primary ladda-button">
-                  <span className="ladda-label">Mine</span>
+                <button
+                  onClick={this.props.mine}
+                  data-style="expand-right"
+                  data={this.props.height}
+                  className="btn btn-primary ladda-button">
+                  <span className="ladda-label" data={this.props.height}>Mine</span>
+                  <div className='loader'/>
                 </button>
               </div>
             </div>
