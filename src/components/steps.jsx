@@ -47,6 +47,7 @@ class Steps extends Component {
           pubKey={this.props.pubKey}
         />
         <StepSix />
+        <InvalidHash />
         <StepSeven
           pubKey={this.props.pubKey}
           favFood={this.props.favFood}
