@@ -1,5 +1,4 @@
 /* Add a black background color to the top navigation */
-
 $off-white: #cdd3d5;
 $blue: #6290c3;
 $blue-dark: #28464b;
@@ -18,18 +17,12 @@ $blue-dark: #28464b;
 }
 
 .navbar {
-  position: absolute;  
-  top: 400px;
+  position: fixed;
   display: inline-block;
   flex-wrap: nowrap;
   white-space: nowrap;
   overflow-x: auto;
   overflow: hidden;
-}
-
-.top {
-  top: 0px;
-  position: fixed;
 }
 
 #navLine {
@@ -40,7 +33,7 @@ $blue-dark: #28464b;
   height: 5px;
   background: $off-white;
   z-index: 8;
-  box-shadow: 0px 2px 3px $off-white;
+  box-shadow: 0 2px 3px $off-white;
 }
 
 .rectangle {
@@ -72,11 +65,11 @@ $blue-dark: #28464b;
 .hilight {
   background: orange;
 }
-
 @keyframes moveRight {
   from {
     transform: translateX(0px);
   }
+
   to {
     transform: translateX(175px);
   }
