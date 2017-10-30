@@ -11,7 +11,12 @@ class InvalidHash extends Component {
       hash: [
         SHA256("first").toString(), SHA256("second").toString(), SHA256("third").toString()
       ],
-      mined: [SHA256("first").toString(), SHA256("second").toString(), SHA256("third").toString()]
+      mined: [
+        SHA256("first").toString(), SHA256("second").toString(), SHA256("third").toString()
+      ],
+      difficulty: 4,
+      maximumNonce: 500000,
+      pattern: '0000'
     };
     this.genHash = this.genHash.bind(this);
     this.greenChange = this.greenChange.bind(this);
@@ -21,12 +26,10 @@ class InvalidHash extends Component {
   genHash(event) {
     let value = event.target.value;
     let index = event.target.attributes.data.value;
-    console.log(event.target.attributes.class.value);
     value = SHA256(value).toString();
     let hash = this.state.hash;
     hash[index - 1] = value;
     this.setState(hash);
-    this.setState(mined);
     this.colorChange(index, value);
   };
 
@@ -80,15 +83,15 @@ class InvalidHash extends Component {
 
   mine(event) {
     event.preventDefault();
-    console.log(event.target)
     let index = event.target.attributes.data.value;
     let has = $(".box" + index).hasClass('badBox')
     if (has) {
       let mined = this.state.mined;
+      console.log(mined);
       mined[index - 1] = this.state.hash[index - 1];
-      setTimeout(function() {
-        this.setState(mined);
+      setTimeout(() => {
         $(".box" + index).removeClass('badBox').addClass('goodBox');
+        this.setState(mined);
       }, 5000);
     }
   }

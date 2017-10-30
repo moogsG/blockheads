@@ -25,12 +25,7 @@ class MakeBlock extends Component {
             <div className="form-group">
               <label className="col-sm-2 control-label">Data:</label>
               <div className="col-sm-10">
-                <textarea
-                  rows="3"
-                  data={this.props.height}
-                  className="form-control"
-                  onKeyUp={this.props.genHash}
-                  placeholder={this.props.data}></textarea>
+                <textarea rows="3" data={this.props.height} className="form-control" onKeyUp={this.props.genHash}>{this.props.data}</textarea>
               </div>
             </div>
             <div className="form-group">
@@ -56,7 +51,7 @@ class MakeBlock extends Component {
                   data={this.props.height}
                   className="btn btn-primary ladda-button">
                   <span className="ladda-label" data={this.props.height}>Mine</span>
-                  <div className='loader'/>
+                  <div className='loader' data={this.props.height}/>
                 </button>
               </div>
             </div>
