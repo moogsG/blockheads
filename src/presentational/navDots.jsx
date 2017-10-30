@@ -23,6 +23,9 @@ class navDots extends Component {
           <li className="" title="StepSix">
             <a href="#StepSix"></a>
           </li>
+          <li className="" title="StepSeven">
+            <a href="#StepSeven"></a>
+          </li>
         </ul>
       </div>
     )

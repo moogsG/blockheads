@@ -25,15 +25,27 @@
       // Comma, not colon ----^
       $(window).bind('scroll', function(e) {
         dotnavigation();
+        navBarSet();
       });
+
+      function navBarSet() {
+
+        let docTop = $(document).scrollTop();
+        if (docTop < 400) {
+          $('.navbar').removeClass('top');
+        } else {
+          $('.navbar').addClass('top');
+        }
+
+      }
 
       function dotnavigation() {
 
-        var numSections = $('section').length;
+        let numSections = $('section').length;
 
         $('#dot-nav li a').removeClass('active').parent('li').removeClass('active');
         $('section').each(function(i, item) {
-          var ele = $(item),
+          let ele = $(item),
             nextTop;
 
           if (typeof ele.next().offset() != "undefined") {
@@ -48,7 +60,7 @@
             thisTop = 0;
           }
 
-          var docTop = $(document).scrollTop();
+          let docTop = $(document).scrollTop();
 
           if (docTop >= thisTop && (docTop < nextTop)) {
             $('#dot-nav li').eq(i).addClass('active');
@@ -62,10 +74,10 @@
         var id = $(this).find('a').attr("href"),
           posi,
           ele,
-          padding = 0;
+          padding = 60;
 
         ele = $(id);
-        posi = ($(ele).offset() || 0).top - padding - 90;
+        posi = ($(ele).offset() || 0).top - padding;
 
         $('html, body').animate({
           scrollTop: posi

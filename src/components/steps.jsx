@@ -7,6 +7,7 @@ import StepFive from '../presentational/stepFive.jsx';
 import StepSix from '../presentational/stepSix.jsx';
 import NavDots from '../presentational/navDots.jsx';
 import StepSeven from '../presentational/stepSeven.jsx';
+import InvalidHash from '../presentational/invalidHash.jsx'
 
 const SHA256 = require('crypto-js/sha256');
 

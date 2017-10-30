@@ -18,7 +18,7 @@ class StepOne extends Component {
     };
     this.props.onStateChange(newState);
   }
-  
+
 
   scrollEnter(event){
     event.preventDefault();

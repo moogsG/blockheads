@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 class IncomingChain extends Component {
   constructor(props) {
@@ -6,7 +6,9 @@ class IncomingChain extends Component {
   }
 
   addColor() {
-    return this.props.privKey == this.props.prevHash ? ' hilight' : '';
+    return this.props.privKey == this.props.prevHash
+      ? ' hilight'
+      : '';
   }
 
   render() {

@@ -3,11 +3,11 @@
 @import '../node_modules/hover.css/scss/hover.scss';
 @import '../node_modules/aos/dist/aos.css';
 @import '../node_modules/dragula/dist/dragula.css';
-// This is the top-level scss file. Import all other files in here.
-@import "_include-media";
+@import "_include-media"; // This is the top-level scss file. Import all other files in here.
 @import "_mixins.scss";
 @import "_globals.scss";
 @import "_nav.scss";
 @import "_app.scss";
 @import "_animations.scss";
 @import "_navigation.scss";
+@import "_invalid-block.scss";
