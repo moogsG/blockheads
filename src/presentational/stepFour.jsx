@@ -18,9 +18,9 @@ class StepFour extends Component {
                 <div className="col-md-6 vert-center">
                   <h1>
                     Now that your transition is sent, it first has to be verified to be a valid transaction. So in this case, is
-                    <b className="secondaryFontInLine">{this.props.favFood}</b>
+                    <b className="secondaryFontInLine">&nbsp;{this.props.favFood}&nbsp;</b>
                     REALLY your favourite food? Is there
-                    <b>proof</b>
+                    <b>&nbsp;proof&nbsp;</b>
                     that it is your favourite food?
                   </h1>
                 </div>
