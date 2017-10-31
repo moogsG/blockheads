@@ -37,7 +37,7 @@ class StepOne extends Component {
 
                     <h1>Learn The block chain!</h1>
                     <h2>Enter Your
-                      <i>Personal</i>
+                      <i>&nbsp;Personal&nbsp;</i>
                       Secret Key</h2>
 
                   </div>
@@ -46,7 +46,7 @@ class StepOne extends Component {
                       <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <label className="mdl-textfield__label" htmlFor="sample1">
                           <span className="red">const</span>
-                          &nbsp;privateKey
+                            &nbsp;privateKey
                           <span className="yellow">=</span>
                         </label>
                         <input className="mdl-textfield__input" type="text" onChange={this.change} value={this.props.privKey}/>
