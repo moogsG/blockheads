@@ -14,7 +14,6 @@ $blue-dark: #28464b;
   white-space: nowrap;
   overflow-x: auto;
   overflow: hidden;
-  background-color: RGB(64, 63, 76, 0.9);
   color: $purple;
   font-size: 18px;
 }
@@ -27,7 +26,7 @@ $blue-dark: #28464b;
   height: 5px;
   background: $off-white;
   z-index: 8;
-  box-shadow: 0 2px 3px $off-white;
+  // box-shadow: 0 2px 3px $off-white;
 }
 
 .blocks{
@@ -36,6 +35,7 @@ $blue-dark: #28464b;
 }
 
 .rectangle {
+  background-image: url("../imgs/dotnoise-light-grey.png");
   overflow: hidden;
   color: $purple;
   font-family: 'VT323', monospace;

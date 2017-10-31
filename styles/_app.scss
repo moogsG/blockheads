@@ -6,6 +6,7 @@
   h2 {
     font-size: 3.5em;
   }
+  background-image: url("../imgs/dotnoise-light-grey.png");
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,6 +37,7 @@
   .secondaryFont {
     font-size: 2em;
   }
+  background-image: url("../imgs/dotnoise-light-grey.png");
   background-color: #6290c3;
   display: flex;
   justify-content: center;
@@ -143,7 +145,6 @@
   font-family: 'VT323', monospace;
   font-size: 20px;
 }
-//////////////////////////////////////////////////////////////////////////////////////////////////
 
 .tooltip2 {
   cursor: default;
