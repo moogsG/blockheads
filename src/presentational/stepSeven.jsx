@@ -64,17 +64,14 @@ class StepSeven extends Component {
                           <h4 data-toggle="tooltip" title="39034456789534455454534">PREVHASH</h4>
                         </div>
                         <div className="col-md-6 ">
-                          <button id="sendTransmission" onClick={this.props.sendWS} className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent float-right">
-                            SEND
-                            <div id="loading" className="mdl-spinner mdl-js-spinner mdl-spinner--single-color is-active display-none-hidden"></div>
-                          </button>
+
 
                           <h4 className="float-right" data-toggle="tooltip" title="39034456789534455454534"></h4>
                         </div>
                         <div className="col-md-12">
                           <div className="alert alert-danger empty-block display-none text-center" role="alert">
                             The block is missing some
-                            <b>VITAL</b>
+                            <b>&nbsp;VITAL&nbsp;</b>
                             infomation! Did you go through the steps?
                           </div>
                         </div>
@@ -83,6 +80,13 @@ class StepSeven extends Component {
                   </div>
                 </div>
               </div>
+
+            </div>
+            <div className="col-md-6">
+              <a id="sendTransmission" onClick={this.props.sendWS} className="button float-right secondaryFont">
+                SEND
+                <div id="loading" className="mdl-spinner mdl-js-spinner mdl-spinner--single-color is-active display-none-hidden"></div>
+              </a>
             </div>
           </div>
         </div>

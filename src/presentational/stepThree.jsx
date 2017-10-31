@@ -89,9 +89,9 @@ class StepThree extends Component {
                     <div className="col-md-12">
                       <div className="alert alert-danger display-none text-center" role="alert">
                         You Typed in the wrong
-                        <b>PUBKEY!</b>
+                        <b>&nbsp;PUBKEY!&nbsp;</b>
                         It is in
-                        <b>STEPTWO</b>.
+                        <b>&nbsp;STEPTWO&nbsp;</b>.
                       </div>
                     </div>
                   </div>
