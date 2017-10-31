@@ -16,7 +16,7 @@
     "url": "https://github.com/moogsG/whateverwewant/issues"
   },
   "engines": {
-    "node": ">=8.3.0"
+    "node": ">=6.0.0"
   },
   "devDependencies": {
     "babel-core": "6.23.1",
