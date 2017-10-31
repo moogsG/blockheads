@@ -19,11 +19,10 @@ class StepOne extends Component {
     this.props.onStateChange(newState);
   }
 
-
-  scrollEnter(event){
+  scrollEnter(event) {
     event.preventDefault();
     $('html, body').animate({
-      scrollTop: $("#StepTwo").offset().top -90
+      scrollTop: $("#StepTwo").offset().top - 90
     }, 2000);
   }
   render() {
@@ -37,7 +36,9 @@ class StepOne extends Component {
                   <div className="col-md-12">
 
                     <h1>Learn The block chain!</h1>
-                    <h2>Enter Your <i>Personal</i> Secret Key</h2>
+                    <h2>Enter Your
+                      <i>Personal</i>
+                      Secret Key</h2>
 
                   </div>
                   <div className="col-md-12">
@@ -45,7 +46,7 @@ class StepOne extends Component {
                       <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <label className="mdl-textfield__label" htmlFor="sample1">
                           <span className="red">const</span>
-                           &nbsp;privateKey
+                          &nbsp;privateKey
                           <span className="yellow">=</span>
                         </label>
                         <input className="mdl-textfield__input" type="text" onChange={this.change} value={this.props.privKey}/>

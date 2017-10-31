@@ -109,6 +109,10 @@
 .display-none {
   visibility: hidden;
 }
+
+.display-none-hidden {
+  display: none;
+}
 .mdl-textfield--floating-label.is-focused .mdl-textfield__label, .mdl-textfield--floating-label.is-dirty .mdl-textfield__label, .mdl-textfield--floating-label.has-placeholder .mdl-textfield__label {
   font-size: 2em;
 	color: rgb(63,81,181);

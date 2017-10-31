@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Steps from './components/steps.jsx';
-import Chain from './presentational/chain.jsx';
 import NavBar from './presentational/navBar.jsx';
 const SHA256 = require('crypto-js/sha256');
 class App extends Component {
@@ -27,6 +26,8 @@ class App extends Component {
       let chain = this.state.chain.concat(parseBlock);
       this.setState({chain: chain});
       this.addTo();
+      $('#loading')
+        .addClass('display-none-hidden')
     };
 
     this.recive.onopen = event => {
@@ -43,7 +44,9 @@ class App extends Component {
 
   sendWS(event) {
     $('.block')
-      .removeClass('hvr-buzz-out')
+      .removeClass('hvr-buzz-out');
+    $('#loading')
+      .removeClass('display-none-hidden')
     var snackbarContainer = document.querySelector('#transmissionSent');
     var showToastButton = document.querySelector('#sendTransmission');
 
@@ -74,6 +77,8 @@ class App extends Component {
         .addClass('hvr-buzz-out')
       $('.alert-danger')
       .removeClass('display-none')
+      $('#loading')
+        .addClass('display-none-hidden')
     }
 
 
