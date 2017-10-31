@@ -72,7 +72,7 @@ class StepTwo extends Component {
                       <div className="col-md-12">
                         <div className="block-header text-center">
                           {/* <span className="block-height float-left" data-toggle="tooltip" title="This is the number of the block.">Height</span> */}
-                          <a href="javascript: void(0)" className="tooltip2 biggerBIGGER float-left block-height">
+                          <a href="javascript: void(0)" className="tooltip2 biggerBIGGER height float-left block-height">
                             HEIGHT
                             <span>
                               <div className="arrow-up"></div>
@@ -83,7 +83,7 @@ class StepTwo extends Component {
                           {/* <h2>Block Hash</h2>
                           <h4>{this.props.hash}</h4> */
                           }
-                          <a href="javascript: void(0)" className="tooltip2 biggerBIGGER">
+                          <a href="javascript: void(0)" className="tooltip2 tooltipBlock biggerBIGGER">
                             <h2>BLOCK HASH</h2>
                             <span>
                               <div className="arrow-up"></div>
@@ -95,7 +95,7 @@ class StepTwo extends Component {
                       </div>
                       <div className="col-md-12"></div>
                       <div className="col-md-12">
-                        <div className="input-group tooltip2">
+                        <div className="input-group tooltip2 tooltipRight">
                           <div className="input-group-addon" id="pubKeyLab">
                             PubKey
                           </div>
@@ -107,11 +107,11 @@ class StepTwo extends Component {
                             value={this.props.pubKey}/>
                           <span>
                             <div className="arrow-up"></div>
-                            <strong>Curret Block Hash</strong><br/>
-                            This is the current blocks hash, a unique string beloning only to this hash based off of its contents.
+                            <strong>Public Key of Transmission One</strong><br/>
+                            This is the public key in hash form, representing the sender of transmission one of this block.
                           </span>
                         </div>
-                        <div className="input-group tooltip2">
+                        <div className="input-group tooltip2 tooltipRight">
                           <div className="input-group-addon" id="transmissionLab">
                             Transmission
                           </div>
@@ -123,11 +123,11 @@ class StepTwo extends Component {
                             defaultValue="your message here"/>
                           <span>
                             <div className="arrow-up"></div>
-                            <strong>Curret Block Hash</strong><br/>
-                            This is the current blocks hash, a unique string beloning only to this hash based off of its contents.
+                            <strong>Data of Transmission One</strong><br/>
+                            This is data contents of the first transmission of this block.
                           </span>
                         </div>
-                        <div className="input-group tooltip2">
+                        <div className="input-group tooltip2 tooltipRight">
                           <div className="input-group-addon" id="pubKeyLab">
                             PubKey
                           </div>
@@ -140,10 +140,10 @@ class StepTwo extends Component {
                           <span>
                             <div className="arrow-up"></div>
                             <strong>Curret Block Hash</strong><br/>
-                            This is the current blocks hash, a unique string beloning only to this hash based off of its contents.
+                            This is the public key in hash form, representing the sender of transmission two of this block.
                           </span>
                         </div>
-                        <div className="input-group tooltip2">
+                        <div className="input-group tooltip2 tooltipRight">
                           <div className="input-group-addon" id="transmissionLab">
                             Transmission
                           </div>
@@ -155,8 +155,8 @@ class StepTwo extends Component {
                             defaultValue="I like cake!"/>
                           <span>
                             <div className="arrow-up"></div>
-                            <strong>Curret Block Hash</strong><br/>
-                            This is the current blocks hash, a unique string beloning only to this hash based off of its contents.
+                            <strong>Data of Transmission Two</strong><br/>
+                            This is data contents of the first transmission of this block.
                           </span>
                         </div>
                         <div className="block-footer">
