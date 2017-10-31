@@ -59,11 +59,12 @@ class InvalidHash extends Component {
 
   mine(event) {
     event.preventDefault();
-    let index = event.target.attributes.data.value;
+    let index = $(event.target).parent()[0].attributes.data.value;
     let has = $(".box" + index).hasClass('badBox')
     let hash = this.state.hash;
     let nonce = this.state.nonce;
-    if (has) {
+    if (has && (this.state.hash[index - 2] === undefined || this.state.hash[index - 2].substring(0, 4) === '0000')) {
+      $('.box' + index + ' .loading').removeClass('display-none')
       for (var x = 0; x <= 500000; x++) {
         hash[index - 1] = SHA256(hash[index - 1]).toString();
         if (hash[index - 1].substring(0, 4) === '0000') {
@@ -75,6 +76,7 @@ class InvalidHash extends Component {
         this.setState(hash);
         this.setState(nonce);
         $(".box" + index).removeClass('badBox').addClass('goodBox');
+        $('.box' + index + ' .loading').addClass('display-none')
         return false;
       }, 2500);
     }
@@ -84,34 +86,34 @@ class InvalidHash extends Component {
 
     let blocks = [
       {
-        index: 1,
-        data: "first"
+        index: 1
       }, {
-        index: 2,
-        data: "second"
+        index: 2
       }, {
-        index: 3,
-        data: "third"
+        index: 3
       }
     ];
 
     const block = blocks.map(blocks => {
-      return (
-        <MakeBlock
-          key={blocks.index}
-          height={blocks.index}
-          Nonce={this.state.nonce[blocks.index - 1]}
-          data={blocks.data}
-          genHash={this.genHash}
-          prevHash={this.state.hash[blocks.index - 2]}
-          hash={this.state.hash[blocks.index - 1]}
-          mine={this.mine}/>
-      )
+      return (<MakeBlock
+        key={blocks.index}
+        height={blocks.index}
+        Nonce={this.state.nonce[blocks.index - 1]}
+        data={this.state.data[blocks.index - 1]}
+        genHash={this.genHash}
+        prevHash={this.state.hash[blocks.index - 2]}
+        hash={this.state.hash[blocks.index - 1]}
+        mine={this.mine}/>)
     });
 
     return (
       <section id="InvalidHash">
         <div className="container">
+          <div className="col-md-12 text-center">
+            <div className="line"></div>
+            <h1>Blockchain integrity</h1>
+            <div className="line"></div>
+          </div>
           <div className="row">{block}</div>
         </div>
       </section>

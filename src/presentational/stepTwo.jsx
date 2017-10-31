@@ -44,7 +44,13 @@ class StepTwo extends Component {
                         <span className="input-group-addon" id="basic-addon3">
                           Seceret Key
                         </span>
-                        <input type="text" className="form-control" id="secretKey" aria-describedby="basic-addon3" onChange={this.change} value={this.props.privKey}/>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="secretKey"
+                          aria-describedby="basic-addon3"
+                          onChange={this.change}
+                          value={this.props.privKey}/>
                       </div>
                       <h4>( This is a HASH )</h4>
                       <div className="input-group">
@@ -65,44 +71,117 @@ class StepTwo extends Component {
                     <div className="row">
                       <div className="col-md-12">
                         <div className="block-header text-center">
-                          <span className="block-height float-left" data-toggle="tooltip" title="This is the number of the block.">Height</span>
-                          <h2>Block Hash</h2>
-                          <h4>{this.props.hash}</h4>
+                          {/* <span className="block-height float-left" data-toggle="tooltip" title="This is the number of the block.">Height</span> */}
+                          <a href="javascript: void(0)" className="tooltip2 biggerBIGGER float-left block-height">
+                            HEIGHT
+                            <span>
+                              <img className="callout" src="http://www.menucool.com/tooltip/cssttp/callout_black.gif"/>
+                              <strong>Block Height</strong><br/>
+                              This indicates the block height of the block in the chain, this indicates how many blocks are in the chain.
+                            </span>
+                          </a>
+                          {/* <h2>Block Hash</h2>
+                          <h4>{this.props.hash}</h4> */}
+                          <a href="javascript: void(0)" className="tooltip2 biggerBIGGER">
+                            <h2>BLOCK HASH</h2>
+                            <span>
+                              <img className="callout" src="http://www.menucool.com/tooltip/cssttp/callout_black.gif"/>
+                              <strong>Curret Block Hash</strong><br/>
+                              This is the current blocks hash, a unique string beloning only to this hash based off of its contents.
+                            </span>
+                          </a>
                         </div>
                       </div>
                       <div className="col-md-12"></div>
                       <div className="col-md-12">
-                        <div className="input-group">
-                          <span className="input-group-addon" id="pubKeyLab">
+                        <div className="input-group tooltip2">
+                          <div className="input-group-addon" id="pubKeyLab">
                             PubKey
+                          </div>
+                          <input
+                            type="text"
+                            className="form-control form-hash"
+                            id="pubKey"
+                            aria-describedby="pubKeyLab"
+                            value={this.props.pubKey}/>
+                          <span>
+                            <img className="callout" src="http://www.menucool.com/tooltip/cssttp/callout_black.gif"/>
+                            <strong>Curret Block Hash</strong><br/>
+                            This is the current blocks hash, a unique string beloning only to this hash based off of its contents.
                           </span>
-                          <input type="text" className="form-control form-hash" id="pubKey" aria-describedby="pubKeyLab" value={this.props.pubKey}/>
                         </div>
-                        <div className="input-group">
-                          <span className="input-group-addon" id="transmissionLab">
+                        <div className="input-group tooltip2">
+                          <div className="input-group-addon" id="transmissionLab">
                             Transmission
+                          </div>
+                          <input
+                            type="text"
+                            className="form-control"
+                            id="transmission"
+                            aria-describedby="transmissionLab"
+                            defaultValue="your message here"/>
+                          <span>
+                            <img className="callout" src="http://www.menucool.com/tooltip/cssttp/callout_black.gif"/>
+                            <strong>Curret Block Hash</strong><br/>
+                            This is the current blocks hash, a unique string beloning only to this hash based off of its contents.
                           </span>
-                          <input type="text" className="form-control" id="transmission" aria-describedby="transmissionLab" defaultValue="your message here"/>
                         </div>
-                        <div className="input-group">
-                          <span className="input-group-addon" id="pubKeyLab">
+                        <div className="input-group tooltip2">
+                          <div className="input-group-addon" id="pubKeyLab">
                             PubKey
+                          </div>
+                          <input
+                            type="text"
+                            className="form-control"
+                            id="pubKey"
+                            aria-describedby="pubKeyLab"
+                            value="2413fb3709b05939f04cf2e92f7d0897fc2596f9ad0b8a9ea855c7bfebaae892"/>
+                          <span>
+                            <img className="callout" src="http://www.menucool.com/tooltip/cssttp/callout_black.gif"/>
+                            <strong>Curret Block Hash</strong><br/>
+                            This is the current blocks hash, a unique string beloning only to this hash based off of its contents.
                           </span>
-                          <input type="text" className="form-control" id="pubKey" aria-describedby="pubKeyLab" value="2413fb3709b05939f04cf2e92f7d0897fc2596f9ad0b8a9ea855c7bfebaae892"/>
                         </div>
-                        <div className="input-group">
-                          <span className="input-group-addon" id="transmissionLab">
+                        <div className="input-group tooltip2">
+                          <div className="input-group-addon" id="transmissionLab">
                             Transmission
+                          </div>
+                          <input
+                            type="text"
+                            className="form-control"
+                            id="transmission"
+                            aria-describedby="transmissionLab"
+                            defaultValue="I like cake!"/>
+                          <span>
+                            <img className="callout" src="http://www.menucool.com/tooltip/cssttp/callout_black.gif"/>
+                            <strong>Curret Block Hash</strong><br/>
+                            This is the current blocks hash, a unique string beloning only to this hash based off of its contents.
                           </span>
-                          <input type="text" className="form-control" id="transmission" aria-describedby="transmissionLab" defaultValue="I like cake!"/>
                         </div>
                         <div className="block-footer">
                           <div className="row">
                             <div className="col-md-6">
-                              <h4 data-toggle="tooltip" title="39034456789534455454534" className="float-left">PREVHASH</h4>
+                              {/* <h4 data-toggle="tooltip" title="39034456789534455454534" className="float-left">PREVHASH</h4> */}
+                              <a href="javascript: void(0)" className="tooltip2 biggerBIGGER float-left">
+                                PREVHASH
+                                <span>
+                                  <img className="callout" src="http://www.menucool.com/tooltip/cssttp/callout_black.gif"/>
+                                  <strong>Previouse Hash</strong><br/>
+                                  This indicates the hash number of the block that came one before in the chain.
+                                </span>
+                              </a>
                             </div>
                             <div className="col-md-6 ">
-                              <h4 className="float-right" data-toggle="tooltip" title="39034456789534455454534">NEXTHASH</h4>
+                              {/* <h4 className="float-right" data-toggle="tooltip" title="39034456789534455454534">NEXTHASH
+                              </h4> */}
+                              <a href="javascript: void(0)" className="tooltip2 biggerBIGGER float-right">
+                                NEXTHASH
+                                <span>
+                                  <img className="callout" src="http://www.menucool.com/tooltip/cssttp/callout_black.gif"/>
+                                  <strong>Next Hash</strong><br/>
+                                  This indicates the hash number of the next block in the chain.
+                                </span>
+                              </a>
                             </div>
                           </div>
                         </div>

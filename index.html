@@ -2,12 +2,12 @@
 
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <!-- EXTERNAL JAVASCRIPTS -->
-    <script src="./node_modules/material-design-lite/material.min.js"></script>
-    <script src="../node_modules/aos/dist/aos.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <!-- EXTERNAL JAVASCRIPTS -->
+  <script src="./node_modules/material-design-lite/material.min.js"></script>
+  <script src="../node_modules/aos/dist/aos.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   </script>
   <!-- EXTERNAL STYLESHEETS -->
 
@@ -20,11 +20,11 @@
   <div id="react-root"></div>
   <script src="/build/bundle.js"></script>
   <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
       $('.container').css('height', $(window).height());
       AOS.init();
       // Comma, not colon ----^
-      $(window).bind('scroll', function (e) {
+      $(window).bind('scroll', function(e) {
         dotnavigation();
       });
 
@@ -33,7 +33,7 @@
         let numSections = $('section').length;
 
         $('#dot-nav li a').removeClass('active').parent('li').removeClass('active');
-        $('section').each(function (i, item) {
+        $('section').each(function(i, item) {
           let ele = $(item),
             nextTop;
 
@@ -58,7 +58,7 @@
       }
 
       /* get clicks working */
-      $('#dot-nav li').click(function () {
+      $('#dot-nav li').click(function() {
 
         var id = $(this).find('a').attr("href"),
           posi,
@@ -75,7 +75,7 @@
         return false;
       });
     });
-    $(window).resize(function () {
+    $(window).resize(function() {
       $('.container').css('height', $(window).height());
       // Comma, not colon ----^
     });

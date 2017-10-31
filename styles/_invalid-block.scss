@@ -31,6 +31,46 @@ $blue: #6290c3;
   padding-right: 6px;
 }
 
+.input-group {
+  display: inline-flex;
+}
+
+.block-nonce {
+  input {
+    display: inline-flex;
+    width: 83.2%;
+  }
+}
+
+.invalid {
+  p {
+    font-size: 4em;
+    position: relative;
+    height: 0.6em;
+  }
+
+  label {
+    padding-left: 0;
+  }
+}
+
+.block-height .form-control {
+  flex-grow: 0.786;
+}
+
+.loading {
+  width: 13px;
+  height: 13px;
+  margin-left: 6px;
+  transition: all 4s linear;
+  display: inline-block;
+}
+
+.display-none {
+  display: none;
+  opacity: 0;
+}
+
 .loader {
   display: inline-flex;
   border: 2px solid #f3f3f3;
