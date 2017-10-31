@@ -22,13 +22,20 @@ class App extends Component {
     this.recive = new WebSocket('ws:localhost:6001');
 
     this.recive.onmessage = event => {
+      var snackbarContainer = document.querySelector('#transmissionSent');
+      var showToastButton = document.querySelector('#sendTransmission');
       let parseBlock = JSON.parse(JSON.parse(event.data).data);
       let chain = this.state.chain.concat(parseBlock);
       this.setState({chain: chain});
       this.addTo();
       $('#loading')
         .addClass('display-none-hidden')
+      var data = {
+        message: 'Block Submitted!'
+      }
+      snackbarContainer.MaterialSnackbar.showSnackbar(data);
     };
+
 
     this.recive.onopen = event => {
       console.log('Connected!');
@@ -47,8 +54,6 @@ class App extends Component {
       .removeClass('hvr-buzz-out');
     $('#loading')
       .removeClass('display-none-hidden')
-    var snackbarContainer = document.querySelector('#transmissionSent');
-    var showToastButton = document.querySelector('#sendTransmission');
 
     if (this.state.pubKey != 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'&& this.state.favFood) {
       let json_upload = 'data=' + JSON.stringify({data: this.state.favFood, from: this.state.pubKey});
@@ -63,10 +68,7 @@ class App extends Component {
         }
       };
 
-      var data = {
-        message: 'Block Submitted!'
-      }
-      snackbarContainer.MaterialSnackbar.showSnackbar(data);
+
       connection.send(json_upload);
 
       this.setState({

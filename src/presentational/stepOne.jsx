@@ -31,11 +31,11 @@ class StepOne extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <div className="box text-center purple vert-center">
+              <div className="box text-center grey vert-center">
                 <div className="row">
                   <div className="col-md-12">
 
-                    <h1>Learn The block chain!</h1>
+                    <h1>Learn The Block Chain!</h1>
                     <h2>Enter Your
                       <i>&nbsp;Personal&nbsp;</i>
                       Secret Key</h2>

@@ -12,7 +12,6 @@ export const calcNonce = ({index, prevHash, timestamp, data}) => {
       break;
     }
   }
-
 }
 
 export const calcHash = ({index, prevHash, timestamp, data}) => {
