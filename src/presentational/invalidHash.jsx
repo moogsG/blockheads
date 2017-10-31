@@ -101,7 +101,7 @@ class InvalidHash extends Component {
     return (
       <section id="InvalidHash">
         <div className="container">
-          <div className="blocks">{block}</div>
+          <div className="row">{block}</div>
         </div>
       </section>
     );

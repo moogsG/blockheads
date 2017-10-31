@@ -9,7 +9,6 @@ $blue-dark: #28464b;
 }
 
 .navbar {
-  position: fixed;
   display: inline-block;
   flex-wrap: nowrap;
   white-space: nowrap;
@@ -31,8 +30,9 @@ $blue-dark: #28464b;
   box-shadow: 0 2px 3px $off-white;
 }
 
-.blocks {
-  margin: 5px;
+.blocks{
+  margin: 2px;
+  line-height: 0.7;
 }
 
 .rectangle {

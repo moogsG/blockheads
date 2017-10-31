@@ -12,9 +12,13 @@ class IncomingChain extends Component {
   render() {
     return (
       <div className={'rectangle moveRight1 navbar-brand' + this.addColor()}>
-        <div className="blocks">
-          <marquee behavior="alternate">{this.props.data}</marquee>
-
+        <div className="float-left blocks">
+        <li>
+            <span>{this.props.nonce}</span>
+          </li>
+          <li>
+            <marquee>{this.props.data}</marquee>
+          </li>
         </div>
       </div>
     );

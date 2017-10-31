@@ -2,13 +2,42 @@ import CryptoJS from 'crypto-js';
 
 import chain from './chain';
 
-export const calcHash = ({index, prevHash, timestamp, data}) => CryptoJS.SHA256(index + prevHash + timestamp + data).toString();
+export const calcNonce = ({index, prevHash, timestamp, data}) => {
+  for (var x = 0; x <= 500000; x++) {
+    var nonce = 0;
+    let hash = CryptoJS.SHA256(index + prevHash + timestamp + data + x).toString();
+    if (hash.substring(0, 4) === '0000') {
+      console.log(x);
+      return x.toString();
+      break;
+    }
+  }
+
+}
+
+export const calcHash = ({index, prevHash, timestamp, data}) => {
+  for (var x = 0; x <= 500000; x++) {
+    var nonce = 0;
+    let hash = CryptoJS.SHA256(index + prevHash + timestamp + data + x).toString();
+    if (hash.substring(0, 4) === '0000') {
+      return hash;
+      break;
+    }
+  }
+
+}
 
 export const create = (data) => {
     const prev = chain.last();
     const index = prev.index + 1;
     const timestamp = new Date().getTime();
     const prevHash = prev.hash;
+    const nonce = calcNonce({
+        index,
+        prevHash,
+        timestamp,
+        data
+    });
     const hash = calcHash({
         index,
         prevHash,
@@ -21,7 +50,8 @@ export const create = (data) => {
         timestamp,
         data,
         prevHash,
-        hash
+        hash,
+        nonce
     };
 };
 

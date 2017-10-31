@@ -27,6 +27,7 @@ class navBar extends Component {
           from={blocks.data.from}
           prevHash={blocks.prevHash}
           pubKey={this.props.pubKey}
+          nonce={blocks.nonce}
         />
       );
     });
