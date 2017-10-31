@@ -75,17 +75,18 @@ class StepTwo extends Component {
                           <a href="javascript: void(0)" className="tooltip2 biggerBIGGER float-left block-height">
                             HEIGHT
                             <span>
-                              <img className="callout" src="http://www.menucool.com/tooltip/cssttp/callout_black.gif"/>
+                              <div className="arrow-up"></div>
                               <strong>Block Height</strong><br/>
                               This indicates the block height of the block in the chain, this indicates how many blocks are in the chain.
                             </span>
                           </a>
                           {/* <h2>Block Hash</h2>
-                          <h4>{this.props.hash}</h4> */}
+                          <h4>{this.props.hash}</h4> */
+                          }
                           <a href="javascript: void(0)" className="tooltip2 biggerBIGGER">
                             <h2>BLOCK HASH</h2>
                             <span>
-                              <img className="callout" src="http://www.menucool.com/tooltip/cssttp/callout_black.gif"/>
+                              <div className="arrow-up"></div>
                               <strong>Curret Block Hash</strong><br/>
                               This is the current blocks hash, a unique string beloning only to this hash based off of its contents.
                             </span>
@@ -105,7 +106,7 @@ class StepTwo extends Component {
                             aria-describedby="pubKeyLab"
                             value={this.props.pubKey}/>
                           <span>
-                            <img className="callout" src="http://www.menucool.com/tooltip/cssttp/callout_black.gif"/>
+                            <div className="arrow-up"></div>
                             <strong>Curret Block Hash</strong><br/>
                             This is the current blocks hash, a unique string beloning only to this hash based off of its contents.
                           </span>
@@ -121,7 +122,7 @@ class StepTwo extends Component {
                             aria-describedby="transmissionLab"
                             defaultValue="your message here"/>
                           <span>
-                            <img className="callout" src="http://www.menucool.com/tooltip/cssttp/callout_black.gif"/>
+                            <div className="arrow-up"></div>
                             <strong>Curret Block Hash</strong><br/>
                             This is the current blocks hash, a unique string beloning only to this hash based off of its contents.
                           </span>
@@ -137,7 +138,7 @@ class StepTwo extends Component {
                             aria-describedby="pubKeyLab"
                             value="2413fb3709b05939f04cf2e92f7d0897fc2596f9ad0b8a9ea855c7bfebaae892"/>
                           <span>
-                            <img className="callout" src="http://www.menucool.com/tooltip/cssttp/callout_black.gif"/>
+                            <div className="arrow-up"></div>
                             <strong>Curret Block Hash</strong><br/>
                             This is the current blocks hash, a unique string beloning only to this hash based off of its contents.
                           </span>
@@ -153,7 +154,7 @@ class StepTwo extends Component {
                             aria-describedby="transmissionLab"
                             defaultValue="I like cake!"/>
                           <span>
-                            <img className="callout" src="http://www.menucool.com/tooltip/cssttp/callout_black.gif"/>
+                            <div className="arrow-up"></div>
                             <strong>Curret Block Hash</strong><br/>
                             This is the current blocks hash, a unique string beloning only to this hash based off of its contents.
                           </span>
@@ -165,7 +166,7 @@ class StepTwo extends Component {
                               <a href="javascript: void(0)" className="tooltip2 biggerBIGGER float-left">
                                 PREVHASH
                                 <span>
-                                  <img className="callout" src="http://www.menucool.com/tooltip/cssttp/callout_black.gif"/>
+                                  <div className="arrow-up"></div>
                                   <strong>Previouse Hash</strong><br/>
                                   This indicates the hash number of the block that came one before in the chain.
                                 </span>
@@ -173,11 +174,12 @@ class StepTwo extends Component {
                             </div>
                             <div className="col-md-6 ">
                               {/* <h4 className="float-right" data-toggle="tooltip" title="39034456789534455454534">NEXTHASH
-                              </h4> */}
+                              </h4> */
+                              }
                               <a href="javascript: void(0)" className="tooltip2 biggerBIGGER float-right">
                                 NEXTHASH
                                 <span>
-                                  <img className="callout" src="http://www.menucool.com/tooltip/cssttp/callout_black.gif"/>
+                                  <div className="arrow-up"></div>
                                   <strong>Next Hash</strong><br/>
                                   This indicates the hash number of the next block in the chain.
                                 </span>
