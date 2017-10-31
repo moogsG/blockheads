@@ -165,9 +165,25 @@
   color: black;
 }
 
+.tooltip2 h2 {
+  position: relative;
+  top: -10px;
+  right: -45px;
+  font-size: 2em;
+  height: 0.8em;
+  width: 60%;
+}
+
+.height {
+  height: 80px;
+  width: 110px;
+  z-index: 60;
+  text-align: left;
+}
+
 .tooltip2 span {
   position: absolute;
-  z-index: 10;
+  z-index: 999999;
   display: none;
   padding: 14px 20px;
   margin-top: 30px;
@@ -179,10 +195,19 @@
 .tooltip2:hover span {
   display: inline;
   position: absolute;
-  right: 200px;
   border: 2px solid #CDD3D5;
   color: #EEE;
   background: #6290c3;
+}
+
+.tooltipRight:hover span {
+  right: 200px;
+  top: 30px;
+}
+
+.tooltipBlock:hover span {
+  right: 100px;
+  top: 10px;
 }
 /*CSS3 extras*/
 .tooltip2 span {
