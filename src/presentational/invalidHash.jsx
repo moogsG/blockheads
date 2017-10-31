@@ -11,6 +11,9 @@ class InvalidHash extends Component {
       hash: [
         '000015783b764259d382017d91a36d206d0600e2cbb3567748f46a33fe9297cf', '000012fa9b916eb9078f8d98a7864e697ae83ed54f5146bd84452cdafd043c19', '0000b9015ce2a08b61216ba5a0778545bf4ddd7ceb7bbd85dd8062b29a9140bf'
       ],
+      data: [
+        'first', 'second', 'third'
+      ],
       nonce: [11316, 35230, 12937]
     };
     this.genHash = this.genHash.bind(this);
@@ -20,11 +23,19 @@ class InvalidHash extends Component {
   genHash(event) {
     let value = event.target.value;
     let index = event.target.attributes.data.value;
+    let message = $(".data" + index).val();
+    let data = this.state.data;
     value = SHA256(value).toString();
     let hash = this.state.hash;
-    hash[index - 1] = value;
-    this.setState(hash);
-    this.redChange(index);
+    if (message !== data[index - 1]) {
+      hash[index - 1] = value;
+      this.setState(hash);
+      this.redChange(index);
+    } else {
+
+      data[index - 1] = message;
+      this.setState(data);
+    }
   };
 
   redChange(index) {
