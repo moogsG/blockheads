@@ -1,14 +1,7 @@
-import React, {
-  Component
-} from 'react';
+import React, {Component} from 'react';
 import IncomingChain from './incomingChain.jsx';
 
 class navBar extends Component {
-  move() {
-    $('.moveRight2').addClass('moveRight3').removeClass('moveRight2');
-    $('.moveRight1').addClass('moveRight2').removeClass('moveRight1');
-    $('.navbar').closest('.offScreen').addClass('moveRight1').removeClass('.offScreen');
-  }
 
   render() {
     let chain = this.props.chain;
@@ -16,7 +9,9 @@ class navBar extends Component {
     chain = chain.slice(Math.max(chain.length - 12, 1));
     chain.reverse();
     const block = chain.map(blocks => {
-      typeof blocks.data === 'object' ? null : (blocks.data = JSON.parse(blocks.data));
+      typeof blocks.data === 'object'
+        ? null
+        : (blocks.data = JSON.parse(blocks.data));
       return (
         <IncomingChain
           key={blocks.hash}
@@ -27,16 +22,14 @@ class navBar extends Component {
           from={blocks.data.from}
           prevHash={blocks.prevHash}
           pubKey={this.props.pubKey}
-          nonce={blocks.nonce}
-        />
+          nonce={blocks.nonce}/>
       );
     });
-
 
     return (
       <nav className="navbar fixed-top bg-faded">
         <div className="blocks">{block}</div>
-        <div id="navLine" />
+        <div id="navLine"/>
       </nav>
     );
   }
