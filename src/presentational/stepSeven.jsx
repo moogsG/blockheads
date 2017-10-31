@@ -65,7 +65,7 @@ class StepSeven extends Component {
                         </div>
                         <div className="col-md-6 ">
                           <button id="sendTransmission" onClick={this.props.sendWS} className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent float-right">
-                            SEND
+                            SEND <div id="loading" className="mdl-spinner mdl-js-spinner mdl-spinner--single-color is-active display-none-hidden"></div>
                           </button>
 
                           <h4 className="float-right" data-toggle="tooltip" title="39034456789534455454534"></h4>
