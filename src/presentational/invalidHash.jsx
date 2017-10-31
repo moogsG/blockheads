@@ -59,7 +59,8 @@ class InvalidHash extends Component {
 
   mine(event) {
     event.preventDefault();
-    let index = $(event.target).parent()[0].attributes.data.value;
+    let index = $(event.target).closest('button')[0].attributes.data.value;
+    console.log(index);
     let has = $(".box" + index).hasClass('badBox')
     let hash = this.state.hash;
     let nonce = this.state.nonce;
@@ -95,15 +96,17 @@ class InvalidHash extends Component {
     ];
 
     const block = blocks.map(blocks => {
-      return (<MakeBlock
-        key={blocks.index}
-        height={blocks.index}
-        Nonce={this.state.nonce[blocks.index - 1]}
-        data={this.state.data[blocks.index - 1]}
-        genHash={this.genHash}
-        prevHash={this.state.hash[blocks.index - 2]}
-        hash={this.state.hash[blocks.index - 1]}
-        mine={this.mine}/>)
+      return (
+        <MakeBlock
+          key={blocks.index}
+          height={blocks.index}
+          Nonce={this.state.nonce[blocks.index - 1]}
+          data={this.state.data[blocks.index - 1]}
+          genHash={this.genHash}
+          prevHash={this.state.hash[blocks.index - 2]}
+          hash={this.state.hash[blocks.index - 1]}
+          mine={this.mine}/>
+      )
     });
 
     return (
