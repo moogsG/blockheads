@@ -9,7 +9,7 @@ class MakeBlock extends Component {
   render() {
     return (
       <div className="col-md-4">
-      <div className={"invalid goodBox box " + this.props.height}>
+      <div className={"invalid goodBox box box" + this.props.height}>
         <div className="row">
           <div className="col-md-12">
         <h1>Block</h1>

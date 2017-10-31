@@ -29,16 +29,14 @@ class StepThree extends Component {
   scrollEnter(event) {
     event.preventDefault();
 
-      if (this.props.pubKey == this.props.isPubKey) {
-        $('html, body').animate({
-          scrollTop: $("#StepFour").offset().top - 90
-        }, 2000);
-      } else {
-        $('.box')
-          .addClass('hvr-buzz-out')
-        $('.alert-danger')
-        .removeClass('display-none')
-      }
+    if (this.props.pubKey == this.props.isPubKey) {
+      $('html, body').animate({
+        scrollTop: $("#StepFour").offset().top - 90
+      }, 2000);
+    } else {
+      $('.box').addClass('hvr-buzz-out')
+      $('.alert-danger').removeClass('display-none')
+    }
 
     console.log("asdf")
   }
@@ -88,9 +86,12 @@ class StepThree extends Component {
                         <span className="giant hvr-forward">}</span>
                       </div>
                     </div>
-                      <div className="col-md-12">
+                    <div className="col-md-12">
                       <div className="alert alert-danger display-none text-center" role="alert">
-                        You Typed in the wrong <b>PUBKEY!</b> It is in <b>STEPTWO</b>.
+                        You Typed in the wrong
+                        <b>PUBKEY!</b>
+                        It is in
+                        <b>STEPTWO</b>.
                       </div>
                     </div>
                   </div>

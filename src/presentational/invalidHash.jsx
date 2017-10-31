@@ -20,6 +20,7 @@ class InvalidHash extends Component {
   genHash(event) {
     let value = event.target.value;
     let index = event.target.attributes.data.value;
+    console.log(index)
     value = SHA256(value).toString();
     let hash = this.state.hash;
     hash[index - 1] = value;

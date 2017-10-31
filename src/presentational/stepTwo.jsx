@@ -29,7 +29,7 @@ class StepTwo extends Component {
               <div className="content"/>
               <div className="col-md-6">
                 <h2>Great! You created a
-                  <b>Secret Key</b>, or password!</h2>
+                  <b>&nbsp;Secret Key</b>, or password!</h2>
                 <h2>
                   Look to the right and you will see that a
                   <b>&nbsp;Public Key</b>, or username was created from your password. This is called a

@@ -24,7 +24,7 @@ class StepSix extends Component {
   render() {
     return (
       <section id="StepSix">
-        <div data-aos="fade-up" data-aos-delay="1000">
+        <div data-aos="fade-up">
           <div className="container" id="server-animation">
             <div className="row">
               <div className="col-md-12 text-center">

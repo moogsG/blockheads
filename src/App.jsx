@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Steps from './components/steps.jsx';
-import Chain from './presentational/chain.jsx';
 import NavBar from './presentational/navBar.jsx';
 const SHA256 = require('crypto-js/sha256');
 class App extends Component {
