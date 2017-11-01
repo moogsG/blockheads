@@ -28,14 +28,12 @@ class App extends Component {
       let chain = this.state.chain.concat(parseBlock);
       this.setState({chain: chain});
       this.addTo();
-      $('#loading')
-        .addClass('display-none-hidden')
+      $('#loading').addClass('display-none-hidden')
       var data = {
         message: 'Block Submitted!'
       }
       snackbarContainer.MaterialSnackbar.showSnackbar(data);
     };
-
 
     this.recive.onopen = event => {
       console.log('Connected!');
@@ -50,50 +48,41 @@ class App extends Component {
   }
 
   sendWS(event) {
-    $('.block')
-      .removeClass('hvr-buzz-out');
-    $('#loading')
-      .removeClass('display-none-hidden')
+    $('.block').removeClass('hvr-buzz-out');
+    $('#loading').removeClass('display-none-hidden')
 
-    if (this.state.pubKey != 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'&& this.state.favFood) {
+    if (this.state.pubKey != 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855' && this.state.favFood) {
       let json_upload = 'data=' + JSON.stringify({data: this.state.favFood, from: this.state.pubKey});
       let connection = new XMLHttpRequest();
       connection.open('POST', 'http://localhost:3001/mine', true);
       connection.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
-      connection.onreadystatechange = function() {
+      connection.onreadystatechange = function () {
 
         if (connection.readyState != 4 || connection.status != 200) {
           return;
         }
       };
 
-
       connection.send(json_upload);
 
-      this.setState({
-        favFood: ''
-      })
-    }else {
-      $('.block')
-        .addClass('hvr-buzz-out')
-      $('.alert-danger')
-      .removeClass('display-none')
-      $('#loading')
-        .addClass('display-none-hidden')
+      this.setState({favFood: ''})
+    } else {
+      $('.block').addClass('hvr-buzz-out')
+      $('.alert-danger').removeClass('display-none')
+      $('#loading').addClass('display-none-hidden')
     }
-
 
   }
 
   addTo() {
     $('.rectangle').addClass('restart').removeClass('moveRight');
 
-    setInterval(function() {
+    setInterval(function () {
       $('.rectangle').removeClass('restart').addClass('moveRight');
     }, 100);
 
-    setInterval(function() {
+    setInterval(function () {
       return false;
     }, 2000);
   }
@@ -105,14 +94,10 @@ class App extends Component {
       let pubKey = SHA256(this.state.privKey).toString();
       this.setState({pubKey});
     });
-    $('.box')
-    .removeClass('hvr-buzz-out')
-    $('.block')
-    .removeClass('hvr-buzz-out')
-    $('.alert-danger')
-    .addClass('display-none');
-    $('.empty-block')
-    .addClass('display-none');
+    $('.box').removeClass('hvr-buzz-out')
+    $('.block').removeClass('hvr-buzz-out')
+    $('.alert-danger').addClass('display-none');
+    $('.empty-block').addClass('display-none');
   }
 
   render() {
