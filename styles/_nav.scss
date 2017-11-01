@@ -9,6 +9,7 @@ $blue-dark: #28464b;
 }
 
 .navbar {
+  list-style-type: none;
   display: inline-block;
   flex-wrap: nowrap;
   white-space: nowrap;
@@ -29,7 +30,7 @@ $blue-dark: #28464b;
   // box-shadow: 0 2px 3px $off-white;
 }
 
-.blocks{
+.blocks {
   margin: 2px;
   line-height: 0.7;
 }
@@ -47,12 +48,16 @@ $blue-dark: #28464b;
   border-radius: 5px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   background: $blue;
-  margin-right: 55px;
+  margin-right: 50px;
   display: inline-block;
   animation-name: none;
   animation-duration: 2s;
   animation-fill-mode: forwards;
   z-index: 999;
+
+  marquee {
+    font-size: 2em;
+  }
 }
 
 .moveRight1 {

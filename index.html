@@ -51,8 +51,6 @@
 
           let docTop = $(document).scrollTop() + 145;
 
-          console.log(docTop);
-
           if (docTop >= thisTop && (docTop < nextTop)) {
             $('#dot-nav li').eq(i).addClass('active');
           }
@@ -69,6 +67,10 @@
 
         ele = $(id);
         posi = ($(ele).offset() || 0).top - padding;
+
+        if (id === "#StepOne") {
+          posi = 0;
+        }
 
         $('html, body').animate({
           scrollTop: posi
