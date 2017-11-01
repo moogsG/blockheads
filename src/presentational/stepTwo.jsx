@@ -89,6 +89,14 @@ class StepTwo extends Component {
                           A unique string belonging only to the attached block. It is created from the contents of the block.
                         </span>
                       </a>
+                      <a href="javascript: void(0)" className="tooltip2 biggerBIGGER height float-right block-height">
+                        NONCE
+                        <span>
+                          <div className="arrow-up"></div>
+                          <strong>Nonce</strong><br/>
+                          Nonce is the product of mining, and creates the siginiture of the hash.
+                        </span>
+                      </a>
                     </div>
                   </div>
                   <div className="col-md-12">
