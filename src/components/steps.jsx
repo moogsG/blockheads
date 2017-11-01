@@ -34,6 +34,7 @@ class Steps extends Component {
           hash={this.props.hash}
           onStateChange={this.props.onStateChange}
         />
+        <InvalidHash />
         <StepThree
           onStateChange={this.props.onStateChange}
           pubKey={this.props.pubKey}
@@ -47,7 +48,6 @@ class Steps extends Component {
           pubKey={this.props.pubKey}
         />
         <StepSix />
-        <InvalidHash />
         <StepSeven
           pubKey={this.props.pubKey}
           favFood={this.props.favFood}

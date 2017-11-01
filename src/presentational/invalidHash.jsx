@@ -114,7 +114,7 @@ class InvalidHash extends Component {
         <div className="container">
           <div className="col-md-12 text-center">
             <div className="line"></div>
-            <h1>Blockchain integrity</h1>
+            <h1>BLOCKCHAIN INTEGRITY</h1>
             <div className="line"></div>
           </div>
           <div className="row">{block}</div>

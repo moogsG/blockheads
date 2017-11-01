@@ -4,6 +4,9 @@
     transition: all .5s;
 }
 
+.block-height .form-control{
+  min-width: auto;
+}
 .button {
     display: inline-block;
     margin-top: 100px;
@@ -145,7 +148,7 @@
 }
 
 #StepOne {
-  margin-top: 15em;
+  margin-top: 28em;
 }
 // MDL
 
