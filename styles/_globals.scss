@@ -1,5 +1,9 @@
 // Global SASS
-html, body {
+
+body,
+html {
+  position: absolute;
+  top: -100px;
   height: 100%;
   margin: 0;
 }
@@ -11,13 +15,15 @@ body {
   background-color: #403F4C;
   color: #CDD3D5;
   font-family: 'Quicksand', sans-serif;
-
 }
-
 // FONTS
 
 h1 {
   font-size: 2.5em;
+}
+
+section {
+  margin-bottom: 200px;
 }
 
 h3 {
@@ -40,4 +46,9 @@ h3 {
 
 .content {
   margin-bottom: 20px;
+}
+
+#footer {
+  left: -13px;
+  bottom: -200px;
 }

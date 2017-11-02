@@ -27,16 +27,22 @@ class Steps extends Component {
           pubKey={this.props.pubKey}
           picks={this.props.picks}
           hash={this.props.hash}
-          onStateChange={this.props.onStateChange}/>
-        <StepThree onStateChange={this.props.onStateChange} pubKey={this.props.pubKey} isPubKey={this.props.isPubKey}/>
-        <StepFour favFood={this.props.favFood}/>
+          onStateChange={this.props.onStateChange}
+        />
+        <InvalidHash />
+        <StepThree
+          onStateChange={this.props.onStateChange}
+          pubKey={this.props.pubKey}
+          isPubKey={this.props.isPubKey}
+        />
+      <StepFour favFood={this.props.favFood} />
         <StepFive
           tempBlock={this.props.tempBlock}
           onStateChange={this.props.onStateChange}
           favFood={this.props.favFood}
-          pubKey={this.props.pubKey}/>
-        <StepSix/>
-        <InvalidHash/>
+          pubKey={this.props.pubKey}
+        />
+        <StepSix />
         <StepSeven
           pubKey={this.props.pubKey}
           favFood={this.props.favFood}

@@ -10,9 +10,6 @@ $blue: #6290c3;
   white-space: nowrap;
   overflow-x: auto;
   overflow: hidden;
-  width: 320px;
-  left: 50px;
-  margin-right: 50px;
 }
 
 .goodBox {
@@ -103,4 +100,10 @@ $blue: #6290c3;
     height: 16px;
     display: all;
   }
+}
+
+.noonce {
+  position: absolute;
+  left: 463px;
+  top: 0;
 }

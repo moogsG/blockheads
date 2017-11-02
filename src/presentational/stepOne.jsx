@@ -22,7 +22,7 @@ class StepOne extends Component {
   scrollEnter(event) {
     event.preventDefault();
     $('html, body').animate({
-      scrollTop: $("#StepTwo").offset().top - 90
+      scrollTop: $("#StepTwo").offset().top - 60
     }, 2000);
   }
   render() {
@@ -36,17 +36,18 @@ class StepOne extends Component {
                   <div className="col-md-12">
 
                     <h1>Learn The Block Chain!</h1>
-                    <h2>Enter Your
-                      <i>&nbsp;Personal&nbsp;</i>
-                      Secret Key</h2>
-
+                    <h2>Enter a
+                      <i>&nbsp;Secret&nbsp;</i>
+                      Key and hit
+                    </h2>
+                    <h1 className="hvr-hang">ENTER</h1>
                   </div>
                   <div className="col-md-12">
                     <form onSubmit={this.scrollEnter}>
                       <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <label className="mdl-textfield__label" htmlFor="sample1">
                           <span className="red">const</span>
-                            &nbsp;privateKey
+                          &nbsp;privateKey
                           <span className="yellow">=</span>
                         </label>
                         <input className="mdl-textfield__input" type="text" onChange={this.change} value={this.props.privKey}/>
