@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import StepOne from '../presentational/stepOne.jsx';
 import StepTwo from '../presentational/stepTwo.jsx';
 import StepThree from '../presentational/stepThree.jsx';
@@ -17,42 +17,31 @@ class Steps extends Component {
 
   }
 
-
   render() {
     return (
       <div>
-        <NavDots />
-        <StepOne
-          onStateChange={this.props.onStateChange}
-          privKey={this.props.privKey}
-        />
+        <NavDots/>
+        <StepOne onStateChange={this.props.onStateChange} privKey={this.props.privKey}/>
         <StepTwo
           privKey={this.props.privKey}
           pubKey={this.props.pubKey}
           picks={this.props.picks}
           hash={this.props.hash}
-          onStateChange={this.props.onStateChange}
-          />
-        <StepThree
-          onStateChange={this.props.onStateChange}
-          pubKey={this.props.pubKey}
-          isPubKey={this.props.isPubKey}
-        />
-      <StepFour favFood={this.props.favFood} />
+          onStateChange={this.props.onStateChange}/>
+        <StepThree onStateChange={this.props.onStateChange} pubKey={this.props.pubKey} isPubKey={this.props.isPubKey}/>
+        <StepFour favFood={this.props.favFood}/>
         <StepFive
           tempBlock={this.props.tempBlock}
           onStateChange={this.props.onStateChange}
           favFood={this.props.favFood}
-          pubKey={this.props.pubKey}
-        />
-        <StepSix />
-        <InvalidHash />
+          pubKey={this.props.pubKey}/>
+        <StepSix/>
+        <InvalidHash/>
         <StepSeven
           pubKey={this.props.pubKey}
           favFood={this.props.favFood}
           sendWS={this.props.sendWS}
-          onStateChange={this.props.onStateChange}
-        />
+          onStateChange={this.props.onStateChange}/>
       </div>
     );
   }
