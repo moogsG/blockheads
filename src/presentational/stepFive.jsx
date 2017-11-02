@@ -82,7 +82,8 @@ class StepFive extends Component {
             <div className="row">
               <div className="col-md-12 vert-center">
                 <h1>
-                  Time to add your transmission to the next block! Looks like there a few transmissions ready to be added. Blocks are able top house many transmissions, so how about we add a few from the MEMPOOL(memory pool).
+                  Time to add your transmission to the next block! Looks like there a few transmissions ready to be added. Blocks are able top house many transmissions, so how about we add a few from the MEMPOOL (memory pool).
+                  Watch how the hash is affected by each transmission.
                 </h1>
               </div>
               <div className="col-md-12">

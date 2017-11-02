@@ -68,6 +68,10 @@
         ele = $(id);
         posi = ($(ele).offset() || 0).top - padding;
 
+        if (id === "#StepOne") {
+          posi = 0;
+        }
+
         $('html, body').animate({
           scrollTop: posi
         }, 'slow');

@@ -23,16 +23,19 @@ class StepSeven extends Component {
 
   render() {
 
-    return (
-      <section id="StepSeven">
-        <div className="container">
-          <div data-aos="flip-up">
-            <div className="row">
-              <div className="col-md-12 text-center">
-                <div className="line"/>
-                <h1>SEND THE BLOCK</h1>
-                <div className="line"/>
-              </div>
+    return (<section id="StepSeven">
+      <div className="container">
+        <div data-aos="flip-up">
+          <div className="row">
+            <div className="col-md-12 text-center">
+              <div className="line"/>
+              <h1>SEND THE BLOCK</h1>
+              <div className="line"/>
+            </div>
+            <div className="col-md-12">
+              <h1>
+                Congrats!  You now hopfully understand a little bit more about how the blockchain works.  Hit the send button to add a new block, and then watch it appear above!  Hover over to see all of details sent with the block.
+              </h1>
             </div>
             <div className="col-md-12">
               <div className="block">
@@ -44,8 +47,8 @@ class StepSeven extends Component {
                       <h4>{this.state.hash}</h4>
                     </div>
                   </div>
-                  <div className="col-md-12"></div>
                   <div className="col-md-12">
+                  <form>
                     <div className="input-group">
                       <span className="input-group-addon" id="pubKeyLab">
                         PubKey
@@ -69,29 +72,28 @@ class StepSeven extends Component {
                         <div className="col-md-6">
                           <h4 data-toggle="tooltip" title="39034456789534455454534">PREVHASH</h4>
                         </div>
-                        <div className="col-md-6 ">
+                        <div className="col-md-6">
+                          <button id="sendTransmission" onClick={this.props.sendWS}
+                            // data-style="expand-left"
+                            data={this.props.height} className="float-right secondaryFont mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent float-right">
+                            SEND<div className="mdl-spinner mdl-js-spinner mdl-spinner--single-color is-active display-none loading" data={this.props.height}></div>
+                          </button>
 
-                          <h4 className="float-right" data-toggle="tooltip" title="39034456789534455454534"></h4>
-                        </div>
-                        <div className="col-md-12">
-                          <div className="alert alert-danger empty-block display-none text-center" role="alert">
-                            The block is missing some
-                            <b>&nbsp;VITAL&nbsp;</b>
-                            infomation! Did you go through the steps?
-                          </div>
+                          <h4 className="float-left" data-toggle="tooltip" title="39034456789534455454534"></h4>
                         </div>
                       </div>
                     </div>
+                    </form>
+
+                    <div className="alert alert-danger empty-block display-none text-center" role="alert">
+                      The block is missing some
+                      <b>&nbsp;VITAL&nbsp;</b>
+                      infomation! Did you go through the steps?
+                    </div>
+
                   </div>
                 </div>
               </div>
-
-            </div>
-            <div className="col-md-6">
-              <a id="sendTransmission" onClick={this.props.sendWS} className="button float-right secondaryFont">
-                SEND
-                <div id="loading" className="mdl-spinner mdl-js-spinner mdl-spinner--single-color is-active display-none-hidden"></div>
-              </a>
             </div>
           </div>
         </div>

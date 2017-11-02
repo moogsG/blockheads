@@ -55,6 +55,16 @@ class StepFour extends Component {
                     </div>
                   </div>
                 </div>
+                <div className="col-md-12 text-center">
+                <div className="content"/>
+                  <h1>
+                  But... Cryptocurrencies?
+                  </h1>
+                  <h2>
+                    The blockchain is virtual ledger, that everyone has access to.
+                    If this was a Cryptocurrency, then we would be checking that there is a record of you reciving enough coin to make this transaction, and that you are sending to a vaild person.
+                  </h2>
+                </div>
               </div>
             </div>
           </div>

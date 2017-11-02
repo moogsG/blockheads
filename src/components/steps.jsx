@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import StepOne from '../presentational/stepOne.jsx';
 import StepTwo from '../presentational/stepTwo.jsx';
 import StepThree from '../presentational/stepThree.jsx';
@@ -17,16 +17,11 @@ class Steps extends Component {
 
   }
 
-
-
   render() {
     return (
       <div>
-        <NavDots />
-        <StepOne
-          onStateChange={this.props.onStateChange}
-          privKey={this.props.privKey}
-        />
+        <NavDots/>
+        <StepOne onStateChange={this.props.onStateChange} privKey={this.props.privKey}/>
         <StepTwo
           privKey={this.props.privKey}
           pubKey={this.props.pubKey}
@@ -52,8 +47,7 @@ class Steps extends Component {
           pubKey={this.props.pubKey}
           favFood={this.props.favFood}
           sendWS={this.props.sendWS}
-          onStateChange={this.props.onStateChange}
-        />
+          onStateChange={this.props.onStateChange}/>
       </div>
     );
   }

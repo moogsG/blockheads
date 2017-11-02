@@ -114,12 +114,12 @@ class InvalidHash extends Component {
               People say that the blockchain is secure, but how does that work? What makes it secure?</h2>
             <h2>
               Blocks are constantly validating themselves along with the blocks before them. This is done by the
-              <b>&nbsp;HASH&nbsp;</b>
+              <b>&nbsp;hash&nbsp;</b>
               of the block. If one block is tampered with, the entire hash is changed and therefore no longer valid.
             </h2>
             <h2>
               What is more, any blocks following are also made invaild. Once a block is edited, itself along with any following will have to be
-              <b>&nbsp;MINED&nbsp;</b>
+              <b>&nbsp;mined&nbsp;</b>
               to create a siginiture hash.
             </h2>
             <h2>
@@ -127,9 +127,9 @@ class InvalidHash extends Component {
             </h2>
             <h2 className="text-center">
               What does
-              <b>&nbsp;MINING&nbsp;</b>
+              <b>&nbsp;mining&nbsp;</b>
               do? How does the
-              <b>&nbsp;NONCE&nbsp;</b>
+              <b>&nbsp;nonce&nbsp;</b>
               affect the hash?
             </h2>
           </div>
