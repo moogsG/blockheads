@@ -119,7 +119,7 @@ class StepTwo extends Component {
                           id="pubKey"
                           aria-describedby="pubKeyLab"
                           value={this.props.pubKey}/>
-                        <span>
+                        <span className="biggerBIGGER">
                           <div className="arrow-up"></div>
                           <strong>Public Key of Transmission</strong><br/>
                           Represents the sender of transmission.
@@ -135,7 +135,7 @@ class StepTwo extends Component {
                           id="transmission"
                           aria-describedby="transmissionLab"
                           defaultValue="your message here"/>
-                        <span>
+                        <span className="biggerBIGGER">
                           <div className="arrow-up"></div>
                           <strong>Data of Transmission</strong><br/>
                           The data contents of the transmission.

@@ -122,7 +122,7 @@ class InvalidHash extends Component {
           <div className="row">
             <div className="col-md-12">
               <h2>
-                People say that the blockchain is secure, but how does that work? What makes it secure?</h2>
+              People say that the blockchain is secure, but how does that work? What makes it secure?</h2>
               <h2>
                 Blocks are constantly validating themselves along with the blocks before them. This is done by the
                 <b>&nbsp;hash&nbsp;</b>
