@@ -1,10 +1,10 @@
 %test {
   position: absolute;
-  content: '';
-  transition: all 0.5s;
+    content: '';
+    transition: all .5s;
 }
 
-.block-height .form-control {
+.block-height .form-control{
   min-width: auto;
 }
 
@@ -22,54 +22,53 @@
 }
 
 .button {
-  display: inline-block;
-  margin-top: 100px;
-  position: relative;
-  transform: translate(-50, -50%);
-  vertical-align: middle;
-  text-decoration: none;
-  font-size: 5em;
-  transition: all 0.5s;
-  background-color: #3498db;
+    display: inline-block;
+    margin-top: 100px;
 
-  &::before {
-    @extend %test;
-    bottom: -15px;
-    height: 15px;
-    width: 100%;
-    left: 8px;
-    transform: skewX(45deg);
-    background-color: darken(#3498db, 20%);
-  }
-
-  &::after {
-    @extend %test;
-    right: -15px;
-    height: 100%;
-    width: 15px;
-    bottom: -8px;
-    transform: skewY(45deg);
-    background-color: darken(#3498db, 30%);
-  }
-
-  &:active {
-    margin-left: 10px;
-    margin-top: 110px;
+    position: relative;
+    transform: translate(-50, -50%);
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 5em;
+    transition: all .5s;
+    background-color: #3498db;
 
     &::before {
-      bottom: -5px;
-      height: 5px;
-      left: 3px;
+    @extend %test;
+        bottom: -15px;
+        height: 15px;
+        width: 100%;
+        left: 8px;
+        transform: skewX(45deg);
+        background-color: darken(#3498db, 20%);
     }
 
     &::after {
-      right: -5px;
-      width: 5px;
-      bottom: -3px;
+        @extend %test;
+        right: -15px;
+        height: 100%;
+        width: 15px;
+        bottom: -8px;
+        transform: skewY(45deg);
+        background-color: darken(#3498db, 30%);
+    }
+
+    &:active {
+        margin-left: 10px;
+        margin-top: 110px;
+        &::before {
+            bottom: -5px;
+            height: 5px;
+            left: 3px;
+        }
+
+    &::after {
+            right: -5px;
+            width: 5px;
+            bottom: -3px;
+        }
     }
   }
-}
-
 .box {
   h1 {
     font-size: 4em;
@@ -283,7 +282,6 @@
   top: 10px;
 }
 /*CSS3 extras*/
-
 .tooltip2 span {
   border-radius: 2px;
   box-shadow: 0 0 8px 4px #666;
@@ -301,24 +299,4 @@
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
   border-bottom: 15px solid #CDD3D5;
-}
-
-#footer {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  font-size: 1.5em;
-  margin-bottom: 50px;
-
-  .line {
-    position: absolute;
-    bottom: 30px;
-    width: 1px;
-  }
-
-  img {
-    height: 20px;
-    width: 20px;
-  }
 }
