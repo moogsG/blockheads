@@ -56,7 +56,13 @@ class StepSeven extends Component {
                       <span className="input-group-addon" id="transmissionLab">
                         Transmission
                       </span>
-                      <input onChange={this.sendState} type="text" className="form-control" id="transmission" aria-describedby="transmissionLab" value={this.props.favFood}/>
+                      <input
+                        onChange={this.sendState}
+                        type="text"
+                        className="form-control"
+                        id="transmission"
+                        aria-describedby="transmissionLab"
+                        value={this.props.favFood}/>
                     </div>
                     <div className="block-footer">
                       <div className="row">
@@ -64,7 +70,6 @@ class StepSeven extends Component {
                           <h4 data-toggle="tooltip" title="39034456789534455454534">PREVHASH</h4>
                         </div>
                         <div className="col-md-6 ">
-
 
                           <h4 className="float-right" data-toggle="tooltip" title="39034456789534455454534"></h4>
                         </div>
@@ -93,6 +98,17 @@ class StepSeven extends Component {
         <div id="transmissionSent" className="mdl-js-snackbar mdl-snackbar">
           <div className="mdl-snackbar__text"></div>
           <button className="mdl-snackbar__action" type="button"></button>
+        </div>
+        <div className="row">
+          <div className="col-md-9 text-center" id="footer">
+            <div className="line"/>
+            <div>Follow Us On GitHub!</div>
+            <a href="https://github.com/moogsG/">{"Morgan Greff "}
+              <img src="../../imgs/GitHub.png" alt="GitHub"/></a>
+            <span>{"  &   "}</span>
+            <a href="https://github.com/ArieGerritse">{"Arie Gerritses "}
+              <img src="../../imgs/GitHub.png" alt="GitHub"/></a>
+          </div>
         </div>
       </section>
     )
