@@ -100,11 +100,11 @@ class StepThree extends Component {
               <div className="col-md-4 vert-center">
                 <h2>
                   Each
-                  <b>&nbsp;TRANSMISSION&nbsp;</b>
+                  <b>&nbsp;transmission&nbsp;</b>
                   is made up of two conponents;
-                  <b>&nbsp;WHO&nbsp;</b>
+                  <b>&nbsp;who&nbsp;</b>
                   it is from, and the
-                  <b>&nbsp;DATA&nbsp;</b>
+                  <b>&nbsp;data&nbsp;</b>
                   that they sent. Copy and paste your
                   <b className="secondaryFontInLine hvr-pulse-grow">&nbsp;PUBKEY&nbsp;</b>
                   from above, along with your favourite food.

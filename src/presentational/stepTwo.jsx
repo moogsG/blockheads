@@ -28,19 +28,19 @@ class StepTwo extends Component {
             <div className="content"/>
             <div className="col-md-6 text-left">
               <h2>Great! You created a
-                <b>&nbsp;SECERET KEY!&nbsp;</b>
+                <b>&nbsp;secret key!&nbsp;</b>
                 This is a
-                <b>&nbsp;PRIVATE&nbsp;</b>
+                <b>&nbsp;private&nbsp;</b>
                 username that you
-                <b>&nbsp;DO NOT&nbsp;</b>
+                <b>&nbsp;do not&nbsp;</b>
                 share.</h2>
               <h2>
                 Look to the right and you will see that a
-                <b>&nbsp;PUBLIC KEY,&nbsp;</b>
+                <b>&nbsp;public key,&nbsp;</b>
                 or a
-                <b>&nbsp;PUBLIC&nbsp;</b>
+                <b>&nbsp;public&nbsp;</b>
                 username was created from your password. This unique ID is called a
-                <b>&nbsp;Hash</b>.
+                <b>&nbsp;hash</b>.
               </h2>
             </div>
             <div className="col-md-6">
@@ -157,14 +157,14 @@ class StepTwo extends Component {
               <div className="text-left">
                 <h2>
                   This is an example of what a
-                  <b>&nbsp;BLOCK&nbsp;</b>
+                  <b>&nbsp;block&nbsp;</b>
                   looks like.
-                  <b>&nbsp;HOVER&nbsp;</b>
+                  <b>&nbsp;hover&nbsp;</b>
                   over the different parts to get more understanding.
                 </h2>
                 <h2>
                   Take a special note of the
-                  <b>&nbsp;BLOCK HASH&nbsp;</b>
+                  <b>&nbsp;block hash&nbsp;</b>
                   as that is discused in the next step.
                 </h2>
               </div>
