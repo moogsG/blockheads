@@ -18,7 +18,6 @@ class Steps extends Component {
   }
 
 
-
   render() {
     return (
       <div>
@@ -33,7 +32,7 @@ class Steps extends Component {
           picks={this.props.picks}
           hash={this.props.hash}
           onStateChange={this.props.onStateChange}
-        />
+          />
         <StepThree
           onStateChange={this.props.onStateChange}
           pubKey={this.props.pubKey}
