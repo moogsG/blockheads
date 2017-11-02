@@ -41,7 +41,7 @@ class StepFive extends Component {
   dragulaDecorator = componentBackingInstance => {
     if (componentBackingInstance) {
       let options = {
-        isContainer: function(el) {
+        isContainer: function (el) {
           return el.classList.contains('dragula-container');
         }
       };
@@ -51,10 +51,10 @@ class StepFive extends Component {
   dragulaDropDecorator = componentBackingInstance => {
     if (componentBackingInstance) {
       let options = {
-        isContainer: function(el) {
+        isContainer: function (el) {
           return el.classList.contains('dragula-container');
         },
-        moves: function(el, source, handle, sibling) {
+        moves: function (el, source, handle, sibling) {
           return true; // elements are always draggable by default
         },
         oveOnSpill: true
@@ -82,8 +82,9 @@ class StepFive extends Component {
             <div className="row">
               <div className="col-md-12 vert-center">
                 <h1>
-                  Time to add your transmission to the next block! Looks like there a few transmissions ready to be added. Blocks are able top house many transmissions, so how about we add a few from the MEMPOOL (memory pool).
-                  Watch how the hash is affected by each transmission.
+                  Time to add your transmission to the next block! Looks like there are a few transmissions ready to be added. Blocks are
+                  able to house many transmissions, so how about we add a few from the MEMPOOL (memory pool). Watch how the hash is
+                  affected by each transmission.
                 </h1>
               </div>
               <div className="col-md-12">
@@ -103,13 +104,24 @@ class StepFive extends Component {
                                 <span className="input-group-addon" id="pubKeyLab">
                                   PubKey
                                 </span>
-                                <input draggable="true" type="text" className="form-control" id="pubKey" aria-describedby="pubKeyLab" value="8af1da89d817259b9e4ada608dbb9ce3b9011ccf80626733e752b01b8d13a532"/>
+                                <input
+                                  draggable="true"
+                                  type="text"
+                                  className="form-control"
+                                  id="pubKey"
+                                  aria-describedby="pubKeyLab"
+                                  value="8af1da89d817259b9e4ada608dbb9ce3b9011ccf80626733e752b01b8d13a532"/>
                               </div>
                               <div className="input-group">
                                 <span className="input-group-addon" id="transmissionLab">
                                   Transmission
                                 </span>
-                                <input type="text" className="form-control" id="transmission" aria-describedby="transmissionLab" value="Prairie Oysters"/>
+                                <input
+                                  type="text"
+                                  className="form-control"
+                                  id="transmission"
+                                  aria-describedby="transmissionLab"
+                                  value="Prairie Oysters"/>
                               </div>
                             </div>
 
@@ -119,7 +131,12 @@ class StepFive extends Component {
                                 <span className="input-group-addon" id="pubKeyLab">
                                   PubKey
                                 </span>
-                                <input type="text" className="form-control" id="pubKey" aria-describedby="pubKeyLab" value="f0e4c2f76c58916ec258f246851bea091d14d4247a2fc3e18694461b1816e13b"/>
+                                <input
+                                  type="text"
+                                  className="form-control"
+                                  id="pubKey"
+                                  aria-describedby="pubKeyLab"
+                                  value="f0e4c2f76c58916ec258f246851bea091d14d4247a2fc3e18694461b1816e13b"/>
                               </div>
                               <div className="input-group">
                                 <span className="input-group-addon" id="transmissionLab">
@@ -134,7 +151,12 @@ class StepFive extends Component {
                                 <span className="input-group-addon" id="pubKeyLab">
                                   PubKey
                                 </span>
-                                <input type="text" className="form-control" id="pubKey" aria-describedby="pubKeyLab" value="2413fb3709b05939f04cf2e92f7d0897fc2596f9ad0b8a9ea855c7bfebaae892"/>
+                                <input
+                                  type="text"
+                                  className="form-control"
+                                  id="pubKey"
+                                  aria-describedby="pubKeyLab"
+                                  value="2413fb3709b05939f04cf2e92f7d0897fc2596f9ad0b8a9ea855c7bfebaae892"/>
                               </div>
                               <div className="input-group">
                                 <span className="input-group-addon" id="transmissionLab">
@@ -170,13 +192,24 @@ class StepFive extends Component {
                                     <span className="input-group-addon" id="pubKeyLab">
                                       PubKey
                                     </span>
-                                    <input draggable="true" type="text" className="form-control" id="pubKey" aria-describedby="pubKeyLab" value={this.props.pubKey}/>
+                                    <input
+                                      draggable="true"
+                                      type="text"
+                                      className="form-control"
+                                      id="pubKey"
+                                      aria-describedby="pubKeyLab"
+                                      value={this.props.pubKey}/>
                                   </div>
                                   <div className="input-group">
                                     <span className="input-group-addon" id="transmissionLab">
                                       Transmission
                                     </span>
-                                    <input type="text" className="form-control" id="transmission" aria-describedby="transmissionLab" value={this.props.favFood}/>
+                                    <input
+                                      type="text"
+                                      className="form-control"
+                                      id="transmission"
+                                      aria-describedby="transmissionLab"
+                                      value={this.props.favFood}/>
                                   </div>
                                 </div>
                               </div>

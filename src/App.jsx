@@ -48,6 +48,7 @@ class App extends Component {
   }
 
   sendWS(event) {
+    event.preventDefault();
     $('.block').removeClass('hvr-buzz-out');
     $('#loading').removeClass('display-none-hidden')
 

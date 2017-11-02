@@ -40,7 +40,7 @@ class StepTwo extends Component {
                   <b>&nbsp;public key,&nbsp;</b>
                   or a
                   <b>&nbsp;public&nbsp;</b>
-                  username was created from your password. This unique ID is called a
+                  username was created from your secret key. This unique ID is called a
                   <b>&nbsp;hash</b>.
                 </h2>
               </div>
@@ -175,13 +175,13 @@ class StepTwo extends Component {
                     This is an example of what a
                     <b>&nbsp;block&nbsp;</b>
                     looks like.
-                    <b>&nbsp;hover&nbsp;</b>
+                    <b>&nbsp;Hover&nbsp;</b>
                     over the different parts to get more understanding.
                   </h2>
                   <h2>
                     Take a special note of the
                     <b>&nbsp;block hash&nbsp;</b>
-                    as that is discused in the next step.
+                    as that is discussed in the next step.
                   </h2>
                 </div>
               </div>

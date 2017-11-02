@@ -96,50 +96,64 @@ class InvalidHash extends Component {
     ];
 
     const block = blocks.map(blocks => {
-      return (<MakeBlock key={blocks.index} height={blocks.index} Nonce={this.state.nonce[blocks.index - 1]} data={this.state.data[blocks.index - 1]} genHash={this.genHash} prevHash={this.state.hash[blocks.index - 2]} hash={this.state.hash[blocks.index - 1]} mine={this.mine}/>)
+      return (
+        <MakeBlock
+          key={blocks.index}
+          height={blocks.index}
+          Nonce={this.state.nonce[blocks.index - 1]}
+          data={this.state.data[blocks.index - 1]}
+          genHash={this.genHash}
+          prevHash={this.state.hash[blocks.index - 2]}
+          hash={this.state.hash[blocks.index - 1]}
+          mine={this.mine}/>
+      )
     });
 
-    return (<section id="InvalidHash">
-      <div className="container">
-        <div className="row">
-          <div className="col-md-12 text-center">
-            <div className="line"></div>
-            <h1>BLOCKCHAIN INTEGRITY</h1>
-            <div className="line"></div>
+    return (
+      <section id="InvalidHash">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12 text-center">
+              <div className="line"></div>
+              <h1>BLOCKCHAIN INTEGRITY</h1>
+              <div className="line"></div>
+            </div>
           </div>
-        </div>
-        <div className="row">
-          <div className="col-md-12">
-            <h2>
-              People say that the blockchain is secure, but how does that work? What makes it secure?</h2>
-            <h2>
-              Blocks are constantly validating themselves along with the blocks before them. This is done by the
-              <b>&nbsp;hash&nbsp;</b>
-              of the block. If one block is tampered with, the entire hash is changed and therefore no longer valid.
-            </h2>
-            <h2>
-              What is more, any blocks following are also made invaild. Once a block is edited, itself along with any following will have to be
-              <b>&nbsp;mined&nbsp;</b>
-              to create a siginiture hash.
-            </h2>
-            <h2>
-              Take a look at this example. Here there are three blocks from a chain. Try changing the data in them and then mine them.
-            </h2>
-            <h2 className="text-center">
-              What does
-              <b>&nbsp;mining&nbsp;</b>
-              do? How does the
-              <b>&nbsp;nonce&nbsp;</b>
-              affect the hash?
-            </h2>
+          <div className="row">
+            <div className="col-md-12">
+              <h2>
+                People say that the blockchain is secure, but how does that work? What makes it secure?</h2>
+              <h2>
+                Blocks are constantly validating themselves along with the blocks before them. This is done by the
+                <b>&nbsp;hash&nbsp;</b>
+                of the block. If one block is tampered with, the hash is changed and therefore no longer valid.
+              </h2>
+              <h2>
+                What is more, any blocks following are also made invalid. Once a block is edited, itself along with any following will
+                have to be
+                <b>&nbsp;mined&nbsp;</b>
+                to create a signature hash, revaidating them.
+              </h2>
+              <h2>
+                Take a look at this example. Here there are three blocks from a chain. Try changing the data in blocks to see how the
+                chain is affected, and how mining effects the hash.
+              </h2>
+              <h2 className="text-center">
+                What does
+                <b>&nbsp;mining&nbsp;</b>
+                do? How does the
+                <b>&nbsp;nonce&nbsp;</b>
+                affect the hash?
+              </h2>
+            </div>
           </div>
+          <div className="content"/>
+          <div className="row">{block}</div>
         </div>
         <div className="content"/>
-        <div className="row">{block}</div>
-      </div>
-      <div className="content"/>
-      <div className="content"/>
-    </section>);
+        <div className="content"/>
+      </section>
+    );
   }
 }
 export default InvalidHash;

@@ -15,7 +15,7 @@ class StepSix extends Component {
   restartAnimation(event) {
     event.preventDefault();
     $('.play-animation').addClass('restart');
-    setInterval(function() {
+    setInterval(function () {
       $('.restart').removeClass('restart');
     }, 500);
     // .removeAttr('style');
@@ -103,7 +103,8 @@ class StepSix extends Component {
               </div>
               <div className="col-md-4 vert-center">
                 <h1>
-                  The server which creates the block, then sends it out to all others on the network. So long as the majority recives and validate the block, it is then successfully added to the chain.
+                  The server which creates the block, then sends it out to all others on the network. So long as the majority receives and
+                  validate the block, it is then successfully added to the chain.
                 </h1>
               </div>
             </div>

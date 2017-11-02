@@ -49,7 +49,7 @@ class StepThree extends Component {
             <div className="row">
               <div className="col-md-12">
                 <div className="line"/>
-                <h1 className="text-center">THE TRANSACTION</h1>
+                <h1 className="text-center">THE TRANSMISSION</h1>
                 <div className="line"/>
               </div>
               <div className="content"/>
@@ -101,13 +101,13 @@ class StepThree extends Component {
                 <h2>
                   Each
                   <b>&nbsp;transmission&nbsp;</b>
-                  is made up of two conponents;
-                  <b>&nbsp;who&nbsp;</b>
+                  is made up of two components;<br/>
+                  <b>who&nbsp;</b>
                   it is from, and the
                   <b>&nbsp;data&nbsp;</b>
                   that they sent. Copy and paste your
                   <b className="secondaryFontInLine hvr-pulse-grow">&nbsp;PUBKEY&nbsp;</b>
-                  from above, along with your favourite food.
+                  from above, along with entering in your favourite food.
                 </h2>
               </div>
             </div>
