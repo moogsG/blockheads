@@ -11,6 +11,9 @@ class navDots extends Component {
           <li className="" title="StepTwo">
             <a href="#StepTwo"></a>
           </li>
+          <li className="" title="InvalidHash">
+            <a href="#InvalidHash"/>
+          </li>
           <li className="" title="StepThree">
             <a href="#StepThree"></a>
           </li>
@@ -22,9 +25,6 @@ class navDots extends Component {
           </li>
           <li className="" title="StepSix">
             <a href="#StepSix"></a>
-          </li>
-          <li className="" title="InvalidHash">
-            <a href="#InvalidHash"/>
           </li>
           <li className="" title="StepSeven">
             <a href="#StepSeven"></a>

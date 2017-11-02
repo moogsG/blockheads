@@ -105,15 +105,15 @@ class StepSeven extends Component {
             <div className="mdl-snackbar__text"></div>
             <button className="mdl-snackbar__action" type="button"></button>
           </div>
-        </div>
-        <div className="col-md-9 text-center" id="footer">
-          <div className="line"/>
-          <div>Follow Us On GitHub!</div>
-          <a href="https://github.com/moogsG/">{"Morgan Greff "}
-            <img src="../../imgs/GitHub.png" alt="GitHub"/></a>
-          <span>{"  &   "}</span>
-          <a href="https://github.com/ArieGerritse">{"Arie Gerritses "}
-            <img src="../../imgs/GitHub.png" alt="GitHub"/></a>
+          <div className="col-md-12 text-center" id="footer">
+            <div className="line"/>
+            <div>Follow Us On GitHub!</div>
+            <a href="https://github.com/moogsG/">{"Morgan Greff "}
+              <img src="../../imgs/GitHub.png" alt="GitHub"/></a>
+            <span>{"  &   "}</span>
+            <a href="https://github.com/ArieGerritse">{"Arie Gerritses "}
+              <img src="../../imgs/GitHub.png" alt="GitHub"/></a>
+          </div>
         </div>
       </section>
     )

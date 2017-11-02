@@ -31,7 +31,7 @@ class StepThree extends Component {
 
     if (this.props.pubKey == this.props.isPubKey) {
       $('html, body').animate({
-        scrollTop: $("#StepFour").offset().top - 90
+        scrollTop: $("#StepFour").offset().top - 60
       }, 2000);
     } else {
       $('.box').addClass('hvr-buzz-out')
