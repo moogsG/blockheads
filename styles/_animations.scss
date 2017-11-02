@@ -229,7 +229,7 @@
 
   .shotting1 {
     top: -117px;
-    left: 1px;
+    left: -1px;
     animation: copy1 2s 3s forwards, makeVisible 3.5s 3s;
   }
   @keyframes copy2 {
@@ -244,7 +244,7 @@
 
   .shotting2 {
     top: -117px;
-    left: 1px;
+    left: -3px;
     animation: copy2 2s 3s forwards, makeVisible 2.5s 3s 2 alternate;
   }
   @keyframes copy3 {
@@ -258,7 +258,7 @@
   }
 
   .shotting3 {
-    top: -117px;
+    top: -120px;
     left: 1px;
     animation: copy3 2s 3s forwards, makeVisible 2.5s 3s 2 alternate;
   }
