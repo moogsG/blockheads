@@ -19,12 +19,13 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.recive = new WebSocket('ws:localhost:6001');
+    this.recive = new WebSocket('wss://blockheadzchain.herokuapp.com');
 
     this.recive.onmessage = event => {
       var snackbarContainer = document.querySelector('#transmissionSent');
       var showToastButton = document.querySelector('#sendTransmission');
       let parseBlock = JSON.parse(JSON.parse(event.data).data);
+      console.log(parseBlock);
       let chain = this.state.chain.concat(parseBlock);
       this.setState({chain: chain});
       this.addTo();
@@ -36,7 +37,7 @@ class App extends Component {
     };
 
     this.recive.onopen = event => {
-      console.log('Connected!');
+      console.log('Connected to P2P');
 
       let type = {
         type: 1
@@ -55,7 +56,7 @@ class App extends Component {
     if (this.state.pubKey != 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855' && this.state.favFood) {
       let json_upload = 'data=' + JSON.stringify({data: this.state.favFood, from: this.state.pubKey});
       let connection = new XMLHttpRequest();
-      connection.open('POST', 'http://localhost:3001/mine', true);
+      connection.open('POST', 'https://blockheadzchain.herokuapp.com/mine', true);
       connection.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
       connection.onreadystatechange = function () {
