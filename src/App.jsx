@@ -22,10 +22,10 @@ class App extends Component {
     this.recive = new WebSocket('wss://blockheadzchain.herokuapp.com');
 
     this.recive.onmessage = event => {
-      console.log("got message");
       var snackbarContainer = document.querySelector('#transmissionSent');
       var showToastButton = document.querySelector('#sendTransmission');
       let parseBlock = JSON.parse(JSON.parse(event.data).data);
+      console.log(parseBlock);
       let chain = this.state.chain.concat(parseBlock);
       this.setState({chain: chain});
       this.addTo();
