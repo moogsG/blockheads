@@ -1,17 +1,7 @@
-const webpack = require('webpack');
-const WebpackDevServer = require('webpack-dev-server');
-const config = require('./webpack.config');
-const PORT = process.env.PORT || 8080;
-new WebpackDevServer(webpack(config), {
-  publicPath: config.output.publicPath,
-  watchOptions: {
-    aggregateTimeout: 300,
-    poll: 1000,
-    ignored: /node_modules/
-  },
-  hot: true,
-  historyApiFallback: true
-}).listen(PORT, () => {
-  console.log("Tweeter app listening on port " + PORT);
+const Server = require('./src/server.js')
+const port = (process.env.PORT || 8080)
+const app = Server.app()
 
-});
+
+app.listen(port)
+console.log(`Listening at http://localhost:${port}`)
