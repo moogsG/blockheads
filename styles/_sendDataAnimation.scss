@@ -14,10 +14,6 @@
 }
 
 #server-animation {
-  $green: #b9f270;
-  $red: #931621;
-  $off-white: #cdd3d5;
-  $blue: #6290c3;
   @keyframes contract {
     from {
       transform: scale(1);
@@ -110,63 +106,52 @@
   }
 
   .server1 {
-    left: -275px;
-    top: -41px;
+    @include left-top-position(-275px,-41px);
   }
 
   .circle1 {
-    left: -287px;
-    top: -50px;
+    @include left-top-position(-287px,-50px);
   }
 
   .server2 {
-    left: -185px;
-    top: 86px;
+    @include left-top-position(-185px,86px);
     animation-name: WtoR;
   }
 
   .circle2 {
-    left: -196px;
-    top: 77px;
+    @include left-top-position(-196px,77px);
     animation-name: expandWtoR, contract;
   }
 
   .server3 {
-    left: -25px;
-    top: 88px;
+    @include left-top-position(-25px,88px);
   }
 
   .circle3 {
-    left: -36px;
-    top: 79px;
+    @include left-top-position(-36px,79px);
   }
 
   .server4 {
-    left: 65px;
-    top: -42px;
+    @include left-top-position(65px,-42px);
   }
 
   .circle4 {
-    left: 55px;
-    top: - 51px;
+    @include left-top-position(55px,-51px);
   }
 
   .server5 {
     color: $green;
-    left: -28px;
-    top: -173px;
+    @include left-top-position(-28px,-173px);
     z-index: 3;
   }
 
   .server6 {
-    left: -183px;
-    top: -173px;
+    @include left-top-position(-183px,-173px);
     animation-name: WtoR;
   }
 
   .circle6 {
-    left: -195px;
-    top: -181px;
+    @include left-top-position(-195px,-181px);
     animation-name: expandWtoR, contract;
   }
   @keyframes makeLine {
@@ -200,7 +185,7 @@
 
   svg {
     position: absolute;
-    stroke: #28464b;
+    stroke: $blue-dark;
     stroke-width: 4;
     z-index: 1;
     stroke-dasharray: 1000;
@@ -243,8 +228,7 @@
   }
 
   .shotting2 {
-    top: -117px;
-    left: -3px;
+    @include left-top-position(-3px,-117px);
     animation: copy2 2s 3s forwards, makeVisible 2.5s 3s 2 alternate;
   }
   @keyframes copy3 {
@@ -258,8 +242,7 @@
   }
 
   .shotting3 {
-    top: -120px;
-    left: 1px;
+    @include left-top-position(1px,-120px);
     animation: copy3 2s 3s forwards, makeVisible 2.5s 3s 2 alternate;
   }
   @keyframes copy4 {
@@ -273,8 +256,7 @@
   }
 
   .shotting4 {
-    top: -117px;
-    left: 1px;
+    @include left-top-position(1px,-117px);
     animation: copy4 2s 3s forwards, makeVisible 2.5s 3s 2 alternate;
   }
   @keyframes copy5 {
@@ -288,35 +270,30 @@
   }
 
   .shotting5 {
-    top: -142px;
-    left: -30px;
+    @include left-top-position(-30px,-142px);
     animation: copy5 2s 3s forwards, makeVisible 2.5s 3s 2 alternate;
   }
 
   .greenServer {
-    top: -90px;
-    right: -200px;
+    @include left-top-position(180px,-90px);
     color: $green;
   }
 
   .redServer {
-    top: 10px;
-    right: -200px;
+    @include left-top-position(180px,10px);
     color: $red;
   }
 
   .score1 {
     font-size: 3em;
     position: absolute;
-    top: 11px;
-    right: -240px;
+    @include left-top-position(240px,11px);
   }
 
   .score2 {
     font-size: 3em;
     position: absolute;
-    top: -88px;
-    right: -240px;
+    @include left-top-position(240px,-88px);
   }
   @keyframes fadeIn {
     from {
@@ -336,8 +313,7 @@
   .majority {
     position: absolute;
     font-size: 3em;
-    top: -140px;
-    left: 142px;
+    @include left-top-position(142px,-140px);
     opacity: 0;
     animation: fadeIn 2s ease 7s forwards;
   }
@@ -354,8 +330,7 @@
     position: absolute;
     z-index: 3;
     background: $off-white;
-    top: -183px;
-    left: 298px;
+    @include left-top-position(298px,-183px);
     color: black;
   }
 

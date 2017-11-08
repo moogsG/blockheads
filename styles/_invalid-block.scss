@@ -1,109 +1,110 @@
-$blue: #6290c3;
-
 #InvalidHash {
   left: 100px;
-}
+  margin-bottom: 100px;
 
-#InvalidHash .invalid {
-  display: inline-block;
-  flex-wrap: nowrap;
-  white-space: nowrap;
-  overflow-x: auto;
-  overflow: hidden;
-}
+  .invalid {
+    display: inline-block;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow: hidden;
+  }
 
-.goodBox {
-  background: $blue;
-}
+  .goodBox {
+    background: $blue;
+  }
 
-.badBox {
-  background: red;
-}
+  .badBox {
+    background: red;
+  }
 
-.container .text-muted {
-  margin: 20px 0;
-}
+  .container {
+    .text-muted {
+      margin: 20px 0;
+    }
+  }
 
-.invalid button span {
-  padding-right: 6px;
-}
+  .invalid button span {
+    padding-right: 6px;
+  }
 
-.input-group {
-  display: inline-flex;
-}
-
-.block-nonce {
-  input {
+  .input-group {
     display: inline-flex;
-    width: 83.2%;
-  }
-}
-
-.invalid {
-  p {
-    font-size: 4em;
-    position: relative;
-    height: 0.6em;
   }
 
-  label {
-    padding-left: 0;
-  }
-}
-
-.block-height .form-control {
-  flex-grow: 0.786;
-}
-
-.loading {
-  width: 13px;
-  height: 13px;
-  margin-left: 6px;
-  transition: all 4s linear;
-  display: inline-block;
-}
-
-.display-none {
-  display: none;
-  opacity: 0;
-}
-
-.loader {
-  display: inline-flex;
-  border: 2px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 2px solid #3498db;
-  width: 0;
-  height: 0;
-  animation: spin 2s linear infinite, enlarge 1s ease 2s forwards;
-  float: right;
-  margin-right: 5px;
-}
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
+  .block-nonce {
+    input {
+      display: inline-flex;
+      width: 83.2%;
+    }
   }
 
-  100% {
-    transform: rotate(360deg);
+  .invalid {
+    p {
+      font-size: 4em;
+      position: relative;
+      height: 0.6em;
+    }
+
+    label {
+      padding-left: 0;
+    }
   }
-}
-@keyframes enlarge {
-  0% {
+
+  .block-height .form-control {
+    flex-grow: 0.786;
+  }
+
+  .loading {
+    width: 13px;
+    height: 13px;
+    margin-left: 6px;
+    transition: all 4s linear;
+    display: inline-block;
+  }
+
+  .display-none {
+    display: none;
+    opacity: 0;
+  }
+
+  .loader {
+    display: inline-flex;
+    border: 2px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 2px solid $button;
     width: 0;
     height: 0;
-    display: none;
+    animation: spin 2s linear infinite, enlarge 1s ease 2s forwards;
+    float: right;
+    margin-right: 5px;
+  }
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes enlarge {
+    0% {
+      width: 0;
+      height: 0;
+      display: none;
+    }
+
+    100% {
+      width: 16px;
+      height: 16px;
+      display: all;
+    }
   }
 
-  100% {
-    width: 16px;
-    height: 16px;
-    display: all;
+  .noonce {
+    position: absolute;
+    left: 463px;
+    top: 0;
   }
-}
-
-.noonce {
-  position: absolute;
-  left: 463px;
-  top: 0;
 }
