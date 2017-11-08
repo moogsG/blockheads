@@ -13,6 +13,10 @@
   animation-iteration-count: 1;
 }
 
+.stepSix {
+  min-height: 400px;
+}
+
 #server-animation {
   @keyframes contract {
     from {
