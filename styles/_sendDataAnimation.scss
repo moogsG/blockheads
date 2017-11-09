@@ -185,10 +185,6 @@
     left: -320px;
     height: 380px;
     width: 670px;
-  }
-
-  svg {
-    position: absolute;
     stroke: $blue-dark;
     stroke-width: 4;
     z-index: 1;
@@ -206,76 +202,31 @@
     visibility: hidden;
     z-index: 2;
   }
-  @keyframes copy1 {
-    from {
-      transform: translate(0px, 0px);
-    }
-
-    to {
-      transform: translate(0px, 220px);
-    }
-  }
 
   .shotting1 {
     top: -117px;
     left: -1px;
-    animation: copy1 2s 3s forwards, makeVisible 3.5s 3s;
-  }
-  @keyframes copy2 {
-    from {
-      transform: translate(0px, 0px);
-    }
-
-    to {
-      transform: translate(-162px, 220px);
-    }
+    @include shootingStar(0px,0px,0px,220px,shooting1);
   }
 
   .shotting2 {
     @include left-top-position(-3px,-117px);
-    animation: copy2 2s 3s forwards, makeVisible 2.5s 3s 2 alternate;
-  }
-  @keyframes copy3 {
-    from {
-      transform: translate(0px, -3px);
-    }
-
-    to {
-      transform: translate(-255px, 89px);
-    }
+    @include shootingStar(0px,0px,-162px,220px,shooting2);
   }
 
   .shotting3 {
     @include left-top-position(1px,-120px);
-    animation: copy3 2s 3s forwards, makeVisible 2.5s 3s 2 alternate;
-  }
-  @keyframes copy4 {
-    from {
-      transform: translate(0px, -6px);
-    }
-
-    to {
-      transform: translate(90px, 90px);
-    }
+    @include shootingStar(0px,-3px,-255px,89px,shooting3);
   }
 
   .shotting4 {
     @include left-top-position(1px,-117px);
-    animation: copy4 2s 3s forwards, makeVisible 2.5s 3s 2 alternate;
-  }
-  @keyframes copy5 {
-    from {
-      transform: translate(0px, 0px);
-    }
-
-    to {
-      transform: translate(-130px, 0px);
-    }
+    @include shootingStar(0px,-6px,90px,90px,shooting4);
   }
 
   .shotting5 {
     @include left-top-position(-30px,-142px);
-    animation: copy5 2s 3s forwards, makeVisible 2.5s 3s 2 alternate;
+    @include shootingStar(0px,0px,-130px,0px,shooting5);
   }
 
   .greenServer {
@@ -299,27 +250,18 @@
     position: absolute;
     @include left-top-position(240px,-88px);
   }
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
-    }
-  }
-
-  .visable {
-    opacity: 0;
-    animation: fadeIn 2s ease 6s forwards;
-  }
 
   .majority {
     position: absolute;
     font-size: 3em;
     @include left-top-position(142px,-140px);
     opacity: 0;
-    animation: fadeIn 2s ease 7s forwards;
+    @include fadeInStuff(7s);
+  }
+
+  .visable {
+    opacity: 0;
+    @include fadeInStuff(6s);
   }
 
   .pause-animation {

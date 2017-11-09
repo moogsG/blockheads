@@ -37,4 +37,27 @@ $breakpoints: (
   left: $left;
   top: $top;
 }
-@mixin movesomething($x,$y) {}
+@mixin fadeInStuff($delay) {
+  @keyframes FadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+  animation: FadeIn 2s ease $delay forwards;
+}
+@mixin shootingStar($fromX, $fromY, $toX, $toY, $name) {
+  @keyframes #{$name} {
+    from {
+      transform: translate($fromX, $fromY);
+    }
+
+    to {
+      transform: translate($toX, $toY);
+    }
+  }
+  animation: $name 2s 3s forwards, makeVisible 2.5s 3s 2 alternate;
+}
