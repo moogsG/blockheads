@@ -4,10 +4,13 @@
 @import '../node_modules/aos/dist/aos.css';
 @import '../node_modules/dragula/dist/dragula.css';
 @import "_include-media"; // This is the top-level scss file. Import all other files in here.
+@import "_colors.scss";
 @import "_mixins.scss";
 @import "_globals.scss";
 @import "_nav.scss";
 @import "_app.scss";
-@import "_animations.scss";
+@import "_sendDataAnimation.scss";
 @import "_navigation.scss";
 @import "_invalid-block.scss";
+@import "_footer.scss";
+@import "_tooltips.scss";
