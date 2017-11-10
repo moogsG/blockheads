@@ -26,7 +26,6 @@ class App extends Component {
       var snackbarContainer = document.querySelector('#transmissionSent');
       var showToastButton = document.querySelector('#sendTransmission');
       let parseBlock = JSON.parse(JSON.parse(event.data).data);
-      console.log(parseBlock);
       let chain = this.state.chain.concat(parseBlock);
       this.setState({chain: chain});
       this.addTo();
@@ -46,10 +45,11 @@ class App extends Component {
 
       this.recive.send(JSON.stringify(type));
     };
-    setInterval(newBlock, 60*1000);
+
   }
 
   newBlock() {
+    console.log("newBlock")
     let json_upload = 'data=' + JSON.stringify({data: "BLOCKHEADZ", from: "SERVER"});
     let connection = new XMLHttpRequest();
     connection.open('POST', 'https://blockheadzchain.herokuapp.com/mine', true);
@@ -119,6 +119,7 @@ class App extends Component {
   }
 
   render() {
+
     return (
       <div data-target="#myScrollspy">
         <NavBar chain={this.state.chain} pubKey={this.state.pubKey}/>
