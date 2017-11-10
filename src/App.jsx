@@ -16,6 +16,7 @@ class App extends Component {
     this.onStateChange = this.onStateChange.bind(this);
     this.sendWS = this.sendWS.bind(this);
     this.addTo = this.addTo.bind(this);
+    this.newBlock = this.newBlock.bind(this);
   }
 
   componentDidMount() {
@@ -45,9 +46,24 @@ class App extends Component {
 
       this.recive.send(JSON.stringify(type));
     };
-
+    setInterval(newBlock, 60*1000);
   }
 
+  newBlock() {
+    let json_upload = 'data=' + JSON.stringify({data: "BLOCKHEADZ", from: "SERVER"});
+    let connection = new XMLHttpRequest();
+    connection.open('POST', 'https://blockheadzchain.herokuapp.com/mine', true);
+    connection.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    connection.onreadystatechange = function () {
+
+      if (connection.readyState != 4 || connection.status != 200) {
+        return;
+      }
+    };
+
+    connection.send(json_upload);
+  }
   sendWS(event) {
     event.preventDefault();
     $('.block').removeClass('hvr-buzz-out');
