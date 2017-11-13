@@ -19,20 +19,25 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.recive = new WebSocket('wss:www.blockheadzchain.herokuapp.com');
+    this.recive = new WebSocket('wss:blockheadzchain.herokuapp.com');
 
     this.recive.onmessage = event => {
       var snackbarContainer = document.querySelector('#transmissionSent');
       var showToastButton = document.querySelector('#sendTransmission');
       let parseBlock = JSON.parse(JSON.parse(event.data).data);
-      let chain = this.state.chain.concat(parseBlock);
-      this.setState({chain: chain});
-      this.addTo();
-      $('#loading').addClass('display-none-hidden')
-      var data = {
-        message: 'Block Submitted!'
+      console.log(parseBlock[0].data)
+      if ((parseBlock[0].data).search("BLOCKHEADZ") > 0) {
+        console.log("blockheadz")
+      } else {
+        let chain = this.state.chain.concat(parseBlock);
+        this.setState({chain: chain});
+        this.addTo();
+        $('#loading').addClass('display-none-hidden')
+        var data = {
+          message: 'Block Submitted!'
+        }
+        snackbarContainer.MaterialSnackbar.showSnackbar(data);
       }
-      snackbarContainer.MaterialSnackbar.showSnackbar(data);
     };
 
     this.recive.onopen = event => {
