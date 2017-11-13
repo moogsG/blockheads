@@ -20,30 +20,14 @@
   <div id="react-root"></div>
   <script src="/static/bundle.js"></script>
   <script>
+
     $(document).ready(function () {
-      // Adds new block every minute
-      function newBlock() {
-        let json_upload = 'data=' + JSON.stringify({data: "BLOCKHEADZ", from: "SERVER"});
-        let connection = new XMLHttpRequest();
-        connection.open('POST', 'https://blockheadzchain.herokuapp.com/mine', true);
-        connection.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-        connection.onreadystatechange = function () {
-
-          if (connection.readyState != 4 || connection.status != 200) {
-            return;
-          }
-        };
-
-        connection.send(json_upload);
-      }
-
-      setInterval(newBlock, 30*1000);
 
       // Scroll animation
       AOS.init();
 
-      $(window).bind('scroll', function (e) {
+
+      $(window).bind('scroll', function(e) {
         dotnavigation();
       });
 
@@ -101,6 +85,9 @@
     $(window).resize(function() {
       $('.container').css('height', $(window).height());
     });
+
+
+
   </script>
 </body>
 

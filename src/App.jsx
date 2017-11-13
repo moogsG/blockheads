@@ -16,11 +16,10 @@ class App extends Component {
     this.onStateChange = this.onStateChange.bind(this);
     this.sendWS = this.sendWS.bind(this);
     this.addTo = this.addTo.bind(this);
-    this.newBlock = this.newBlock.bind(this);
   }
 
   componentDidMount() {
-    this.recive = new WebSocket('wss://blockheadzchain.herokuapp.com');
+    this.recive = new WebSocket('wss:blockheadzchain.herokuapp.com');
 
     this.recive.onmessage = event => {
       var snackbarContainer = document.querySelector('#transmissionSent');
@@ -37,7 +36,7 @@ class App extends Component {
     };
 
     this.recive.onopen = event => {
-      console.log('Connected to P2P');
+      console.log('Connected!');
 
       let type = {
         type: 1
@@ -48,22 +47,6 @@ class App extends Component {
 
   }
 
-  newBlock() {
-    console.log("newBlock")
-    let json_upload = 'data=' + JSON.stringify({data: "BLOCKHEADZ", from: "SERVER"});
-    let connection = new XMLHttpRequest();
-    connection.open('POST', 'https://blockheadzchain.herokuapp.com/mine', true);
-    connection.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-    connection.onreadystatechange = function () {
-
-      if (connection.readyState != 4 || connection.status != 200) {
-        return;
-      }
-    };
-
-    connection.send(json_upload);
-  }
   sendWS(event) {
     event.preventDefault();
     $('.block').removeClass('hvr-buzz-out');
@@ -119,7 +102,6 @@ class App extends Component {
   }
 
   render() {
-
     return (
       <div data-target="#myScrollspy">
         <NavBar chain={this.state.chain} pubKey={this.state.pubKey}/>
