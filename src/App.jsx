@@ -19,7 +19,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.recive = new WebSocket('wss:blockheadzchain.herokuapp.com');
+    this.recive = new WebSocket('wss:www.blockheadzchain.herokuapp.com');
 
     this.recive.onmessage = event => {
       var snackbarContainer = document.querySelector('#transmissionSent');
