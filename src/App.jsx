@@ -108,10 +108,6 @@ class App extends Component {
       const pubKey = SHA256(this.state.privKey).toString();
       this.setState({pubKey});
     })
-    $('.box').removeClass('hvr-buzz-out')
-    $('.block').removeClass('hvr-buzz-out')
-    $('.alert-danger').addClass('display-none');
-    $('.empty-block').addClass('display-none');
   }
 
   render() {
