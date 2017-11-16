@@ -26,20 +26,20 @@ class App extends Component {
     // Raise snackbar and parses data from block
     this.recive.onmessage = event => {
 
-      var snackbarContainer = document.querySelector('#transmissionSent');
-      var showToastButton = document.querySelector('#sendTransmission');
+      const snackbarContainer = document.querySelector('#transmissionSent');
+      const showToastButton = document.querySelector('#sendTransmission');
       let parseBlock = JSON.parse(JSON.parse(event.data).data);
 
       if ((parseBlock[0].data).search("BLOCKHEADZ") > 0) {
         // Do nothing
       } else {
 
-        let chain = this.state.chain.concat(parseBlock);
+        const chain = this.state.chain.concat(parseBlock);
         this.setState({chain: chain});
         this.addTo();
         $('#loading').addClass('display-none-hidden')
 
-        var data = {
+        const data = {
           message: 'Block Submitted!'
         }
 
@@ -51,7 +51,7 @@ class App extends Component {
     this.recive.onopen = event => {
       console.log('Connected to Chain!');
 
-      let type = {
+      const type = {
         type: 1
       };
 
