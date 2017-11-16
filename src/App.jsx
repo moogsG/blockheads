@@ -19,29 +19,37 @@ class App extends Component {
   }
 
   componentDidMount() {
+    //Adds websocket, wss for https
     this.recive = new WebSocket('wss:blockheadzchain.herokuapp.com');
 
+    //On message
+    // Raise snackbar and parses data from block
     this.recive.onmessage = event => {
+
       var snackbarContainer = document.querySelector('#transmissionSent');
       var showToastButton = document.querySelector('#sendTransmission');
       let parseBlock = JSON.parse(JSON.parse(event.data).data);
-      console.log(parseBlock[0].data)
+
       if ((parseBlock[0].data).search("BLOCKHEADZ") > 0) {
-        console.log("blockheadz")
+        // Do nothing
       } else {
+
         let chain = this.state.chain.concat(parseBlock);
         this.setState({chain: chain});
         this.addTo();
         $('#loading').addClass('display-none-hidden')
+
         var data = {
           message: 'Block Submitted!'
         }
+
         snackbarContainer.MaterialSnackbar.showSnackbar(data);
       }
     };
 
+    // On WS connection set type to recive current chain
     this.recive.onopen = event => {
-      console.log('Connected!');
+      console.log('Connected to Chain!');
 
       let type = {
         type: 1
@@ -52,14 +60,16 @@ class App extends Component {
 
   }
 
+  //Sends data to WS
   sendWS(event) {
     event.preventDefault();
     $('.block').removeClass('hvr-buzz-out');
     $('#loading').removeClass('display-none-hidden')
 
     if (this.state.pubKey != 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855' && this.state.favFood) {
-      let json_upload = 'data=' + JSON.stringify({data: this.state.favFood, from: this.state.pubKey});
-      let connection = new XMLHttpRequest();
+
+      const json_upload = 'data=' + JSON.stringify({data: this.state.favFood, from: this.state.pubKey});
+      const connection = new XMLHttpRequest();
       connection.open('POST', 'https://blockheadzchain.herokuapp.com/mine', true);
       connection.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
@@ -71,16 +81,15 @@ class App extends Component {
       };
 
       connection.send(json_upload);
-
       this.setState({favFood: ''})
     } else {
       $('.block').addClass('hvr-buzz-out')
       $('.alert-danger').removeClass('display-none')
       $('#loading').addClass('display-none-hidden')
     }
-
   }
 
+  // Adds animation to blocks
   addTo() {
     $('.rectangle').addClass('restart').removeClass('moveRight');
 
@@ -93,13 +102,12 @@ class App extends Component {
     }, 2000);
   }
 
+  // Sets state
   onStateChange(newState) {
-    Promise.resolve(this.setState({
-      ...newState
-    })).then(() => {
-      let pubKey = SHA256(this.state.privKey).toString();
+    this.setState({...newState}, () => {
+      const pubKey = SHA256(this.state.privKey).toString();
       this.setState({pubKey});
-    });
+    })
     $('.box').removeClass('hvr-buzz-out')
     $('.block').removeClass('hvr-buzz-out')
     $('.alert-danger').addClass('display-none');
