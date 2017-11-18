@@ -13,18 +13,18 @@ class App extends Component {
       favFood: ''
     };
 
-    this.onStateChange = this.onStateChange.bind(this);
-    this.sendWS = this.sendWS.bind(this);
-    this.addTo = this.addTo.bind(this);
+    this.handleStateChange = this.handleStateChange.bind(this);
+    this.handleMine = this.handleMine.bind(this);
+    this.handleNewBlock = this.handleNewBlock.bind(this);
   }
 
   componentDidMount() {
     //Adds websocket, wss for https
-    this.recive = new WebSocket('wss:blockheadzchain.herokuapp.com');
+    this.receive = new WebSocket('wss:blockheadzchain.herokuapp.com');
 
     //On message
     // Raise snackbar and parses data from block
-    this.recive.onmessage = event => {
+    this.receive.onmessage = event => {
 
       const snackbarContainer = document.querySelector('#transmissionSent');
       const showToastButton = document.querySelector('#sendTransmission');
@@ -47,21 +47,20 @@ class App extends Component {
       }
     };
 
-    // On WS connection set type to recive current chain
-    this.recive.onopen = event => {
+    // On WS connection set type to receive current chain
+    this.receive.onopen = event => {
       console.log('Connected to Chain!');
 
       const type = {
         type: 1
       };
 
-      this.recive.send(JSON.stringify(type));
+      this.receive.send(JSON.stringify(type));
     };
-
   }
 
   //Sends data to WS
-  sendWS(event) {
+  handleMine(event) {
     event.preventDefault();
     $('.block').removeClass('hvr-buzz-out');
     $('#loading').removeClass('display-none-hidden')
@@ -90,7 +89,7 @@ class App extends Component {
   }
 
   // Adds animation to blocks
-  addTo() {
+  handleNewBlock() {
     $('.rectangle').addClass('restart').removeClass('moveRight');
 
     setInterval(function () {
@@ -103,7 +102,7 @@ class App extends Component {
   }
 
   // Sets state
-  onStateChange(newState) {
+  handleStateChange(newState) {
     this.setState({...newState}, () => {
       const pubKey = SHA256(this.state.privKey).toString();
       this.setState({pubKey});
@@ -114,7 +113,7 @@ class App extends Component {
     return (
       <div data-target="#myScrollspy">
         <NavBar chain={this.state.chain} pubKey={this.state.pubKey}/>
-        <Steps { ...this.state } onStateChange={this.onStateChange} sendWS={this.sendWS}/>
+        <Steps { ...this.state } handleStateChange={this.handleStateChange} handleMine={this.handleMine}/>
       </div>
     );
   }

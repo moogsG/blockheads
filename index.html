@@ -1,14 +1,9 @@
 <!doctype html>
-
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <!-- EXTERNAL JAVASCRIPTS -->
-  <script src="./node_modules/material-design-lite/material.min.js"></script>
-  <script src="../node_modules/aos/dist/aos.js"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  </script>
+
+
   <!-- EXTERNAL STYLESHEETS -->
 
   <!-- FONTS -->
@@ -17,25 +12,24 @@
 </head>
 
 <body>
+
   <div id="react-root"></div>
   <script src="/static/bundle.js"></script>
-  <script>
 
+  <script>
     $(document).ready(function () {
 
       // Scroll animation
       AOS.init();
-
 
       $(window).bind('scroll', function(e) {
         dotnavigation();
       });
 
       function dotnavigation() {
-
         let numSections = $('section').length;
-
         $('#dot-nav li a').removeClass('active').parent('li').removeClass('active');
+
         $('section').each(function(i, item) {
           let ele = $(item),
             nextTop;
@@ -60,7 +54,7 @@
         });
       }
 
-      /* get clicks working */
+      // Clicking nav bar
       $('#dot-nav li').click(function() {
 
         var id = $(this).find('a').attr("href"),
@@ -82,12 +76,10 @@
         return false;
       });
     });
+
     $(window).resize(function() {
       $('.container').css('height', $(window).height());
     });
-
-
-
   </script>
 </body>
 
