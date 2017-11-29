@@ -91,7 +91,7 @@ class StepTwo extends Component {
                           <h2>BLOCK HASH</h2>
                           <span>
                             <div className="arrow-up"></div>
-                            <strong>Curret Block Hash</strong><br/>
+                            <strong>Current Block Hash</strong><br/>
                             A unique string belonging only to the attached block. It is created from the contents of the block.
                           </span>
                         </a>
