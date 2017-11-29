@@ -111,7 +111,7 @@ class StepSeven extends Component {
             <a href="https://github.com/moogsG/">{"Morgan Greff "}
               <img src="../../imgs/GitHub.png" alt="GitHub"/></a>
             <span>{"  &   "}</span>
-            <a href="https://github.com/ArieGerritse">{"Arie Gerritses "}
+            <a href="https://github.com/ArieGerritse">{"Arie Gerritse "}
               <img src="../../imgs/GitHub.png" alt="GitHub"/></a>
           </div>
         </div>
