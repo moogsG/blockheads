@@ -100,7 +100,7 @@ class StepTwo extends Component {
                           <span>
                             <div className="arrow-up"></div>
                             <strong>Nonce</strong><br/>
-                            Nonce is the product of mining, and creates the siginiture of the hash.
+                            Nonce is the product of mining, and creates the signature of the hash.
                           </span>
                         </a>
                       </div>
