@@ -30,10 +30,6 @@ class App extends Component {
       const showToastButton = document.querySelector('#sendTransmission');
       let parseBlock = JSON.parse(JSON.parse(event.data).data);
 
-      if ((parseBlock[0].data).search("BLOCKHEADZ") > 0) {
-        // Do nothing
-      } else {
-
         const chain = this.state.chain.concat(parseBlock);
         this.setState({chain: chain});
         this.addTo();
@@ -44,7 +40,7 @@ class App extends Component {
         }
 
         snackbarContainer.MaterialSnackbar.showSnackbar(data);
-      }
+
     };
 
     // On WS connection set type to recive current chain
