@@ -3,15 +3,18 @@
   font-size: 1em;
 }
 
+.fixed-top {
+  z-index: 8;
+}
 .navbar {
   list-style-type: none;
   display: inline-block;
   flex-wrap: nowrap;
   white-space: nowrap;
   overflow-x: auto;
-  overflow: hidden;
   color: $purple;
   font-size: 18px;
+  overflow: visible;
 }
 
 #navLine {
@@ -48,7 +51,7 @@
   animation-name: none;
   animation-duration: 2s;
   animation-fill-mode: forwards;
-  z-index: 999;
+  z-index: 9;
 
   marquee {
     font-size: 2em;
@@ -75,4 +78,11 @@
   to {
     transform: translateX(175px);
   }
+}
+
+.mk-logo {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  right: 0;
 }

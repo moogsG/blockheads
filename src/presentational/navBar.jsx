@@ -30,6 +30,7 @@ class navBar extends Component {
       <nav className="navbar fixed-top bg-faded">
         <div className="blocks">{block}</div>
         <div id="navLine"/>
+        <img className="img-fluid mk-logo" src="../../imgs/mk.png"/>
       </nav>
     );
   }
